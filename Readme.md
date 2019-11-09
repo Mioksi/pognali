@@ -1,7 +1,7 @@
 # Личный проект «Погнали» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Наталья Самбурова](https://up.htmlacademy.ru/adaptive/18/user/13939).
-* Наставник: `Неизвестно`.
+* Наставник: [Екатерина Комнатная](https://up.htmlacademy.ru/adaptive/18/user/215761).
 
 ---
 
