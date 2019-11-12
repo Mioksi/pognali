@@ -55,26 +55,25 @@
     <main class="page-main">
       <h1 class="visually-hidden">Сервис поиска попутчиков "Погнали"</h1>
       <section class="promo">
-        <h2 class="visually-hidden">Промо блок</h2>
+        <h2 class="visually-hidden">Промо</h2>
         <b class="promo__title">В путешествие с крутыми попутчиками!</b>
-      </section>
-      <div class="user-block">
-        <ul class="user-block__list contast-list">
-          <li class="contast-list__item">
-            <a class="contast-list__link contast-list__link--phone" href="tel:88005558628">8 800 555-86-28</a>
-          </li>
-          <li class="contast-list__item">
-            <a class="contast-list__link contast-list__link--email" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
-          </li>
-        </ul>
-        <a class="user-block__button button" href="login.html">Авторизация</a>
-      </div>
-      <section class="review">
-        <h2 class="visually-hidden">Отзывы</h2>
-        <blockquote class="review">
-          <p class="review__text">«Лучшее приложение, что я видел в жизни!»</p>
-          <cite class="review__author">Мурат Эльтазин главный редактор газеты «гаджетлайф»</cite>
-        </blockquote>
+        <div class="promo__wrapper user-block">
+          <ul class="user-block__list contacts-list">
+            <li class="contacts-list__item">
+              <a class="contacts-list__link contacts-list__link--phone" href="tel:88005558628">8 800 555-86-28</a>
+            </li>
+            <li class="contacts-list__item">
+              <a class="contacts-list__link contacts-list__link--email" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
+            </li>
+          </ul>
+          <a class="user-block__button button" href="login.html">Авторизация</a>
+        </div>
+        <div class="promo__review review">
+          <blockquote class="review__content">
+            <p class="review__text">«Лучшее приложение, что я видел в жизни!»</p>
+            <cite class="review__author">Мурат Эльтазин главный редактор газеты «гаджетлайф»</cite>
+          </blockquote>
+        </div>
       </section>
       <section class="service-guide">
         <h2 class="visually-hidden">Как пользоваться?</h2>
@@ -125,7 +124,7 @@
         <p class="companions__text">Все мы индивидуальны и у каждого свой взгляд на идеальный отдых. Одному нужен пляж и коктейль, а другому маршрут для хайкинга.</p>
         <b class="companions__accent">Теперь можно легко найти единомышленников!</b>
         <ul class="companions__list">
-          <li class="companions__item companions__item--sri-Lanka companions__item--thailand companions__item--seychelles">
+          <li class="companions__item">
             <dl class="companions__level level">
               <dt class="level__text">level</dt>
               <dd class="level__number">99</dd>
@@ -134,9 +133,20 @@
             <div class="companions__wrapper">
               <h3 class="companions__name">Таня Фирсова</h3>
               <p class="companions__tags">#ЗОЖ #ПП #Фитнес #пляж #авокадо #смузи</p>
+              <ul class="companions__countries">
+                <li class="companions__country">
+                  <img class="companions__country-image" src="https://via.placeholder.com/35x24" alt="Шри-Ланка">
+                </li>
+                <li class="companions__country">
+                  <img class="companions__country-image" src="https://via.placeholder.com/35x24" alt="Тайланд">
+                </li>
+                <li class="companions__country">
+                  <img class="companions__country-image" src="https://via.placeholder.com/35x24" alt="Сейшельские Острова">
+                </li>
+              </ul>
             </div>
             <ul class="companions__transport">
-              <li class="companions__item companions__item--plane companions__item--active">
+              <li class="companions__item companions__item--plane">
                 <span class="visually-hidden">На самолёте</span>
               </li>
               <li class="companions__item companions__item--bus">
@@ -150,9 +160,7 @@
               </li>
             </ul>
           </li>
-        </ul>
-        <ul class="companions__list">
-          <li class="companions__item companions__item--belgium companions__item--czech">
+          <li class="companions__item">
             <dl class="companions__level level">
               <dt class="level__text">level</dt>
               <dd class="level__number">80</dd>
@@ -161,18 +169,26 @@
             <div class="companions__wrapper">
               <h3 class="companions__name">Петя Демин</h3>
               <p class="companions__tags">#бургер #бар #футбол #концерт #крафт</p>
+              <ul class="companions__countries">
+                <li class="companions__country">
+                  <img class="companions__country-image" src="https://via.placeholder.com/35x24" alt="Бельгия">
+                </li>
+                <li class="companions__country">
+                  <img class="companions__country-image" src="https://via.placeholder.com/35x24" alt="Чехия">
+                </li>
+              </ul>
             </div>
             <ul class="companions__transport">
-              <li class="companions__item companions__item--plane companions__item--active">
+              <li class="companions__item companions__item--plane">
                 <span class="visually-hidden">На самолёте</span>
               </li>
-              <li class="companions__item companions__item--bus companions__item--active">
+              <li class="companions__item companions__item--bus">
                 <span class="visually-hidden">На автобусе</span>
               </li>
               <li class="companions__item companions__item--bicycle">
                 <span class="visually-hidden">На велосипеде</span>
               </li>
-              <li class="companions__item companions__item--runner companions__item--active">
+              <li class="companions__item companions__item--runner">
                 <span class="visually-hidden">Пешком</span>
               </li>
             </ul>
