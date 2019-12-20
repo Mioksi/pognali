@@ -1,0 +1,34 @@
+.review__content {
+  margin: 0;
+  width: 155px;
+
+  color: $white;
+}
+
+.review__text {
+  margin: 0;
+  margin-bottom: 18px;
+}
+
+.review__author {
+  font-weight: 700;
+  font-style: normal;
+}
+
+@media (min-width: $tablet-width) {
+  .review__content {
+    width: 260px;
+  }
+
+  .review__text {
+    margin-bottom: 43px;
+
+    font-size: 28px;
+    line-height: 33px;
+  }
+
+  .review__author {
+    font-size: 21px;
+    line-height: 25px;
+  }
+}

@@ -1,0 +1,140 @@
+.modal-tariffs {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  right: 0;
+  z-index: 4;
+
+  display: none;
+  margin: 0 auto;
+  padding-top: 34px;
+  width: 270px;
+
+  background-color: $white;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(29, 46, 91, 0.1);
+
+  &--show {
+    display: block;
+  }
+}
+
+.modal-tariffs__title {
+  margin: 0;
+  margin-bottom: 27px;
+
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  color: $orange;
+}
+
+.modal-tariffs__list {
+  @include list-reset;
+
+  margin-bottom: 30px;
+  padding: 0 25px;
+}
+
+.modal-tariffs__item {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 12px;
+  padding-bottom: 10px;
+
+  border-top: 1px solid rgba(#000000, 0.05);
+
+  &:last-child {
+    border-bottom: 1px solid rgba(#000000, 0.05);
+  }
+}
+
+.modal-tariffs__button {
+  padding-top: 19px;
+  padding-right: 20px;
+  padding-bottom: 16px;
+  padding-left: 20px;
+  width: 100%;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #1d2e5b;
+
+  background-color: #f3f4f8;
+  border: none;
+  border-radius: 0 0 20px 20px;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: #edeff6;
+  }
+
+  &:active {
+    color: rgba(#1d2e5b, 0.3);
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .modal-tariffs {
+    top: 57px;
+    left: -8px;
+
+    width: 688px;
+    padding-top: 51px;
+
+    border-radius: 30px;
+  }
+
+  .modal-tariffs__title {
+    margin-bottom: 46px;
+
+    font-size: 45px;
+    line-height: 45px;
+  }
+
+  .modal-tariffs__list {
+    margin-bottom: 51px;
+    padding: 0 91px;
+  }
+
+  .modal-tariffs__item {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 13px;
+    padding-bottom: 14px;
+
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .modal-tariffs__button {
+    padding-top: 41px;
+    padding-bottom: 43px;
+
+    font-size: 24px;
+    text-transform: none;
+
+    border-radius: 0 0 30px 30px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .modal-tariffs {
+    top: 164px;
+    left: 0;
+
+    width: 750px;
+  }
+
+  .modal-tariffs__list {
+    padding: 0 60px;
+  }
+}

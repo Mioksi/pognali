@@ -1,0 +1,51 @@
+.user-level {
+  position: relative;
+
+  width: 60px;
+  height: 60px;
+
+  text-align: center;
+  color: $white;
+
+  background-color: rgba(#000000, 0.6);
+  border: 3px solid $orange;
+  border-radius: 50%;
+}
+
+.user-level__info {
+  position: relative;
+
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: auto;
+  margin-top: 11px;
+  width: 25px;
+
+  &::before {
+    @include pseudo;
+
+    top: 22px;
+    left: -4px;
+
+    width: 31px;
+    height: 1px;
+
+    background-color: rgba($white, 0.3);
+  }
+}
+
+.user-level__text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.user-level__number {
+  margin: 0;
+
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+}

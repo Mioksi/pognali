@@ -1,0 +1,255 @@
+.companions {
+  position: relative;
+  z-index: 4;
+
+  margin-top: -25px;
+  padding-top: 97px;
+  padding-bottom: 30px;
+
+  background-color: #192144;
+  border-radius: 0 0 30px 30px;
+}
+
+.companions__wrapper {
+  position: relative;
+  z-index: 0;
+
+  &::before,
+  &::after {
+    @include pseudo;
+  }
+
+  &::before {
+    top: -33px;
+    right: 25px;
+
+    width: 143px;
+    height: 143px;
+
+    background-image: url("../img/smolov-back-desktop@1x.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/smolov-back-desktop@2x.png");
+      background-size: 143px auto;
+    }
+  }
+
+  &::after {
+    top: 239px;
+    left: 0;
+    z-index: -1;
+
+    width: 71px;
+    height: 71px;
+
+    background-image: url("../img/rogovaya-back-mobile@1x.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/rogovaya-back-mobile@2x.png");
+      background-size: 71px auto;
+    }
+  }
+}
+
+.companions__content {
+  position: relative;
+
+  margin-left: 24px;
+  margin-bottom: 56px;
+  width: 215px;
+
+  &::before {
+    @include pseudo;
+
+    top: -35px;
+    left: -70px;
+    z-index: -1;
+
+    width: 132px;
+    height: 132px;
+
+    background-color: #141b3b;
+    border-radius: 20px;
+  }
+}
+
+.companions__title {
+  margin: 0;
+  margin-bottom: 19px;
+
+  font-size: 24px;
+  line-height: 24px;
+  color: $orange;
+}
+
+.companions__text {
+  margin: 0;
+
+  color: $white;
+
+  &--main {
+    margin-bottom: 21px;
+  }
+
+  &--accent {
+    font-weight: 700;
+  }
+}
+
+.companions__list {
+  @include list-reset;
+
+  margin-bottom: 20px;
+}
+
+.companions__item {
+  margin-bottom: 10px;
+}
+
+@media (min-width: $tablet-width) {
+  .companions {
+    margin-top: -55px;
+    padding-top: 196px;
+    padding-bottom: 88px;
+
+    border-radius: 0 0 60px 60px;
+  }
+
+  .companions__wrapper {
+    &::before {
+      top: 285px;
+      right: auto;
+      left: 40px;
+    }
+
+
+    &::after {
+      top: -61px;
+      right: 75px;
+      left: auto;
+
+      width: 285px;
+      height: 285px;
+
+      background-image: url("../img/rogovaya-back-desktop@1x.png");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/rogovaya-back-desktop@2x.png");
+        background-size: 285px auto;
+      }
+    }
+  }
+
+  .companions__content {
+    margin-bottom: 57px;
+    margin-left: 34px;
+    width: 425px;
+
+    &::before {
+      top: -61px;
+      left: -34px;
+
+      width: 213px;
+      height: 213px;
+    }
+  }
+
+  .companions__title {
+    margin-bottom: 58px;
+
+    font-size: 45px;
+    line-height: 45px;
+  }
+
+  .companions__text {
+    font-size: 28px;
+    line-height: 33px;
+
+    &--main {
+      margin-bottom: 39px;
+    }
+
+    &--accent {
+      width: 260px;
+
+      font-size: 21px;
+      line-height: 25px;
+    }
+  }
+
+  .companions__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 70px;
+    margin-left: 35px;
+  }
+
+  .companions__item {
+    margin-right: 48px;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+
+  .companions__button {
+    margin: 0 auto;
+    width: 618px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .companions {
+    padding-top: 185px;
+    padding-bottom: 124px;
+  }
+
+  .companions__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    &::before {
+      top: 3px;
+      left: 547px;
+    }
+
+    &::after {
+      top: 255px;
+      right: auto;
+      left: 191px;
+    }
+  }
+
+  .companions__content {
+    margin-bottom: 0;
+    margin-left: 70px;
+    padding-bottom: 110px;
+
+    &::before {
+      left: -70px;
+    }
+  }
+
+  .companions__list {
+    margin-top: 3px;
+    margin-bottom: 0;
+    margin-left: 195px;
+    width: 630px;
+  }
+
+  .companions__item {
+    margin-right: 60px;
+  }
+
+  .companions__button {
+    margin: 0;
+    margin-top: -91px;
+    margin-left: 71px;
+    width: 280px;
+  }
+}

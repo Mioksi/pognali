@@ -1,0 +1,152 @@
+.service-use__list {
+  @include list-reset;
+
+  counter-reset: section;
+}
+
+.service-use__item {
+  position: relative;
+
+  padding-top: 23px;
+  padding-bottom: 31px;
+  padding-left: 25px;
+
+  background-color: $orange;
+  border-radius: 10px 10px 0 0;
+
+
+  &:not(:first-child) {
+    margin-top: -10px;
+  }
+
+  &:last-child {
+    padding-bottom: 21px;
+
+    border-radius: 10px;
+  }
+
+  &:nth-child(2) {
+    background-color: #ffa530;
+  }
+
+  &:nth-child(3) {
+    background-color: #ffbd30;
+  }
+
+  &:nth-child(4) {
+    background-color: #ffd74b;
+  }
+
+  &::before {
+    content: counter(section);
+
+    position: absolute;
+    top: 22px;
+    right: 21px;
+
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 18px;
+    color: $white;
+
+    counter-increment: section;
+  }
+}
+
+.service-use__text {
+  margin: 0;
+  width: 150px;
+
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 18px;
+  color: #161c35;
+}
+
+@media (min-width: $tablet-width) {
+  .service-use__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    background-image: linear-gradient(to bottom, $orange 50%, #ffbd30 50%);
+    border-radius: 20px;
+  }
+
+  .service-use__item {
+    padding-top: 31px;
+    padding-bottom: 61px;
+    padding-left: 34px;
+    width: 50%;
+
+    border-radius: 20px 20px 0 0;
+
+    &:not(:first-child) {
+      margin-top: 0;
+    }
+
+    &:nth-child(3) {
+      border-radius: 0 0 20px 20px;
+    }
+
+    &:last-child {
+      border-radius: 0 0 20px 20px;
+    }
+
+    &::before {
+      top: 43px;
+      right: 0;
+      left: 33px;
+
+      font-size: 30px;
+      line-height: 120px;
+    }
+  }
+
+  .service-use__text {
+    width: 185px;
+
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .service-use__list {
+    background-image: none;
+  }
+
+  .service-use__item {
+    padding-bottom: 28px;
+    width: 355px;
+
+    border-radius: 20px;
+
+
+    &:not(:first-child) {
+      margin-left: -42px;
+      width: 388px;
+    }
+
+    &:nth-child(3) {
+      border-radius: 20px;
+    }
+
+    &:last-child {
+      width: 315px;
+
+      border-radius: 20px;
+
+      &::before {
+        right: 33px;
+      }
+    }
+
+    &::before {
+      top: -19px;
+      left: auto;
+      right: 74px;
+
+      font-size: 24px;
+    }
+  }
+}
