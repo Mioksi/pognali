@@ -1,0 +1,142 @@
+.pagination__list {
+  display: none;
+}
+
+.pagination__arrow {
+  display: flex;
+  align-items: flex-start;
+}
+
+.pagination__link {
+  display: block;
+
+  &--arrow {
+    position: relative;
+
+    width: 135px;
+    height: 50px;
+
+    background-color: $white;
+
+    &::before {
+      @include pseudo;
+
+      top: 15px;
+    }
+
+    &:hover::before,
+    &:focus::before {
+      opacity: 0.6;
+    }
+
+    &:active::before {
+      opacity: 0.3;
+    }
+  }
+
+  &--arrow-left {
+    border-right: 1px solid #edeff6;
+    border-radius: 20px 0 0 20px;
+
+    &::before {
+      left: 53px;
+
+      border: 10px solid transparent;
+      border-right: 10px solid #192144;
+    }
+  }
+
+  &--arrow-right {
+    border-radius: 0 20px 20px 0;
+
+    &::before {
+      right: 52px;
+
+      border: 10px solid transparent;
+      border-left: 10px solid #192144;
+    }
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+
+    background-color: #ffffff;
+    border-radius: 20px;
+  }
+
+  .pagination__list {
+    @include list-reset;
+
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+  }
+
+  .pagination__link {
+    padding: 10px;
+    width: 50px;
+
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #161c35;
+
+    border-radius: 50%;
+
+    &--active {
+      background-color: #ffd74b;
+    }
+
+    &--arrow {
+      width: 35px;
+      height: 35px;
+
+      background-color: transparent;
+
+      &::before {
+        top: 7px;
+      }
+    }
+
+    &--arrow-left {
+      border: none;
+
+      &::before {
+        left: -3px;
+      }
+    }
+
+    &--arrow-right {
+      border: none;
+
+      &::before {
+        right: 0;
+      }
+    }
+
+    &[href]:hover,
+    &[href]:focus {
+      color: rgba(#161c35, 0.6);
+    }
+
+    &[href]:not(&--arrow):active {
+      color: #161c35;
+
+      background-color: #ffd74b;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .pagination {
+    padding-right: 34px;
+  }
+}

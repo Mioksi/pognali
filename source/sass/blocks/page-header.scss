@@ -23,6 +23,10 @@
   align-items: flex-start;
   padding-top: 27px;
   padding-bottom: 20px;
+
+  &--inner {
+    padding-top: 19px;
+  }
 }
 
 .page-header__logo {
@@ -73,6 +77,10 @@
   border-bottom: 1px;
 
   cursor: pointer;
+
+  &--inner {
+    top: 11px;
+  }
 }
 
 .page-header--menu-closed .page-header__toggle::before {
@@ -130,6 +138,10 @@
 @media (min-width: $tablet-width) {
   .page-header {
     background-color: #182044;
+
+    &--inner {
+      background-color: #161c35;
+    }
 
     &--menu-scroll {
       background-color: $white;
