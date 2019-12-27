@@ -23,16 +23,17 @@
 
 .new-user__text {
   margin: 0 auto;
-  width: 200px;
 
   text-align: center;
   color: $white;
 
   &--registration {
+    width: 200px;
     margin-bottom: 29px;
   }
 
   &--contacts {
+    width: 230px;
     margin-bottom: 17px;
   }
 }

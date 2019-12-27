@@ -66,15 +66,16 @@
 }
 
 .user-level__number {
-  order: -1;
   margin: 0;
-  margin-top: 13px;
+  margin-top: 10px;
 
   font-size: 24px;
   font-weight: 700;
   line-height: 24px;
 
   &--catalog {
+    margin-top: 13px;
+
     line-height: 18px;
     color: #1d2e5b;
   }
@@ -102,9 +103,11 @@
   }
 
   .user-level__text {
-    display: block;
+    &--catalog {
+      display: block;
 
-    color: rgba(#444444, 0.4);
+      color: rgba(#444444, 0.4);
+    }
   }
 
   .user-level__number {

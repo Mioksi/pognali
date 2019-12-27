@@ -173,7 +173,7 @@
       background-image: url("../img/about-desktop@1x.png");
 
       @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-        background-image: url("../img/about-tablet@2x.png");
+        background-image: url("../img/about-desktop@2x.png");
         background-size: 630px auto;
       }
     }

@@ -39,7 +39,7 @@
 
   padding-top: 26px;
   padding-right: 30px;
-  padding-bottom: 18px;
+  padding-bottom: 17px;
   padding-left: 30px;
 
   text-align: center;
@@ -48,23 +48,28 @@
   border-radius: 0 0 10px 10px;
 }
 
-.companions-item__name {
+.companions-item__info {
   position: relative;
 
   display: inline-block;
   vertical-align: top;
-  margin: 0;
   margin-bottom: 15px;
+}
+
+.companions-item__title {
+  margin: 0;
   padding-right: 18px;
   padding-left: 18px;
 
   font-size: 21px;
   font-weight: 700;
   line-height: 21px;
+  color: #1d2e5b;
 }
 
 .companions-item__link {
-  color: #1d2e5b;
+  display: inline-block;
+  vertical-align: top;
 
   &:hover,
   &:hover + .companions-item__status,
@@ -145,9 +150,11 @@
     border-radius: 0 0 20px 20px;
   }
 
-  .companions-item__name {
+  .companions-item__info {
     margin-bottom: 21px;
+  }
 
+  .companions-item__title {
     font-size: 24px;
     line-height: 24px;
   }

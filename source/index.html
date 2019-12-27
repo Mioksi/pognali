@@ -20,7 +20,7 @@
               <source type="image/webp" media="(min-width: 768px)" srcset="img/webp/logo-tablet-blue@1x.webp 1x, img/webp/logo-tablet-blue@2x.webp 2x">
               <source type="image/webp" srcset="img/webp/logo-mobile-blue@1x.webp 1x, img/webp/logo-mobile-blue@2x.webp 2x">
 
-              <source media="(min-width: 1440px)" srcset="img/logo-desktop-blue@1x.jpg 1x, img/logo-desktop-blue@2x.jpg 2x">
+              <source media="(min-width: 1440px)" srcset="img/logo-desktop-blue@1x.png 1x, img/logo-desktop-blue@2x.png 2x">
               <source media="(min-width: 768px)" srcset="img/logo-tablet-blue@1x.png 1x, img/logo-tablet-blue@2x.png 2x">
               <img class="page-header__logo-image" src="img/logo-mobile-blue@1x.png" srcset="img/logo-mobile-blue@2x.png 2x" alt="Логотип сервиса «Погнали»">
             </picture>
@@ -31,7 +31,7 @@
               <source type="image/webp" media="(min-width: 768px)" srcset="img/webp/logo-tablet-white@1x.webp 1x, img/webp/logo-tablet-white@2x.webp 2x">
               <source type="image/webp" srcset="img/webp/logo-mobile-white@1x.webp 1x, img/webp/logo-mobile-white@2x.webp 2x">
 
-              <source media="(min-width: 1440px)" srcset="img/logo-desktop-white@1x.jpg 1x, img/logo-desktop-white@2x.jpg 2x">
+              <source media="(min-width: 1440px)" srcset="img/logo-desktop-white@1x.png 1x, img/logo-desktop-white@2x.png 2x">
               <source media="(min-width: 768px)" srcset="img/logo-tablet-white@1x.png 1x, img/logo-tablet-white@2x.png 2x">
               <img class="page-header__logo-image" src="img/logo-mobile-white@1x.png" srcset="img/logo-mobile-white@2x.png 2x" alt="Логотип сервиса «Погнали»">
             </picture>
@@ -126,7 +126,7 @@
             <div class="promo__review-wrapper container">
               <blockquote class="review__content">
                 <p class="review__text">«Лучшее приложение, что я видел в жизни!»</p>
-                <cite class="review__author">Мурат Эльтазин главный редактор газеты «гаджетлайф»</cite>
+                <cite class="review__author">Мурат Эльтазин главный&nbsp;редактор газеты «гаджетлайф»</cite>
               </blockquote>
             </div>
           </div>
@@ -139,7 +139,7 @@
                 <p class="service-use__text">Изучите идеи путешественников</p>
               </li>
               <li class="service-use__item">
-                <p class="service-use__text">Находите тех, кто похож на вас</p>
+                <p class="service-use__text">Находите тех, кто&nbsp;похож на вас</p>
               </li>
               <li class="service-use__item">
                 <p class="service-use__text">Путешествуйте вместе!</p>
@@ -151,7 +151,7 @@
       <section class="about-service">
         <div class="about-service__wrapper container">
           <h2 class="about-service__title">О сервисе</h2>
-          <p class="about-service__text about-service__text--main">Любое путешествие веселее с попутчиками, которые на одной волне с тобой! Делитесь своими идеями путешествий и черпайте вдохновение в чужих. </p>
+          <p class="about-service__text about-service__text--main">Любое путешествие веселее с&nbsp;попутчиками, которые на одной волне с тобой! Делитесь своими идеями путешествий и черпайте вдохновение в чужих. </p>
           <p class="about-service__text about-service__text--accent">
             <b>А если найдете кого-то близкого по духу — скорее зовите в совместный трип!</b>
           </p>
@@ -235,10 +235,10 @@
           <ul class="companions__list">
             <li class="companions__item companions-item">
               <div class="companions-item__user-level user-level">
-                <dl class="user-level__info">
-                  <dt class="user-level__text">level</dt>
-                  <dd class="user-level__number">99</dd>
-                </dl>
+                <div class="user-level__info">
+                  <span class="user-level__number">99</span>
+                  <span class="user-level__text">level</span>
+                </div>
               </div>
               <p class="companions-item__picture">
                 <picture>
@@ -248,20 +248,22 @@
                 </picture>
               </p>
               <div class="companions-item__wrapper">
-                <h3 class="companions-item__name">
-                  <a class="companions-item__link" href="#">Таня Фирсова</a>
-                  <span class="companions-item__status companions-item__status--offline"><span class="visually-hidden">Оффлайн</span></span>
-                </h3>
+                <div class="companions-item__info">
+                  <a class="companions-item__link" href="#">
+                    <h3 class="companions-item__title">Таня Фирсова</h3>
+                  </a>
+                  <span class="companions-item__status companions-item__status--online"><span class="visually-hidden">Онлайн</span></span>
+                </div>
                 <p class="companions-item__tags">#ЗОЖ #ПП #Фитнес #пляж #авокадо #смузи</p>
                 <div class="companions-item__countries countries">
                   <ul class="countries__list">
-                    <li class="countries__item countries__item--sri-lanka">
+                    <li class="countries__item countries__item--sri-lanka countries__item--hover">
                       <span class="countries__name countries__name--hover">Шри-Ланка</span>
                     </li>
-                    <li class="countries__item countries__item--thailand">
+                    <li class="countries__item countries__item--thailand countries__item--hover">
                       <span class="countries__name countries__name--hover">Тайланд</span>
                     </li>
-                    <li class="countries__item countries__item--seychelles">
+                    <li class="countries__item countries__item--seychelles countries__item--hover">
                       <span class="countries__name countries__name--hover">Сейшелы</span>
                     </li>
                   </ul>
@@ -298,10 +300,10 @@
             </li>
             <li class="companions__item companions-item">
               <div class="companions-item__user-level user-level">
-                <dl class="user-level__info">
-                  <dt class="user-level__text">level</dt>
-                  <dd class="user-level__number">80</dd>
-                </dl>
+                <div class="user-level__info">
+                  <span class="user-level__number">80</span>
+                  <span class="user-level__text">level</span>
+                </div>
               </div>
               <p class="companions-item__picture">
                 <picture>
@@ -311,17 +313,19 @@
                 </picture>
               </p>
               <div class="companions-item__wrapper">
-                <h3 class="companions-item__name">
-                  <a class="companions-item__link" href="#">Петя Демин</a>
-                  <span class="companions-item__status companions-item__status--online"><span class="visually-hidden">Оффлайн</span></span>
-                </h3>
+                <div class="companions-item__info">
+                  <a class="companions-item__link" href="#">
+                    <h3 class="companions-item__title">Петя Демин</h3>
+                  </a>
+                  <span class="companions-item__status companions-item__status--offline"><span class="visually-hidden">Оффлайн</span></span>
+                </div>
                 <p class="companions-item__tags">#бургер #бар #футбол #концерт #крафт</p>
                 <div class="companions-item__countries countries">
                   <ul class="countries__list">
-                    <li class="countries__item countries__item--belgium">
+                    <li class="countries__item countries__item--belgium countries__item--hover">
                       <span class="countries__name countries__name--hover">Бельгия</span>
                     </li>
-                    <li class="countries__item countries__item--czech">
+                    <li class="countries__item countries__item--czech countries__item--hover">
                       <span class="countries__name countries__name--hover">Чехия</span>
                     </li>
                   </ul>
@@ -412,13 +416,13 @@
       <section class="new-user">
         <div class="new-user__wrapper container">
           <h2 class="new-user__title">Заинтересовались?</h2>
-          <p class="new-user__text new-user__text--registration">Зарегистрируйтесь, это быстро и бесплатно! Уже зарегистрированы? Тогда скорее <a class="new-user__link" href="login.html">авторизуйтесь</a>.</p>
+          <p class="new-user__text new-user__text--registration">Зарегистрируйтесь, это&nbsp;быстро и бесплатно! <br> Уже зарегистрированы? Тогда скорее <a class="new-user__link" href="login.html">авторизуйтесь</a>.</p>
           <form class="new-user__form registration-form" action="https://echo.htmlacademy.ru" method="post">
             <label class="registration-form__label visually-hidden" for="email-field">Ваш email</label>
             <input class="registration-form__input" type="email" name="email" id="email-field" placeholder="E-mail" required>
             <button class="registration-form__button" type="submit">Регистрация</button>
           </form>
-          <p class="new-user__text new-user__text--contacts">Остались вопросы? Мы с радостью на них ответим!</p>
+          <p class="new-user__text new-user__text--contacts">Остались вопросы? Мы&nbsp;с&nbsp;радостью на них ответим!</p>
           <div class="new-user__contacts contacts">
             <ul class="contacts__list">
               <li class="contacts__item">
@@ -477,7 +481,7 @@
             <source type="image/webp" media="(min-width: 768px)" srcset="img/webp/logo-tablet-blue@1x.webp 1x, img/webp/logo-tablet-blue@2x.webp 2x">
             <source type="image/webp" srcset="img/webp/logo-mobile-blue@1x.webp 1x, img/webp/logo-mobile-blue@2x.webp 2x">
 
-            <source media="(min-width: 1440px)" srcset="img/logo-desktop-blue@1x.jpg 1x, img/logo-desktop-blue@2x.jpg 2x">
+            <source media="(min-width: 1440px)" srcset="img/logo-desktop-blue@1x.png 1x, img/logo-desktop-blue@2x.png 2x">
             <source media="(min-width: 768px)" srcset="img/logo-tablet-blue@1x.png 1x, img/logo-tablet-blue@2x.png 2x">
             <img class="page-footer__logo-image" src="img/logo-mobile-blue@1x.png" srcset="img/logo-mobile-blue@2x.png 2x" alt="Логотип сервиса «Погнали»">
           </picture>

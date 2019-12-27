@@ -37,6 +37,11 @@
   display: none;
 }
 
+.page-header__logo-image {
+  width: 100px;
+  height: 19px;
+}
+
 .page-header--menu-scroll .page-header__logo-wrapper--blue {
   display: block;
 }
@@ -61,6 +66,7 @@
 
 .page-header__social {
   margin: 0 auto;
+  padding-bottom: 8px;
 }
 
 .page-header__toggle {
@@ -158,6 +164,11 @@
     margin-top: 5px;
   }
 
+  .page-header__logo-image {
+    width: 166px;
+    height: 42px;
+  }
+
   .page-header__toggle {
     top: 49px;
     right: 48%;
@@ -188,6 +199,7 @@
     order: 4;
     margin: 0;
     margin-left: 60px;
+    padding-bottom: 36px;
   }
 
   .page-header--menu-closed .page-header__button,
@@ -205,7 +217,7 @@
   }
 
   .page-header.page-header--menu-opened {
-    position: fixed;
+    position: absolute;
     z-index: 10;
 
     width: 100%;
@@ -285,6 +297,11 @@
 
   .page-header__logo {
     margin: 0;
+  }
+
+  .page-header__logo-image {
+    width: 200px;
+    height: 52px;
   }
 
   .page-header__logo-wrapper {
