@@ -17,7 +17,8 @@
   height: 45px;
 
   &--header {
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: #ffbd30;
       border-radius: 50%;
     }
@@ -32,11 +33,13 @@
     background-color: #ffd74b;
     border-radius: 50%;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: #192144;
     }
 
-    &:hover .social__icon {
+    &:hover .social__icon,
+    &:focus .social__icon {
       fill: $white;
     }
   }

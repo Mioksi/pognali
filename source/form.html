@@ -113,41 +113,73 @@
           <h2 class="visually-hidden">О попутчике</h2>
           <div class="traveller-info__wrapper container">
             <div class="traveller-info__user-level user-level">
-              <div class="user-level__info">
-                <span class="user-level__number">80</span>
-                <span class="user-level__text">level</span>
+              <div class="user-level__info user-level__info--form">
+                <svg class="user-level__bar user-level__bar--form" width="100" height="100" viewBox="0 0 100 100" stroke-dasharray="250">
+                  <circle r="49" cx="50" cy="50" stroke-width="3"></circle>
+                </svg>
+                <span class="user-level__number user-level__number--form">80</span>
+                <span class="user-level__text user-level__text--form">level</span>
               </div>
             </div>
-            <img class="traveller-info__image" src="https://via.placeholder.com/99x100" width="99" height="100" alt="Фото попутчика">
-            <p class="traveller-form__item">
+            <p class="traveller-info__picture">
+              <picture>
+                <source type="image/webp" media="(min-width: 1440px)" srcset="img/webp/demin-tablet@1x.webp 1x, img/webp/demin-tablet@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 768px)" srcset="img/webp/photo-account-tablet@1x.webp 1x, img/webp/photo-account-tablet@2x.webp 2x">
+                <source type="image/webp" srcset="img/webp/photo-account-mobile@1x.webp 1x, img/webp/photo-account-mobile@2x.webp 2x">
+
+                <source media="(min-width: 1440px)" srcset="img/demin-tablet@1x.jpg 1x, img/demin-tablet@2x.jpg 2x">
+                <source media="(min-width: 768px)" srcset="img/photo-account-tablet@1x.jpg 1x, img/photo-account-tablet@2x.jpg 2x">
+                <img class="traveller-info__image" src="img/photo-account-mobile@1x.jpg" srcset="img/photo-account-mobile@2x.jpg 2x" alt="Фото попутчика»">
+              </picture>
+            </p>
+            <p class="traveller-form__item traveller-form__item--file">
               <input class="traveller-form__input visually-hidden" type="file" name="photo" id="photo-field">
               <label class="traveller-form__label traveller-form__label--file" for="photo-field">
-                <span class="traveller-form__label-text traveller-form__label-text--divice">Сменить</span>
-                <span class="traveller-form__label-text traveller-form__label-text--desktop">фото</span>
+                <span class="traveller-form__label-text traveller-form__label-text--device">Сменить</span>фото
               </label>
             </p>
             <p class="traveller-form__item traveller-form__item--tags">
-              <textarea class="traveller-form__textarea" name="tags" id="tags-field" cols="30" rows="10">#бургер #бар #футбол #концерт #крафт</textarea>
+              <textarea class="traveller-form__textarea traveller-form__textarea--tags" name="tags" id="tags-field" cols="30" rows="10">#бургер #бар #футбол #концерт #крафт</textarea>
               <label class="traveller-form__label traveller-form__label--textarea" for="tags-field">Тэги</label>
             </p>
-            <div class="traveller-form__group">
-              <h3 class="traveller-form__legend">Транспорт</h3>
-              <ul class="traveller-form__list">
-                <li class="traveller-form__item">
-                  <input class="traveller-form__input visually-hudden" type="checkbox" name="transport" value="plane" id="plane-field" checked>
-                  <label class="traveller-form__label traveller-form__label--checkbox" for="plane-field"><span class="visually-hidden">Самолёт</span></label>
+            <div class="traveller-form__group traveller-form__group--transport">
+              <h3 class="traveller-form__legend traveller-form__legend--transport">Транспорт</h3>
+              <ul class="traveller-form__list traveller-form__list--transport">
+                <li class="traveller-form__item traveller-form__item--transport">
+                  <input class="traveller-form__input traveller-form__input--transport visually-hidden" type="checkbox" name="transport" value="plane" id="plane-field" checked>
+                  <label class="traveller-form__label traveller-form__label--transport" for="plane-field">
+                    <span class="visually-hidden">Самолёт</span>
+                    <svg class="traveller-form__icon traveller-form__icon--plane" width="14" height="16">
+                      <use xlink:href="#plane"></use>
+                    </svg>
+                  </label>
                 </li>
-                <li class="traveller-form__item">
-                  <input class="traveller-form__input visually-hudden" type="checkbox" name="transport" value="bus" id="bus-field" checked>
-                  <label class="traveller-form__label traveller-form__label--checkbox" for="bus-field"><span class="visually-hidden">Автобус</span></label>
+                <li class="traveller-form__item traveller-form__item--transport">
+                  <input class="traveller-form__input traveller-form__input--transport visually-hidden" type="checkbox" name="transport" value="bus" id="bus-field" checked>
+                  <label class="traveller-form__label traveller-form__label--transport" for="bus-field">
+                    <span class="visually-hidden">Автобус</span>
+                    <svg class="traveller-form__icon traveller-form__icon--bus" width="13" height="16">
+                      <use xlink:href="#bus"></use>
+                    </svg>
+                  </label>
                 </li>
-                <li class="traveller-form__item">
-                  <input class="traveller-form__input visually-hudden" type="checkbox" name="transport" value="bicycle" id="bicycle-field">
-                  <label class="traveller-form__label traveller-form__label--checkbox" for="bicycle-field"><span class="visually-hidden">Велосипед</span></label>
+                <li class="traveller-form__item traveller-form__item--transport">
+                  <input class="traveller-form__input traveller-form__input--transport visually-hidden" type="checkbox" name="transport" value="bicycle" id="bicycle-field">
+                  <label class="traveller-form__label traveller-form__label--transport" for="bicycle-field">
+                    <span class="visually-hidden">Велосипед</span>
+                    <svg class="traveller-form__icon traveller-form__icon--bike" width="19" height="17">
+                      <use xlink:href="#bike"></use>
+                    </svg>
+                  </label>
                 </li>
-                <li class="traveller-form__item">
-                  <input class="traveller-form__input visually-hudden" type="checkbox" name="transport" value="on-foot" id="on-foot-field" checked>
-                  <label class="traveller-form__label traveller-form__label--checkbox" for="on-foot-field"><span class="visually-hidden">Пешком</span></label>
+                <li class="traveller-form__item traveller-form__item--transport">
+                  <input class="traveller-form__input traveller-form__input--transport visually-hidden" type="checkbox" name="transport" value="on-foot" id="on-foot-field" checked>
+                  <label class="traveller-form__label traveller-form__label--transport" for="on-foot-field">
+                    <span class="visually-hidden">Пешком</span>
+                    <svg class="traveller-form__icon traveller-form__icon--on-foot" width="15" height="17">
+                      <use xlink:href="#run"></use>
+                    </svg>
+                  </label>
                 </li>
               </ul>
             </div>
@@ -155,362 +187,441 @@
         </section>
         <section class="traveller-plans">
           <div class="traveller-plans__wrapper container">
-            <h2 class="traveller-plans__title">Мои планы</h2>
+            <h2 class="traveller-plans__title">Мои планы:</h2>
             <ol class="traveller-plans__list">
               <li class="traveller-plans__item">
                 <h3 class="traveller-plans__sub-title">
-                  <span class="traveller-plans__number">1</span>
+                  <span class="traveller-plans__number">1.</span>
                   Франция, Италия
                 </h3>
-                <p class="traveller-plans__companion">3 попутчика</p>
-                <p class="traveller-plans__date">26 мар — 29 мар</p>
-                <a class="traveller-plans__button" href="#">Изменить</a>
+                <div class="traveller-plans__info">
+                  <p class="traveller-plans__companion">3 попутчика</p>
+                  <p class="traveller-plans__date">26 мар — 29 мар</p>
+                  <a class="traveller-plans__button" href="#">Изменить</a>
+                </div>
               </li>
               <li class="traveller-plans__item">
                 <h3 class="traveller-plans__sub-title">
-                  <span class="traveller-plans__number">1</span>
+                  <span class="traveller-plans__number">2.</span>
                   Таиланд, Индонезия
                 </h3>
-                <p class="traveller-plans__companion">1 попутчик</p>
-                <p class="traveller-plans__date">1 июл — 15 июл</p>
-                <a class="traveller-plans__button" href="#">Изменить</a>
+                <div class="traveller-plans__info">
+                  <p class="traveller-plans__companion">1 попутчик</p>
+                  <p class="traveller-plans__date">1 июл — 15 июл</p>
+                  <a class="traveller-plans__button" href="#">Изменить</a>
+                </div>
               </li>
             </ol>
           </div>
         </section>
         <section class="add-plan">
           <div class="add-plan__wrapper container">
-            <h2 class="add-plan__title">Добавить план</h2>
+            <h2 class="add-plan__title">Добавить план:</h2>
             <ol class="add-plan__list">
               <li class="add-plan__item plan-item">
-                <div class="plan-item__wrapper container">
-                  <h3 class="plan-item__title">Шаг 1. Даты пребывания</h3>
-                  <p class="plan-item__text">Укажите предпочтительное количество попутчиков, которых вы хотели бы позвать в поездку и ее предполагаемую длительность.</p>
-                  <ul class="add-plan__list add-plan__list--step">
-                    <li class="add-plan__item add-plan__item--active">Даты</li>
-                    <li class="add-plan__item">Маршрут</li>
-                    <li class="add-plan__item">Развлечения</li>
+                <div class="plan-item__wrapper">
+                  <div class="plan-item__header">
+                    <div class="plan-item__step">
+                      <h3 class="plan-item__title">
+                        Шаг 1.<br>
+                        Даты пребывания</h3>
+                      <p class="plan-item__text">Укажите предпочтительное количество попутчиков, которых вы&nbsp;хотели бы позвать в поездку и ее предполагаемую длительность.</p>
+                    </div>
+                    <ul class="add-plan__list add-plan__list--step">
+                      <li class="add-plan__item add-plan__item--step add-plan__item--step-active">Даты</li>
+                      <li class="add-plan__item add-plan__item--step">Маршрут</li>
+                      <li class="add-plan__item add-plan__item--step">Развлечения</li>
+                    </ul>
+                  </div>
+                  <ul class="traveller-form__list traveller-form__list--options">
+                    <li class="traveller-form__item traveller-form__item--option">
+                      <label class="traveller-form__label traveller-form__label--number" for="number-field">Ищу попутчиков:</label>
+                      <span class="traveller-form__note">Чел.</span>
+                      <button class="traveller-form__toggle traveller-form__toggle--option traveller-form__toggle--remove" type="button"><span class="visually-hidden">Убрать попутчика</span></button>
+                      <input class="traveller-form__input traveller-form__input--number" type="number" name="traveller-number" id="number-field" value="2">
+                      <button class="traveller-form__toggle traveller-form__toggle--option traveller-form__toggle--add" type="button"><span class="visually-hidden">Добавить попутчика</span></button>
+                    </li>
+                    <li class="traveller-form__item traveller-form__item--option traveller-form__item--duration">
+                      <label class="traveller-form__label traveller-form__label--number" for="days-field">Длительность:</label>
+                      <span class="traveller-form__note">Дн.</span>
+                      <button class="traveller-form__toggle traveller-form__toggle--option traveller-form__toggle--remove" type="button"><span class="visually-hidden">Убрать день</span></button>
+                      <input class="traveller-form__input traveller-form__input--number" type="number" name="days" id="days-field" value="2">
+                      <button class="traveller-form__toggle traveller-form__toggle--option traveller-form__toggle--add" type="button"><span class="visually-hidden">Добавить день</span></button>
+                    </li>
+                    <li class="traveller-form__item traveller-form__item--checkbox">
+                      <input class="traveller-form__input visually-hidden" type="checkbox" name="children" id="children-field" checked>
+                      <label class="traveller-form__label traveller-form__label--checkbox" for="children-field">Можно с детьми</label>
+                    </li>
                   </ul>
-                  <div class="traveller-form__group">
-                    <label class="traveller-form__label" for="number-field">Ищу попутчиков:<span class="traveller-form__note">Чел.</span></label>
-                    <button class="traveller-form__toggle traveller-form__toggle--remove" type="button"><span class="visually-hidden">Убрать попутчика</span></button>
-                    <input class="traveller-form__input traveller-form__input--number" type="number" name="traveller-number" id="number-field" value="2">
-                    <button class="traveller-form__toggle traveller-form__toggle--add" type="button"><span class="visually-hidden">Добавить попутчика</span></button>
-                  </div>
-                  <div class="traveller-form__group">
-                    <label class="traveller-form__label" for="days-field">Длительность:<span class="traveller-form__note">Дн.</span></label>
-                    <button class="traveller-form__toggle traveller-form__toggle--remove" type="button"><span class="visually-hidden">Убрать день</span></button>
-                    <input class="traveller-form__input traveller-form__input--number" type="number" name="days" id="days-field" value="2">
-                    <button class="traveller-form__toggle traveller-form__toggle--add" type="button"><span class="visually-hidden">Добавить день</span></button>
-                  </div>
-                  <p class="traveller-form__item">
-                    <input class="traveller-form__input visually-hidden" type="checkbox" name="children" id="children-field" checked>
-                    <label class="traveller-form__label traveller-form__label--checkbox" for="children-field">Можно с детьми</label>
-                  </p>
                   <div class="traveller-form__group traveller-form__group--calendar">
                     <p class="traveller-form__item traveller-form__item--date">
-                      <button class="traveller-form__toggle traveller-form__toggle--previos" type="button"><span class="visually-hidden">Предыдущий месяц</span></button>
+                      <button class="traveller-form__toggle traveller-form__toggle--arrow traveller-form__toggle--previous" type="button"><span class="visually-hidden">Предыдущий месяц</span></button>
                       <span class="traveller-form__date">Март 2019</span>
-                      <button class="traveller-form__toggle traveller-form__toggle--next" type="button"><span class="visually-hidden">Следующий месяц</span></button>
+                      <button class="traveller-form__toggle traveller-form__toggle--arrow traveller-form__toggle--next" type="button"><span class="visually-hidden">Следующий месяц</span></button>
                     </p>
                     <table class="traveller-form__calendar">
                       <tr>
-                        <th class="traveller-form__field">П</th>
-                        <th class="traveller-form__field">В</th>
-                        <th class="traveller-form__field">С</th>
-                        <th class="traveller-form__field">Ч</th>
-                        <th class="traveller-form__field">П</th>
-                        <th class="traveller-form__field">С</th>
-                        <th class="traveller-form__field">В</th>
+                        <th class="traveller-form__field">
+                          П<span class="traveller-form__day">н</span>
+                        </th>
+                        <th class="traveller-form__field">
+                          В<span class="traveller-form__day">т</span>
+                        </th>
+                        <th class="traveller-form__field">
+                          С<span class="traveller-form__day">р</span>
+                        </th>
+                        <th class="traveller-form__field">
+                          Ч<span class="traveller-form__day">т</span>
+                        </th>
+                        <th class="traveller-form__field">
+                          П<span class="traveller-form__day">т</span>
+                        </th>
+                        <th class="traveller-form__field traveller-form__field--weekend">
+                          С<span class="traveller-form__day">б</span>
+                        </th>
+                        <th class="traveller-form__field traveller-form__field--weekend">
+                          В<span class="traveller-form__day">с</span>
+                        </th>
                       </tr>
                       <tr>
-                        <td>
-                          <button class="traveller-form__value" type="button">23</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>23</button>
                         </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">24</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>24</button>
                         </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">25</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>25</button>
                         </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">26</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>26</button>
                         </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">27</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>27</button>
                         </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">28</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>28</button>
                         </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">1</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <button class="traveller-form__value" type="button">2</button>
-                        </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">3</button>
-                        </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">4</button>
-                        </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">5</button>
-                        </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">6</button>
-                        </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">7</button>
-                        </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">8</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>1</button>
                         </td>
                       </tr>
                       <tr>
-                        <td>
-                          <button class="traveller-form__value" type="button">9</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>2</button>
                         </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">10</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>3</button>
                         </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">11</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>4</button>
                         </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">12</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>5</button>
                         </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">13</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>6</button>
                         </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">14</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>7</button>
                         </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">15</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <button class="traveller-form__value" type="button">16</button>
-                        </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">17</button>
-                        </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">18</button>
-                        </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">19</button>
-                        </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">20</button>
-                        </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">21</button>
-                        </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">22</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>8</button>
                         </td>
                       </tr>
                       <tr>
-                        <td>
-                          <button class="traveller-form__value" type="button">23</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>9</button>
                         </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">24</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>10</button>
                         </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">25</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>11</button>
                         </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">26</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>12</button>
                         </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">27</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>13</button>
                         </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">28</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>14</button>
                         </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">29</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>15</button>
                         </td>
                       </tr>
                       <tr>
-                        <td>
-                          <button class="traveller-form__value" type="button">30</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>16</button>
                         </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">31</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>17</button>
                         </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">1</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>18</button>
                         </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">2</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>19</button>
                         </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">3</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>20</button>
                         </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">4</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>21</button>
                         </td>
-                        <td>
-                          <button class="traveller-form__value" type="button">5</button>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>22</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>23</button>
+                        </td>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>24</button>
+                        </td>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>25</button>
+                        </td>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--active" type="button">
+                            26
+                            <span class="traveller-form__staying">Заезд</span>
+                          </button>
+                        </td>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--active" type="button">27</button>
+                        </td>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--active" type="button">
+                            28
+                            <span class="traveller-form__staying">Выезд</span>
+                          </button>
+                        </td>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date" type="button">29</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date" type="button">30</button>
+                        </td>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date" type="button">31</button>
+                        </td>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date" type="button">
+                            1
+                            <span class="traveller-form__next-month">aпр</span>
+                          </button>
+                        </td>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date" type="button">2</button>
+                        </td>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date" type="button">3</button>
+                        </td>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date" type="button">4</button>
+                        </td>
+                        <td class="traveller-form__value">
+                          <button class="traveller-form__button traveller-form__button--date" type="button">5</button>
                         </td>
                       </tr>
                     </table>
                   </div>
-                  <a class="traveller-form__link" href="#">Следующий шаг</a>
                 </div>
+                <a class="traveller-form__link traveller-form__link--next button button--inner" href="#">Следующий шаг</a>
               </li>
-              <li class="add-plan__item plan-item">
-                <div class="plan-item__wrapper container">
-                  <h3 class="plan-item__title">Шаг 2. Маршрут</h3>
-                  <p class="plan-item__text">Укажите страны, которые вы хотели по посетить. Это может быть одна или сразу несколько.</p>
-                  <ul class="add-plan__list add-plan__list--step">
-                    <li class="add-plan__item">Даты</li>
-                    <li class="add-plan__item add-plan__item--active">Маршрут</li>
-                    <li class="add-plan__item">Развлечения</li>
-                  </ul>
-                  <button class="traveller-form__select" type="button">Босния и Герцеговина</button>
-                  <button class="traveller-form__select" type="button">Чехия</button>
-                  <button class="traveller-form__select" type="button">Выберите страну</button>
-                  <button class="traveller-form__select" type="button">Добавить страну</button>
-                  <div class="traveller-form__dropdown-select">
-                    <ul class="traveller-form__alphabet alphabet-list">
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">А</button>
-                      </li>
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">Б</button>
-                      </li>
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">В</button>
-                      </li>
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">Г</button>
-                      </li>
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">Д</button>
-                      </li>
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">Е</button>
-                      </li>
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">З</button>
-                      </li>
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">И</button>
-                      </li>
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">К</button>
-                      </li>
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">Л</button>
-                      </li>
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">М</button>
-                      </li>
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">Н</button>
-                      </li>
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">О</button>
-                      </li>
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">П</button>
-                      </li>
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">Р</button>
-                      </li>
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">С</button>
-                      </li>
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">Т</button>
-                      </li>
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">У</button>
-                      </li>
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">Ф</button>
-                      </li>
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">Х</button>
-                      </li>
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">Ч</button>
-                      </li>
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">Ш</button>
-                      </li>
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">Э</button>
-                      </li>
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">Ю</button>
-                      </li>
-                      <li class="alphabet-list__item">
-                        <button class="alphabet-list__button" type="button">Я</button>
-                      </li>
-                    </ul>
-                    <ul class="traveller-form__country country-list">
-                      <li class="country-list__item">
-                        <a class="country-list__link" href="#">Афганистан</a>
-                      </li>
-                      <li class="country-list__item">
-                        <a class="country-list__link" href="#">Албаниа</a>
-                      </li>
-                      <li class="country-list__item">
-                        <a class="country-list__link" href="#">Алжир</a>
-                      </li>
-                      <li class="country-list__item">
-                        <a class="country-list__link" href="#">Андорра</a>
-                      </li>
-                      <li class="country-list__item">
-                        <a class="country-list__link" href="#">Аргентина</a>
-                      </li>
-                      <li class="country-list__item">
-                        <a class="country-list__link" href="#">Армения</a>
-                      </li>
-                      <li class="country-list__item">
-                        <a class="country-list__link" href="#">Австралия</a>
-                      </li>
-                      <li class="country-list__item">
-                        <a class="country-list__link" href="#">Австрия</a>
-                      </li>
-                      <li class="country-list__item">
-                        <a class="country-list__link" href="#">Азербайджан</a>
-                      </li>
+              <li class="add-plan__item plan-item plan-item--route">
+                <div class="plan-item__wrapper">
+                  <div class="plan-item__header plan-item__header--route">
+                    <div class="plan-item__step">
+                      <h3 class="plan-item__title">
+                        Шаг 2.<br>
+                        Маршрут</h3>
+                      <p class="plan-item__text plan-item__text--route">Укажите страны, которые вы хотели посетить. Это может быть одна или сразу несколько.</p>
+                    </div>
+                    <ul class="add-plan__list add-plan__list--step">
+                      <li class="add-plan__item add-plan__item--step">Даты</li>
+                      <li class="add-plan__item add-plan__item--step add-plan__item--active">Маршрут</li>
+                      <li class="add-plan__item add-plan__item--step">Развлечения</li>
                     </ul>
                   </div>
-                  <a class="traveller-form__link" href="#">Следующий шаг</a>
-                  <a class="traveller-form__link traveller-form__link--previous" href="#">На шаг назад</a>
+                  <ul class="traveller-form__list traveller-form__list--select">
+                    <li class="traveller-form__item traveller-form__item--select">
+                      <button class="traveller-form__select traveller-form__select--selected traveller-form__select--arrow" type="button">Босния и Герцеговина</button>
+                      <p class="traveller-form__picture">
+                        <img class="traveller-form__image" src="img/svg/flag-bosnia.svg" width="35" height="24" alt="Флаг Боснии и Герцеговины">
+                      </p>
+                      <button class="traveller-form__button traveller-form__button--delete" type="button"><span class="visually-hidden">Отменить выбор</span></button>
+                    </li>
+                    <li class="traveller-form__item traveller-form__item--select">
+                      <button class="traveller-form__select traveller-form__select--selected traveller-form__select--arrow" type="button">Чехия</button>
+                      <p class="traveller-form__picture">
+                        <img class="traveller-form__image" src="img/svg/flag-czech.svg" width="35" height="24" alt="Флаг Чехии">
+                      </p>
+                      <button class="traveller-form__button traveller-form__button--delete" type="button"><span class="visually-hidden">Отменить выбор</span></button>
+                    </li>
+                    <li class="traveller-form__item traveller-form__item--select traveller-form__item--select-add">
+                      <button class="traveller-form__select traveller-form__select--option traveller-form__select--arrow" type="button">Выберите страну</button>
+                      <button class="traveller-form__button traveller-form__button--delete" type="button"><span class="visually-hidden">Отменить выбор</span></button>
+                      <div class="traveller-form__dropdown-select">
+                        <ul class="traveller-form__alphabet-list">
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button traveller-form__alphabet-button--active" type="button">А</button>
+                          </li>
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button" type="button">Б</button>
+                          </li>
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button" type="button">В</button>
+                          </li>
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button" type="button">Г</button>
+                          </li>
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button" type="button">Д</button>
+                          </li>
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button" type="button">Е</button>
+                          </li>
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button" type="button">З</button>
+                          </li>
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button" type="button">И</button>
+                          </li>
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button" type="button">К</button>
+                          </li>
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button" type="button">Л</button>
+                          </li>
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button" type="button">М</button>
+                          </li>
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button" type="button">Н</button>
+                          </li>
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button" type="button">О</button>
+                          </li>
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button" type="button">П</button>
+                          </li>
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button" type="button">Р</button>
+                          </li>
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button" type="button">С</button>
+                          </li>
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button" type="button">Т</button>
+                          </li>
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button" type="button">У</button>
+                          </li>
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button" type="button">Ф</button>
+                          </li>
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button" type="button">Х</button>
+                          </li>
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button" type="button">Ч</button>
+                          </li>
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button" type="button">Ш</button>
+                          </li>
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button" type="button">Э</button>
+                          </li>
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button" type="button">Ю</button>
+                          </li>
+                          <li class="traveller-form__alphabet-item">
+                            <button class="traveller-form__alphabet-button" type="button">Я</button>
+                          </li>
+                        </ul>
+                        <ul class="traveller-form__country-list">
+                          <li class="traveller-form__country-item">
+                            <a class="traveller-form__country-link" href="#">Афганистан</a>
+                          </li>
+                          <li class="traveller-form__country-item">
+                            <a class="traveller-form__country-link" href="#">Албаниа</a>
+                          </li>
+                          <li class="traveller-form__country-item">
+                            <a class="traveller-form__country-link" href="#">Алжир</a>
+                          </li>
+                          <li class="traveller-form__country-item">
+                            <a class="traveller-form__country-link" href="#">Андорра</a>
+                          </li>
+                          <li class="traveller-form__country-item">
+                            <a class="traveller-form__country-link" href="#">Аргентина</a>
+                          </li>
+                          <li class="traveller-form__country-item">
+                            <a class="traveller-form__country-link" href="#">Армения</a>
+                          </li>
+                          <li class="traveller-form__country-item">
+                            <a class="traveller-form__country-link" href="#">Австралия</a>
+                          </li>
+                          <li class="traveller-form__country-item">
+                            <a class="traveller-form__country-link" href="#">Австрия</a>
+                          </li>
+                          <li class="traveller-form__country-item">
+                            <a class="traveller-form__country-link" href="#">Азербайджан</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="traveller-form__item traveller-form__item--select">
+                      <button class="traveller-form__select traveller-form__select--add" type="button">Добавить страну</button>
+                    </li>
+                  </ul>
                 </div>
+                <a class="traveller-form__link traveller-form__link--next button button--inner" href="#">Следующий шаг</a>
+                <a class="traveller-form__link traveller-form__link--previous" href="#">На шаг назад</a>
               </li>
               <li class="add-plan__item plan-item">
-                <div class="plan-item__wrapper container">
-                  <h3 class="plan-item__title">Шаг 3. Развлечения</h3>
-                  <p class="plan-item__text">Наконец, расскажите о своих планах времяпровождения. Можно писать в свободной форме и ставить тэги.</p>
-                  <ul class="add-plan__list add-plan__list--step">
-                    <li class="add-plan__item">Даты</li>
-                    <li class="add-plan__item">Маршрут</li>
-                    <li class="add-plan__item add-plan__item--active">Развлечения</li>
+                <div class="plan-item__wrapper">
+                  <div class="plan-item__header plan-item__header--plans">
+                    <div class="plan-item__step">
+                      <h3 class="plan-item__title">
+                        Шаг 3.<br>
+                        Развлечения
+                      </h3>
+                      <p class="plan-item__text plan-item__text--plans">Наконец, расскажите о своих планах времяпровождения. Можно писать в свободной форме и ставить тэги.</p>
+                    </div>
+                    <ul class="add-plan__list add-plan__list--step">
+                      <li class="add-plan__item add-plan__item--step">Даты</li>
+                      <li class="add-plan__item add-plan__item--step">Маршрут</li>
+                      <li class="add-plan__item add-plan__item--step add-plan__item--active">Развлечения</li>
+                    </ul>
+                  </div>
+                  <ul class="traveller-form__list traveller-form__list--plans">
+                    <li class="traveller-form__item traveller-form__item--plans">
+                      <label class="traveller-form__label traveller-form__label--plans" for="plans-bosnia-field">Босния и герцеговинa</label>
+                      <p class="traveller-form__picture traveller-form__picture--plans">
+                        <img class="traveller-form__image" src="img/svg/flag-bosnia.svg" width="35" height="24" alt="Флаг Боснии и Герцеговины">
+                      </p>
+                      <textarea class="traveller-form__textarea traveller-form__textarea--plans" name="plans-bosnia" id="plans-bosnia-field" cols="30" rows="10" placeholder="План действий"></textarea>
+                    </li>
+                    <li class="traveller-form__item traveller-form__item--plans">
+                      <label class="traveller-form__label traveller-form__label--plans" for="plans-czech-field">
+                        Чехия
+                      </label>
+                      <p class="traveller-form__picture traveller-form__picture--plans">
+                        <img class="traveller-form__image" src="img/svg/flag-czech.svg" width="35" height="24" alt="Флаг Чехии">
+                      </p>
+                      <textarea class="traveller-form__textarea traveller-form__textarea--plans" name="plans-czech" id="plans-czech-field" cols="30" rows="10">Пить пиво и лазить по старым замкам, наслаждаться архитектурой и вот это все.</textarea>
+                    </li>
                   </ul>
-                  <p class="traveller-form__item">
-                    <label class="traveller-form__label" for="plans-bosnia-field">Босния и герцеговина</label>
-                    <textarea class="traveller-form__textarea" name="plans-bosnia" id="plans-bosnia-field" cols="30" rows="10" placeholder="План действий"></textarea>
-                  </p>
-                  <p class="traveller-form__item">
-                    <label class="traveller-form__label" for="plans-czech-field">Чехия</label>
-                    <textarea class="traveller-form__textarea" name="plans-czech" id="plans-czech-field" cols="30" rows="10">Пить пиво и лазить по старым замкам, наслаждаться архитектурой и вот это все.</textarea>
-                  </p>
-                  <button class="traveller-form__button" type="submit">Отправить</button>
-                  <a class="traveller-form__link traveller-form__link--previous" href="#">На шаг назад</a>
                 </div>
+                <button class="traveller-form__button traveller-form__button--submit button button--inner" type="submit">Отправить</button>
+                <a class="traveller-form__link traveller-form__link--previous" href="#">На шаг назад</a>
               </li>
             </ol>
           </div>
@@ -566,5 +677,6 @@
         </div>
       </div>
     </footer>
+    <script src="js/lib/picturefill.min.js"></script>
   </body>
 </html>

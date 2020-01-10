@@ -11,7 +11,6 @@
   color: $white;
 
   background-color: rgba(#000000, 0.6);
-  border: 3px solid $orange;
   border-radius: 50%;
 
   &--catalog {
@@ -26,16 +25,50 @@
     }
   }
 
+  &--form {
+    width: 100px;
+    height: 100px;
+
+    background-color: transparent;
+  }
+
   &::before {
     @include pseudo;
 
     top: 33px;
-    left: 10px;
+    left: 14px;
 
     width: 31px;
     height: 1px;
 
     background-color: rgba($white, 0.3);
+  }
+
+  &--form::before {
+    top: 55px;
+    left: 25px;
+
+    width: 49px;
+    height: 2px;
+
+    background-color: #cbced9;
+  }
+}
+
+.user-level__bar {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  fill: transparent;
+  stroke: $orange;
+
+  transform: rotate(-90deg);
+
+  &--catalog {
+    width: 45px;
+    height: 45px;
   }
 }
 
@@ -46,6 +79,12 @@
 
   &--catalog {
     display: none;
+  }
+
+  &--form {
+    font-size: 18px;
+    line-height: 22.17px;
+    color: #444444;
   }
 }
 
@@ -79,6 +118,14 @@
     line-height: 18px;
     color: #1d2e5b;
   }
+
+  &--form {
+    margin-top: 20px;
+
+    font-size: 38px;
+    line-height: 38px;
+    color: #1d2e5b;
+  }
 }
 
 @media (min-width: $tablet-width) {
@@ -89,12 +136,38 @@
       height: 60px;
 
       background-color: transparent;
+    }
 
-      &::before {
-        display: block;
+    &--form {
+      width: 94px;
+      height: 94px;
+    }
 
-        background-color: rgba(#000000, 0.1);
-      }
+    &::before {
+      left: 14px;
+
+      display: block;
+
+      background-color: rgba(#000000, 0.1);
+    }
+
+    &--form::before {
+      top: 53px;
+      left: 22px;
+
+      background-color: rgba(#000000, 0.3);
+    }
+  }
+
+  .user-level__bar {
+    &--catalog {
+      width: 60px;
+      height: 60px;
+    }
+
+    &--form {
+      width: 94px;
+      height: 94px;
     }
   }
 
@@ -114,5 +187,30 @@
     margin-top: 10px;
 
     line-height: 24px;
+
+    &--form {
+      margin-top: 22px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .user-level__info {
+    &--form::before {
+      background-color: rgba($white, 0.3);
+    }
+  }
+
+  .user-level__number {
+    &--form {
+      color: $white;
+    }
+  }
+
+  .user-level__text {
+    &--form {
+      color: $white;
+    }
   }
 }

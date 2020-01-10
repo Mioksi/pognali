@@ -15,17 +15,17 @@
   text-transform: uppercase;
   color: #192144;
 
-  &:hover,
-  &:focus {
+  &[href]:hover,
+  &[href]:focus {
     color: #ffd74b;
   }
 
-  &:hover .main-navigation__hover,
-  &:focus .main-navigation__hover {
+  &[href]:hover .main-navigation__hover,
+  &[href]:focus .main-navigation__hover {
     transform: translateY(-100%);
   }
 
-  &:active {
+  &[href]:active {
     opacity: 0.3;
   }
 }
