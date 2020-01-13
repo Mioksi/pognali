@@ -11,7 +11,7 @@
     <div style="display:none">
       <include src="build/img/svg/sprite.svg"></include>
     </div>
-    <header class="page-header page-header--menu-closed">
+    <header class="page-header page-header--menu-closed page-header--menu-nojs">
       <div class="page-header__wrapper container">
         <a class="page-header__logo" aria-label="Главная страница сервиса «Погнали»">
           <div class="page-header__logo-wrapper page-header__logo-wrapper--blue">
@@ -464,7 +464,7 @@
             </a>
           </div>
         </div>
-        <div class="map__interactive">
+        <div class="map__interactive" id="yandexmap">
           <div class="map__picture">
             <picture>
               <source type="image/webp" media="(min-width: 1440px)" srcset="img/webp/map-desktop@1x.webp 1x, img/webp/map-desktop@2x.webp 2x">
@@ -528,6 +528,8 @@
         </div>
       </div>
     </footer>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=5dd7b717-6791-493e-bfca-36f7bec94721&lang=ru_RU"></script>
     <script src="js/lib/picturefill.min.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

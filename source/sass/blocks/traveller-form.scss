@@ -1531,6 +1531,16 @@ input[type="number"] {
     }
 
     &--open {
+      + .traveller-form__button {
+        &--delete {
+          display: block;
+        }
+      }
+
+      &::before {
+        display: block;
+      }
+
       &::after {
         top: 25px;
 
