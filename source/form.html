@@ -6,12 +6,21 @@
     <meta name="format-detection" content="telephone=no">
     <title>Направления — Погнали</title>
     <link href="css/style.min.css" rel="stylesheet">
+    <link rel="preload" href="fonts/bloggersans-light.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/bloggersans-medium.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts//bloggersans-bold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   </head>
   <body>
     <div style="display:none">
       <include src="build/img/svg/sprite.svg"></include>
     </div>
     <header class="page-header page-header--inner page-header--menu-closed page-header--menu-nojs">
+
+      <!-- .page-header--menu-nojs - оставляет меню открытым при выключенном JS -->
+      <!-- .page-header--menu-closed - закрывает меню, открытие происходит при нажатии на иконку «гамбургера» -->
+      <!-- .page-header--menu-opened - открывает меню, закрытие происходит при нажатии на иконку крестика -->
+      <!-- .page-header--menu-scroll - отвечает за прокручивание меню -->
+
       <div class="page-header__wrapper page-header__wrapper--inner container">
         <a class="page-header__logo" href="index.html" aria-label="Главная страница сервиса «Погнали»">
           <div class="page-header__logo-wrapper page-header__logo-wrapper--blue">
@@ -52,19 +61,19 @@
           </ul>
         </nav>
         <a class="page-header__button button button--inner" href="login.html">Авторизация</a>
-        <div class="page-header__contacts contacts">
+        <div class="page-header__contacts contacts contacts--header">
           <ul class="contacts__list">
-            <li class="contacts__item contacts__item--header">
-              <a class="contacts__link contacts__link--header contacts__link--phone contacts__link--phone-header" href="tel:88005558628">
-                <svg class="contacts__icon contacts__icon--header contacts__icon--phone" width="18" height="18">
+            <li class="contacts__item">
+              <a class="contacts__link contacts__link--phone" href="tel:88005558628">
+                <svg class="contacts__icon contacts__icon--phone" width="18" height="18">
                   <use xlink:href="#contacts-phone"></use>
                 </svg>
                 8 800 555-86-28
               </a>
             </li>
-            <li class="contacts__item contacts__item--header">
-              <a class="contacts__link contacts__link--header contacts__link--mail contacts__link--mail-header" href="mailto:mail@htmlacademy.ru">
-                <svg class="contacts__icon contacts__icon--header contacts__icon--mail" width="18" height="13">
+            <li class="contacts__item">
+              <a class="contacts__link contacts__link--mail" href="mailto:mail@htmlacademy.ru">
+                <svg class="contacts__icon contacts__icon--mail" width="18" height="13">
                   <use xlink:href="#contacts-mail"></use>
                 </svg>
                 mail@htmlacademy.ru
@@ -75,25 +84,25 @@
         <div class="page-header__social social">
           <ul class="social__list">
             <li class="social__item">
-              <a class="social__link social__link--header" href="#">
+              <a class="social__link social__link--background" href="#">
                 <span class="visually-hidden">Погнали в Facebook</span>
-                <svg class="social__icon social__icon--header social__icon--facebook" width="11" height="21">
+                <svg class="social__icon social__icon--color social__icon--facebook" width="11" height="21">
                   <use xlink:href="#facebook"></use>
                 </svg>
               </a>
             </li>
             <li class="social__item">
-              <a class="social__link social__link--header" href="#">
+              <a class="social__link social__link--background" href="#">
                 <span class="visually-hidden">Погнали в VK</span>
-                <svg class="social__icon social__icon--header social__icon--vk" width="23" height="12">
+                <svg class="social__icon social__icon--color social__icon--vk" width="23" height="12">
                   <use xlink:href="#vk"></use>
                 </svg>
               </a>
             </li>
             <li class="social__item">
-              <a class="social__link social__link--header" href="#">
+              <a class="social__link social__link--background" href="#">
                 <span class="visually-hidden">Погнали в Instagram</span>
-                <svg class="social__icon social__icon--header social__icon--instagram" width="18" height="18">
+                <svg class="social__icon social__icon--color social__icon--instagram" width="18" height="18">
                   <use xlink:href="#instagram"></use>
                 </svg>
               </a>
@@ -108,17 +117,17 @@
           <h1 class="page-main__title">Направления</h1>
         </div>
       </div>
-      <form class="traveller-form" action="https://echo.htmlacademy.ru" method="post">
+      <form class="page-main__form traveller-form" action="https://echo.htmlacademy.ru" method="post">
         <section class="traveller-info">
           <h2 class="visually-hidden">О попутчике</h2>
           <div class="traveller-info__wrapper container">
-            <div class="traveller-info__user-level user-level">
-              <div class="user-level__info user-level__info--form">
-                <svg class="user-level__bar user-level__bar--form" width="100" height="100" viewBox="0 0 100 100" stroke-dasharray="250">
+            <div class="traveller-info__user-level user-level user-level--form">
+              <div class="user-level__info">
+                <svg class="user-level__bar" width="100" height="100" viewBox="0 0 100 100" stroke-dasharray="250">
                   <circle r="49" cx="50" cy="50" stroke-width="3"></circle>
                 </svg>
-                <span class="user-level__number user-level__number--form">80</span>
-                <span class="user-level__text user-level__text--form">level</span>
+                <span class="user-level__number">80</span>
+                <span class="user-level__text">level</span>
               </div>
             </div>
             <p class="traveller-info__picture">
@@ -216,9 +225,16 @@
         </section>
         <section class="add-plan">
           <div class="add-plan__wrapper container">
-            <h2 class="add-plan__title">Добавить план:</h2>
+            <div class="add-plan__header">
+              <h2 class="add-plan__title">Добавить план:</h2>
+              <ul class="add-plan__list add-plan__list--step">
+                <li class="add-plan__item add-plan__item--dot add-plan__item--dot-active"></li>
+                <li class="add-plan__item add-plan__item--dot"></li>
+                <li class="add-plan__item add-plan__item--dot"></li>
+              </ul>
+            </div>
             <ol class="add-plan__list">
-              <li class="add-plan__item plan-item">
+              <li class="add-plan__item plan-item" id="step-1">
                 <div class="plan-item__wrapper">
                   <div class="plan-item__header">
                     <div class="plan-item__step">
@@ -227,10 +243,10 @@
                         Даты пребывания</h3>
                       <p class="plan-item__text">Укажите предпочтительное количество попутчиков, которых вы&nbsp;хотели бы позвать в поездку и ее предполагаемую длительность.</p>
                     </div>
-                    <ul class="add-plan__list add-plan__list--step">
-                      <li class="add-plan__item add-plan__item--step add-plan__item--step-active">Даты</li>
-                      <li class="add-plan__item add-plan__item--step">Маршрут</li>
-                      <li class="add-plan__item add-plan__item--step">Развлечения</li>
+                    <ul class="plan-item__list step-list">
+                      <li class="step-list__item step-list__item--active">Даты</li>
+                      <li class="step-list__item">Маршрут</li>
+                      <li class="step-list__item">Развлечения</li>
                     </ul>
                   </div>
                   <ul class="traveller-form__list traveller-form__list--options">
@@ -386,7 +402,7 @@
                           <button class="traveller-form__button traveller-form__button--date traveller-form__button--disabled" type="button" disabled>25</button>
                         </td>
                         <td class="traveller-form__value">
-                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--active" type="button">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--staying traveller-form__button--active" type="button">
                             26
                             <span class="traveller-form__staying">Заезд</span>
                           </button>
@@ -395,7 +411,7 @@
                           <button class="traveller-form__button traveller-form__button--date traveller-form__button--active" type="button">27</button>
                         </td>
                         <td class="traveller-form__value">
-                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--active" type="button">
+                          <button class="traveller-form__button traveller-form__button--date traveller-form__button--staying traveller-form__button--active" type="button">
                             28
                             <span class="traveller-form__staying">Выезд</span>
                           </button>
@@ -433,9 +449,9 @@
                     </table>
                   </div>
                 </div>
-                <a class="traveller-form__link traveller-form__link--next button button--inner" href="#">Следующий шаг</a>
+                <a class="traveller-form__link traveller-form__link--next button button--inner" href="#step-2">Следующий шаг</a>
               </li>
-              <li class="add-plan__item plan-item plan-item--route">
+              <li class="add-plan__item add-plan__item--route plan-item" id="step-2">
                 <div class="plan-item__wrapper">
                   <div class="plan-item__header plan-item__header--route">
                     <div class="plan-item__step">
@@ -444,10 +460,10 @@
                         Маршрут</h3>
                       <p class="plan-item__text plan-item__text--route">Укажите страны, которые вы хотели посетить. Это может быть одна или сразу несколько.</p>
                     </div>
-                    <ul class="add-plan__list add-plan__list--step">
-                      <li class="add-plan__item add-plan__item--step">Даты</li>
-                      <li class="add-plan__item add-plan__item--step add-plan__item--active">Маршрут</li>
-                      <li class="add-plan__item add-plan__item--step">Развлечения</li>
+                    <ul class="plan-item__list step-list">
+                      <li class="step-list__item">Даты</li>
+                      <li class="step-list__item step-list__item--active">Маршрут</li>
+                      <li class="step-list__item">Развлечения</li>
                     </ul>
                   </div>
                   <ul class="traveller-form__list traveller-form__list--select">
@@ -582,10 +598,12 @@
                     </li>
                   </ul>
                 </div>
-                <a class="traveller-form__link traveller-form__link--next button button--inner" href="#">Следующий шаг</a>
-                <a class="traveller-form__link traveller-form__link--previous" href="#">На шаг назад</a>
+                <div class="traveller-form__buttons">
+                  <a class="traveller-form__link traveller-form__link--next button button--inner" href="#step-3">Следующий шаг</a>
+                  <a class="traveller-form__link traveller-form__link--previous" href="#step-1">На шаг назад</a>
+                </div>
               </li>
-              <li class="add-plan__item plan-item">
+              <li class="add-plan__item plan-item" id="step-3">
                 <div class="plan-item__wrapper">
                   <div class="plan-item__header plan-item__header--plans">
                     <div class="plan-item__step">
@@ -595,10 +613,10 @@
                       </h3>
                       <p class="plan-item__text plan-item__text--plans">Наконец, расскажите о своих планах времяпровождения. Можно писать в свободной форме и ставить тэги.</p>
                     </div>
-                    <ul class="add-plan__list add-plan__list--step">
-                      <li class="add-plan__item add-plan__item--step">Даты</li>
-                      <li class="add-plan__item add-plan__item--step">Маршрут</li>
-                      <li class="add-plan__item add-plan__item--step add-plan__item--active">Развлечения</li>
+                    <ul class="plan-item__list step-list">
+                      <li class="step-list__item">Даты</li>
+                      <li class="step-list__item">Маршрут</li>
+                      <li class="step-list__item step-list__item--active">Развлечения</li>
                     </ul>
                   </div>
                   <ul class="traveller-form__list traveller-form__list--plans">
@@ -607,7 +625,8 @@
                       <p class="traveller-form__picture traveller-form__picture--plans">
                         <img class="traveller-form__image" src="img/svg/flag-bosnia.svg" width="35" height="24" alt="Флаг Боснии и Герцеговины">
                       </p>
-                      <textarea class="traveller-form__textarea traveller-form__textarea--plans" name="plans-bosnia" id="plans-bosnia-field" cols="30" rows="10" placeholder="План действий"></textarea>
+                      <textarea class="traveller-form__textarea traveller-form__textarea--plans" name="plans-bosnia" id="plans-bosnia-field" cols="30" rows="10" placeholder="План действий" required></textarea>
+                      <span class="traveller-form__invalid">Это поле должно быть заполнено</span>
                     </li>
                     <li class="traveller-form__item traveller-form__item--plans">
                       <label class="traveller-form__label traveller-form__label--plans" for="plans-czech-field">
@@ -616,19 +635,22 @@
                       <p class="traveller-form__picture traveller-form__picture--plans">
                         <img class="traveller-form__image" src="img/svg/flag-czech.svg" width="35" height="24" alt="Флаг Чехии">
                       </p>
-                      <textarea class="traveller-form__textarea traveller-form__textarea--plans" name="plans-czech" id="plans-czech-field" cols="30" rows="10">Пить пиво и лазить по старым замкам, наслаждаться архитектурой и вот это все.</textarea>
+                      <textarea class="traveller-form__textarea traveller-form__textarea--plans" name="plans-czech" id="plans-czech-field" cols="30" rows="10" required>Пить пиво и лазить по старым замкам, наслаждаться архитектурой и вот это все.</textarea>
+                      <span class="traveller-form__invalid">Это поле должно быть заполнено</span>
                     </li>
                   </ul>
                 </div>
-                <button class="traveller-form__button traveller-form__button--submit button button--inner" type="submit">Отправить</button>
-                <a class="traveller-form__link traveller-form__link--previous" href="#">На шаг назад</a>
+                <div class="traveller-form__buttons">
+                  <button class="traveller-form__button traveller-form__button--submit button button--inner" type="submit">Отправить</button>
+                  <a class="traveller-form__link traveller-form__link--previous" href="#step-2">На шаг назад</a>
+                </div>
               </li>
             </ol>
           </div>
         </section>
       </form>
     </main>
-    <footer class="page-footer page-footer--inner">
+    <footer class="page-footer">
       <div class="page-footer__wrapper container">
         <a class="page-footer__logo" href="index.html" aria-label="Главная страница сервиса «Погнали»">
           <picture>
@@ -644,7 +666,7 @@
         <div class="page-footer__social social">
           <ul class="social__list">
             <li class="social__item">
-              <a class="social__link social__link--footer" href="#">
+              <a class="social__link" href="#">
                 <span class="visually-hidden">Погнали в Facebook</span>
                 <svg class="social__icon social__icon--facebook" width="11" height="21">
                   <use xlink:href="#facebook"></use>
@@ -652,7 +674,7 @@
               </a>
             </li>
             <li class="social__item">
-              <a class="social__link social__link--footer" href="#">
+              <a class="social__link" href="#">
                 <span class="visually-hidden">Погнали в VK</span>
                 <svg class="social__icon social__icon--vk" width="23" height="12">
                   <use xlink:href="#vk"></use>
@@ -660,7 +682,7 @@
               </a>
             </li>
             <li class="social__item">
-              <a class="social__link social__link--footer" href="#">
+              <a class="social__link" href="#">
                 <span class="visually-hidden">Погнали в Instagram</span>
                 <svg class="social__icon social__icon--instagram" width="18" height="18">
                   <use xlink:href="#instagram"></use>

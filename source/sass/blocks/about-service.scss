@@ -1,9 +1,6 @@
 .about-service {
-  position: relative;
-  z-index: 6;
-
   padding-top: 33px;
-  padding-bottom: 81px;
+  padding-bottom: 82px;
 
   background-color: #192144;
   border-radius: 0 0 30px 30px;
@@ -62,16 +59,16 @@
 
 .about-service__text {
   margin: 0;
+  margin-bottom: 19px;
 
   color: $white;
+}
 
-  &--main {
-    margin-bottom: 19px;
-  }
+.about-service__promo {
+  margin: 0;
 
-  &--accent {
-    font-weight: 700;
-  }
+  font-weight: 700;
+  color: $white;
 }
 
 .about-service__button {
@@ -81,7 +78,7 @@
 @media (min-width: $tablet-width) {
   .about-service {
     padding-top: 0;
-    padding-bottom: 88px;
+    padding-bottom: 89px;
 
     background-color: #182044;
     border-radius: 0 0 60px 60px;
@@ -119,28 +116,26 @@
 
   .about-service__title {
     margin-bottom: 40px;
-    padding-top: 43px;
+    padding-top: 40px;
 
     font-size: 45px;
     line-height: 45px;
   }
 
   .about-service__text {
+    margin-bottom: 31px;
     width: 300px;
 
     font-size: 28px;
     line-height: 33px;
+  }
 
-    &--main {
-      margin-bottom: 31px;
-    }
+  .about-service__promo {
+    margin-bottom: 54px;
+    width: 300px;
 
-    &--accent {
-      margin-bottom: 51px;
-
-      font-size: 21px;
-      line-height: 25px;
-    }
+    font-size: 21px;
+    line-height: 25px;
   }
 
   .about-service__button {
@@ -164,7 +159,7 @@
     }
 
     &::after {
-      top: 13px;
+      top: 14px;
       right: 60px;
 
       width: 630px;
@@ -181,19 +176,16 @@
 
   .about-service__title {
     margin-bottom: 58px;
-    padding-top: 60px;
+    padding-top: 57px;
   }
 
   .about-service__text {
+    margin-bottom: 40px;
     width: 615px;
+  }
 
-    &--main {
-      margin-bottom: 38px;
-    }
-
-    &--accent {
-      margin-bottom: 84px;
-      width: 415px;
-    }
+  .about-service__promo {
+    margin-bottom: 86px;
+    width: 415px;
   }
 }

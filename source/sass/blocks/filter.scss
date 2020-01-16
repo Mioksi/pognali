@@ -37,6 +37,10 @@
   }
 }
 
+.filter__title-colon {
+  display: none;
+}
+
 .filter__toggle {
   position: absolute;
   top: 0;
@@ -64,7 +68,7 @@
 .filter--closed .filter__toggle::before {
   @include pseudo;
 
-  top: 8px;
+  top: 9px;
   left: 1px;
 
   width: 3px;
@@ -212,7 +216,7 @@
     position: relative;
 
     order: 1;
-    width: 185px;
+    width: 186px;
     height: auto;
     margin-left: auto;
   }
@@ -259,7 +263,7 @@
     }
   }
 
-  .filter__wrapper-country {
+  .filter--opened .filter__wrapper-country {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -331,21 +335,25 @@
     }
   }
 
+  .filter__title-colon {
+    display: inline;
+  }
+
   .filter__continents {
-    margin-left: 39px;
+    margin-left: 33px;
   }
 
   .filter--opened .filter__alphabet {
     display: none;
   }
 
-  .filter__wrapper-country {
+  .filter--opened .filter__wrapper-country {
     margin-bottom: 0;
   }
 
   .filter__country {
-    margin-top: 68px;
-    margin-left: 23px;
+    margin-top: 81px;
+    margin-left: 21px;
   }
 
   .filter__button {

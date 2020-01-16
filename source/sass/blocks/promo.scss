@@ -42,8 +42,8 @@
 .promo__title {
   margin: 0 auto;
   width: 240px;
-  padding-top: 21px;
-  padding-bottom: 244px;
+  padding-top: 19px;
+  padding-bottom: 247px;
 
   font-size: 36px;
   font-weight: 700;
@@ -81,7 +81,7 @@
 
     background-color: #182044;
     background-image: url("../img/globe-back-tablet@1x.jpg");
-    background-position: center 259px;
+    background-position: center 251px;
     background-repeat: no-repeat;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
@@ -100,7 +100,7 @@
     &::before {
       @include pseudo;
 
-      top: 271px;
+      top: 263px;
       left: 284px;
 
       width: 372px;
@@ -137,7 +137,6 @@
   }
 
   .promo__title {
-    padding-top: 30px;
     padding-bottom: 87px;
     width: 395px;
 
@@ -157,11 +156,14 @@
 
 @media (min-width: $desktop-width) {
   .promo {
+    position: relative;
+    z-index: 1;
+
     padding-bottom: 0;
 
     background-color: #161c34;
     background-image: url("../img/globe-back-desktop@1x.jpg");
-    background-position: -181px -125px;
+    background-position: -181px -121px;
     background-repeat: no-repeat;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
@@ -179,7 +181,7 @@
     width: $desktop-width;
 
     &::before {
-      top: -14px;
+      top: -13px;
       left: 604px;
 
       width: 431px;
@@ -197,7 +199,7 @@
   .promo__title {
     margin: 0;
     margin-left: 67px;
-    padding-top: 85px;
+    padding-top: 83px;
     width: 395px;
 
     text-align: left;
@@ -206,7 +208,7 @@
   .promo__review {
     margin-top: 97px;
     margin-right: 26px;
-    margin-bottom: 115px;
+    margin-bottom: 113px;
     margin-left: auto;
     width: 260px;
   }

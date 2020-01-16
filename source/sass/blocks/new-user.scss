@@ -1,8 +1,4 @@
 .new-user {
-  position: relative;
-  z-index: 2;
-
-  margin-top: -35px;
   padding-top: 107px;
   padding-bottom: 29px;
 
@@ -11,7 +7,7 @@
 }
 
 .new-user__title {
-  margin: 0;
+  display: block;
   margin-bottom: 19px;
 
   font-size: 24px;
@@ -58,9 +54,8 @@
 
 @media (min-width: $tablet-width) {
   .new-user {
-    margin-top: -55px;
-    padding-top: 131px;
-    padding-bottom: 61px;
+    padding-top: 127px;
+    padding-bottom: 65px;
 
     border-radius: 0 0 60px 60px;
   }
@@ -79,17 +74,17 @@
     line-height: 33px;
 
     &--registration {
-      margin-bottom: 62px;
+      margin-bottom: 66px;
     }
 
     &--contacts {
-      margin-bottom: 37px;
+      margin-bottom: 40px;
     }
   }
 
   .new-user__form {
     margin-right: 35px;
-    margin-bottom: 59px;
+    margin-bottom: 56px;
     margin-left: 35px;
   }
 
@@ -100,18 +95,18 @@
 
 @media (min-width: $desktop-width) {
   .new-user {
-    padding-top: 162px;
-    padding-bottom: 104px;
+    padding-top: 158px;
+    padding-bottom: 105px;
   }
 
   .new-user__text {
     &--registration {
-      margin-bottom: 56px;
+      margin-bottom: 60px;
       width: 610px;
     }
 
     &--contacts {
-      margin-bottom: 40px;
+      margin-bottom: 44px;
     }
   }
 
@@ -121,7 +116,7 @@
 
   .new-user__form {
     margin-right: 74px;
-    margin-bottom: 70px;
+    margin-bottom: 65px;
     margin-left: 72px;
   }
 }

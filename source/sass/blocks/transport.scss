@@ -1,3 +1,24 @@
+.transport {
+  &--catalog {
+    .transport__list {
+      margin-left: 10px;
+      width: auto;
+    }
+
+    .transport__item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      width: 33px;
+      height: 32px;
+
+      background-color: #edeff6;
+      border-radius: 50%;
+    }
+  }
+}
+
 .transport__sub-title {
   margin: 0;
   margin-bottom: 14px;
@@ -21,11 +42,6 @@
   display: flex;
   flex-wrap: wrap;
   width: 150px;
-
-  &--catalog {
-    margin-left: 10px;
-    width: auto;
-  }
 }
 
 .transport__item {
@@ -34,18 +50,6 @@
   margin-right: 10px;
   width: 24px;
   height: 24px;
-
-  &--catalog {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    width: 33px;
-    height: 32px;
-
-    background-color: #edeff6;
-    border-radius: 50%;
-  }
 
   &:hover .transport__name--hover {
     display: block;
@@ -118,26 +122,26 @@
 }
 
 @media (min-width: $tablet-width) {
+  .transport {
+    &--catalog {
+      .transport__list {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
+
+      .transport__item {
+        width: 31px;
+        height: 31px;
+
+        background-color: transparent;
+        border-radius: 0;
+      }
+    }
+  }
+
   .transport__sub-title {
     display: none;
-  }
-
-  .transport__list {
-    &--catalog {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-    }
-  }
-
-  .transport__item {
-    &--catalog {
-      width: 31px;
-      height: 31px;
-
-      background-color: transparent;
-      border-radius: 0;
-    }
   }
 
   .transport__icon {
@@ -164,6 +168,14 @@
 }
 
 @media (min-width: $desktop-width) {
+  .transport {
+    &--catalog {
+      .transport__list {
+        flex-direction: row;
+      }
+    }
+  }
+
   .transport__list {
     flex-direction: row;
   }

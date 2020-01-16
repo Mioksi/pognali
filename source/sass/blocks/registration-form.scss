@@ -38,7 +38,7 @@
     outline: none;
   }
 
-  &:invalid:focus:not(:placeholder-shown) {
+  &:invalid:focus {
     color: #ff0000;
 
     background-color: #ffefef;
@@ -132,9 +132,9 @@
     width: 325px;
     height: auto;
 
-    padding-top: 30px;
+    padding-top: 28px;
     padding-right: 36px;
-    padding-bottom: 27px;
+    padding-bottom: 29px;
     padding-left: 36px;
 
     font-size: 24px;

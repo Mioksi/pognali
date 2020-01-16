@@ -1,4 +1,9 @@
 .page-header {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 1;
+
   background-color: #161c36;
 
   &--menu-scroll {
@@ -131,14 +136,12 @@
   }
 }
 
-@media (max-width: $mobile-width-only) {
-  .page-header--menu-closed .page-header__button {
-    display: none;
-  }
+.page-header--menu-closed .page-header__button {
+  display: none;
+}
 
-  .page-header--menu-opened .page-header__button {
-    display: block;
-  }
+.page-header--menu-opened .page-header__button {
+  display: block;
 }
 
 @media (min-width: $tablet-width) {

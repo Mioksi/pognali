@@ -1,5 +1,4 @@
 .plan-item {
-  margin-bottom: 10px;
   padding: 0 20px;
   padding-bottom: 8px;
 
@@ -12,8 +11,8 @@
 }
 
 .plan-item__header {
-  margin-bottom: 21px;
-  padding-top: 24px;
+  margin-bottom: 23px;
+  padding-top: 22px;
 }
 
 .plan-item__title {
@@ -34,19 +33,10 @@
 
 @media (min-width: $tablet-width) {
   .plan-item {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-
-    margin-bottom: 40px;
     padding: 0 44px;
     padding-bottom: 41px;
 
     border-radius: 30px;
-
-    &--route {
-      margin-bottom: 49px;
-    }
   }
 
   .plan-item__wrapper {
@@ -82,11 +72,16 @@
 
 @media (min-width: $desktop-width) {
   .plan-item {
-    margin-bottom: 44px;
     padding: 0 160px;
     padding-bottom: 91px;
 
     border-radius: 60px;
+  }
+
+  .plan-item__list {
+    margin-top: 14px;
+    margin-right: 46px;
+    margin-left: auto;
   }
 
   .plan-item__header {

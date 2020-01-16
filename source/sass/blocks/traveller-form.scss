@@ -16,7 +16,7 @@
   }
 
   &--select {
-    margin-bottom: 3px;
+    margin-bottom: 5px;
   }
 }
 
@@ -121,7 +121,7 @@
   }
 
   &--calendar {
-    margin-bottom: 23px;
+    margin-bottom: 22px;
   }
 }
 
@@ -432,6 +432,9 @@ input[type="number"] {
   }
 
   &--plans {
+    position: relative;
+    z-index: 1;
+
     padding: 7px 13px;
     width: 220px;
     height: 220px;
@@ -448,6 +451,30 @@ input[type="number"] {
   &:focus {
     border-color: #161c35;
   }
+
+  &:invalid {
+    border: 1px solid #f47e7e;
+
+    + .traveller-form__invalid {
+      display: block;
+    }
+  }
+}
+
+.traveller-form__invalid {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  display: none;
+  padding: 10px;
+  width: 100%;
+
+  font-weight: 400;
+  color: #ff0000;
+
+  background-color: #ffefef;
 }
 
 .traveller-form__toggle {
@@ -684,7 +711,7 @@ input[type="number"] {
       height: 2px;
 
       background-color: #000000;
-      opacity: 0.3;
+      opacity: 0.1;
     }
 
     &::before {
@@ -693,6 +720,18 @@ input[type="number"] {
 
     &::after {
       transform: rotate(-45deg);
+    }
+
+    &:hover::before,
+    &:hover::after,
+    &:focus::before,
+    &:focus::after {
+      opacity: 0.3;
+    }
+
+    &:active::before,
+    &:active::after {
+      opacity: 0.05;
     }
   }
 
@@ -1056,7 +1095,7 @@ input[type="number"] {
     }
 
     &--plans {
-      margin-bottom: 25px;
+      margin-bottom: 23px;
       padding-top: 27px;
       padding-right: 31px;
 
@@ -1308,6 +1347,13 @@ input[type="number"] {
     }
   }
 
+  .traveller-form__invalid {
+    padding: 16px 24px;
+
+    font-size: 20px;
+    line-height: 24px;
+  }
+
   .traveller-form__toggle {
     &--option {
       top: 93px;
@@ -1384,6 +1430,13 @@ input[type="number"] {
     display: inline;
   }
 
+  .traveller-form__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
   .traveller-form__button {
     &--date {
       padding: 25px;
@@ -1411,8 +1464,6 @@ input[type="number"] {
         left: 0;
 
         width: 24px;
-
-        opacity: 0.2;
       }
     }
 
@@ -1469,7 +1520,6 @@ input[type="number"] {
     }
 
     &--previous {
-      margin-left: auto;
       padding-left: 31px;
       width: 178px;
 
@@ -1788,6 +1838,10 @@ input[type="number"] {
     }
   }
 
+  .traveller-form__invalid {
+    width: 730px;
+  }
+
   .traveller-form__toggle {
     &--option {
       top: 26px;
@@ -1839,6 +1893,10 @@ input[type="number"] {
     &--delete {
       top: 22px;
       right: 6px;
+    }
+
+    &--staying {
+      padding-bottom: 0;
     }
   }
 

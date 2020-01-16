@@ -1,3 +1,11 @@
+.contacts {
+  &--header {
+    .contacts__link {
+      color: #192144;
+    }
+  }
+}
+
 .contacts__list {
   @include list-reset;
 }
@@ -15,10 +23,6 @@
   line-height: 22px;
   text-transform: uppercase;
   color: #ffd74b;
-
-  &--header {
-    color: #192144;
-  }
 
   &::before {
     @include pseudo;
@@ -69,7 +73,7 @@
 
 @media (min-width: $tablet-width) {
   .contacts__link {
-    padding-top: 25px;
+    padding-top: 23px;
     padding-bottom: 15px;
     padding-left: 91px;
 
@@ -93,7 +97,7 @@
     }
 
     &--mail {
-      top: 26px;
+      top: 28px;
 
       width: 27px;
       height: 20px;
@@ -102,6 +106,69 @@
 }
 
 @media (min-width: $desktop-width) {
+  .contacts {
+    &--header {
+      .contacts__item {
+        margin-right: 0;
+      }
+
+      .contacts__link {
+        padding: 0;
+        width: 50px;
+        height: 50px;
+
+        font-size: 0;
+
+        border-radius: 50%;
+
+        &--phone {
+          background-color: $orange;
+
+          &::after {
+            top: 16px;
+            left: 17px;
+
+            width: 18px;
+            height: 18px;
+
+            background-image: url("../img/svg/topmenu-phone.svg");
+          }
+        }
+
+        &--mail {
+          background-color: #ffbd30;
+
+          &::after {
+            top: 18px;
+            left: 16px;
+
+            width: 18px;
+            height: 14px;
+
+            background-image: url("../img/svg/topmenu-mail.svg");
+          }
+        }
+
+        &::before {
+          display: none;
+        }
+
+        &:hover,
+        &:focus {
+          background-color: #f26926;
+        }
+
+        &:active::after {
+          opacity: 0.3;
+        }
+      }
+
+      .contacts__icon {
+        display: none;
+      }
+    }
+  }
+
   .contacts__list {
     display: flex;
     flex-wrap: wrap;
@@ -109,47 +176,12 @@
 
   .contacts__item {
     margin-right: 110px;
-
-    &--header {
-      margin-right: 0;
-    }
   }
 
   .contacts__link {
     padding-top: 34px;
     padding-bottom: 28px;
     padding-left: 122px;
-
-    &--header {
-      padding: 0;
-      width: 50px;
-      height: 50px;
-
-      font-size: 0;
-
-      border-radius: 50%;
-
-      &:hover,
-      &:focus {
-        background-color: #f26926;
-      }
-
-      &:active::after {
-        opacity: 0.3;
-      }
-    }
-
-    &--phone-header {
-      background-color: $orange;
-    }
-
-    &--mail-header {
-      background-color: #ffbd30;
-    }
-
-    &--header::before {
-      display: none;
-    }
 
     &::before {
       width: 90px;
@@ -159,34 +191,10 @@
     &::after {
       @include pseudo;
     }
-
-    &--phone-header::after {
-      top: 16px;
-      left: 17px;
-
-      width: 18px;
-      height: 18px;
-
-      background-image: url("../img/svg/topmenu-phone.svg");
-    }
-
-    &--mail-header::after {
-      top: 18px;
-      left: 16px;
-
-      width: 18px;
-      height: 14px;
-
-      background-image: url("../img/svg/topmenu-mail.svg");
-    }
   }
 
   .contacts__icon {
     left: 28px;
-
-    &--header {
-      display: none;
-    }
 
     &--phone {
       top: 28px;

@@ -35,8 +35,20 @@
 
   .country-filter__group {
     display: block;
-    margin-bottom: 71px;
+    margin-bottom: 69px;
     width: 252px;
+
+    &:nth-child(n + 10) {
+      margin-bottom: 104px;
+    }
+
+    &:nth-child(n + 16) {
+      margin-bottom: 64px;
+    }
+
+    &:nth-child(n + 21) {
+      margin-bottom: 35px;
+    }
   }
 
   .country-filter__title {

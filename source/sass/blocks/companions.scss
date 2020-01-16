@@ -1,8 +1,4 @@
 .companions {
-  position: relative;
-  z-index: 4;
-
-  margin-top: -25px;
   padding-top: 97px;
   padding-bottom: 30px;
 
@@ -88,16 +84,16 @@
 
 .companions__text {
   margin: 0;
+  margin-bottom: 21px;
 
   color: $white;
+}
 
-  &--main {
-    margin-bottom: 21px;
-  }
+.companions__promo {
+  margin: 0;
 
-  &--accent {
-    font-weight: 700;
-  }
+  font-weight: 700;
+  color: $white;
 }
 
 .companions__list {
@@ -112,8 +108,7 @@
 
 @media (min-width: $tablet-width) {
   .companions {
-    margin-top: -55px;
-    padding-top: 196px;
+    padding-top: 191px;
     padding-bottom: 88px;
 
     border-radius: 0 0 60px 60px;
@@ -128,7 +123,7 @@
 
 
     &::after {
-      top: -61px;
+      top: -56px;
       right: 75px;
       left: auto;
 
@@ -145,12 +140,12 @@
   }
 
   .companions__content {
-    margin-bottom: 57px;
+    margin-bottom: 60px;
     margin-left: 34px;
     width: 425px;
 
     &::before {
-      top: -61px;
+      top: -56px;
       left: -34px;
 
       width: 213px;
@@ -166,19 +161,17 @@
   }
 
   .companions__text {
+    margin-bottom: 41px;
+
     font-size: 28px;
     line-height: 33px;
+  }
 
-    &--main {
-      margin-bottom: 39px;
-    }
+  .companions__promo {
+    width: 260px;
 
-    &--accent {
-      width: 260px;
-
-      font-size: 21px;
-      line-height: 25px;
-    }
+    font-size: 21px;
+    line-height: 25px;
   }
 
   .companions__list {
@@ -204,7 +197,7 @@
 
 @media (min-width: $desktop-width) {
   .companions {
-    padding-top: 185px;
+    padding-top: 180px;
     padding-bottom: 124px;
   }
 
@@ -236,7 +229,7 @@
   }
 
   .companions__list {
-    margin-top: 3px;
+    margin-top: 8px;
     margin-bottom: 0;
     margin-left: 195px;
     width: 630px;

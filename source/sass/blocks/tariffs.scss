@@ -3,10 +3,6 @@
 }
 
 .tariffs__add-profile {
-  position: relative;
-  z-index: 3;
-
-  margin-top: -35px;
   padding-top: 87px;
   padding-bottom: 35px;
 
@@ -139,9 +135,8 @@
 
 @media (min-width: $tablet-width) {
   .tariffs__add-profile {
-    margin-top: -55px;
-    padding-top: 129px;
-    padding-bottom: 66px;
+    padding-top: 125px;
+    padding-bottom: 68px;
 
     border-radius: 0 0 60px 60px;
   }
@@ -150,7 +145,7 @@
     &::before {
       top: auto;
       right: 85px;
-      bottom: -17px;
+      bottom: -20px;
       z-index: 1;
 
       width: 100px;
@@ -177,12 +172,12 @@
     padding-top: 43px;
     padding-right: 34px;
     padding-left: 90px;
-    padding-bottom: 42px;
+    padding-bottom: 44px;
 
     &::before {
       @include pseudo;
 
-      top: 0;
+      top: 3px;
       right: 0;
 
       width: 198px;
@@ -204,7 +199,7 @@
     line-height: 33px;
 
     &::after {
-      top: -2px;
+      top: 0;
       right: auto;
       left: -90px;
 
@@ -246,7 +241,7 @@
 
   .tariffs__icon {
     position: absolute;
-    top: 13px;
+    top: 15px;
     left: 25px;
 
     display: block;
@@ -257,8 +252,8 @@
 
 @media (min-width: $desktop-width) {
   .tariffs__add-profile {
-    padding-top: 162px;
-    padding-bottom: 167px;
+    padding-top: 158px;
+    padding-bottom: 169px;
 
     border-radius: 0 0 60px 60px;
   }
@@ -266,7 +261,8 @@
   .tariffs__wrapper {
     &::before {
       right: 134px;
-      bottom: 99px;
+      bottom: auto;
+      top: 183px;
 
       width: 198px;
       height: 198px;
@@ -282,7 +278,7 @@
   .tariffs__list {
     padding-top: 52px;
     padding-right: 345px;
-    padding-bottom: 49px;
+    padding-bottom: 51px;
     padding-left: 162px;
 
     &::before {
@@ -298,12 +294,12 @@
     padding-left: 90px;
 
     &::before {
-      top: -16px;
+      top: -14px;
     }
   }
 
   .tariffs__icon {
-    top: 6px;
+    top: 8px;
     left: 26px;
   }
 }

@@ -4,6 +4,8 @@ var navigationToggle = pageHeader.querySelector('.page-header__toggle');
 var mainNavigation = document.querySelector('.main-navigation');
 var mainNavigationItem = mainNavigation.querySelectorAll('.main-navigation__item');
 
+var tariffs = document.querySelector('.tariffs');
+
 var map = document.querySelector('.map');
 
 var catalogFilter = document.querySelector('.catalog-filter');
@@ -46,6 +48,24 @@ window.addEventListener('scroll', function () {
   }
 });
 
+if (tariffs) {
+  var tariffsLink = tariffs.querySelector('.tariffs__link');
+  var modalTariffs = tariffs.querySelector('.modal-tariffs');
+  var modalTariffsButton = tariffs.querySelector('.modal-tariffs__button');
+
+  tariffsLink.addEventListener('click', function (evt) {
+    evt.preventDefault();
+
+    modalTariffs.classList.add('modal-tariffs--show');
+  });
+
+  modalTariffsButton.addEventListener('click', function (evt) {
+    evt.preventDefault();
+
+    modalTariffs.classList.remove('modal-tariffs--show');
+  });
+}
+
 if (map) {
   var mapPicture = map.querySelector('.map__picture');
 
@@ -63,7 +83,7 @@ if (map) {
       }, {
         iconLayout: 'default#image',
         iconImageHref: 'img/svg/map-marker.svg',
-        iconImageSize: [66, 101],
+        iconImageSize: [54, 54],
         iconImageOffset: [-35, -85]
       })
 
@@ -78,6 +98,14 @@ if (catalogFilter) {
   var currentToggle = 0;
 
   if (document.body.clientWidth < 768 || document.body.clientWidth > 1439) {
+    for (var i = 0; i < catalogFilterToggle.length; i++) {
+      catalogFilterToggle[i].classList.add('catalog-filter__toggle--hide');
+    }
+
+    for (var i = 0; i < catalogFilterList.length; i++) {
+      catalogFilterList[i].classList.add('catalog-filter__select--hide');
+    }
+
     var getToggle = function (i) {
       catalogFilterToggle[i].addEventListener('click', function () {
         currentToggle = i;

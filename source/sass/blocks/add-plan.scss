@@ -3,52 +3,68 @@
   z-index: 2;
 
   margin-top: -30px;
-  margin-bottom: -33px;
   padding-bottom: 70px;
 
   background-color: #d4d9eb;
   border-radius: 30px 30px 0 0;
 }
 
+.add-plan__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .add-plan__title {
   position: relative;
 
   margin: 0;
-  padding-top: 30px;
-  padding-right: 65px;
-  padding-bottom: 29px;
+  padding-top: 27px;
+  padding-bottom: 32px;
 
   font-size: 24px;
   font-weight: 700;
   line-height: 24px;
   color: #1d2e5b;
-
-  &::after {
-    @include pseudo;
-
-    top: 39px;
-    right: 60px;
-
-    width: 5px;
-    height: 5px;
-
-    background-color: #1d2e5b;
-    border-radius: 50%;
-    box-shadow: 21px 0 0 rgba(#808285, 0.3), 42px 0 0 rgba(#808285, 0.3);
-  }
 }
 
 .add-plan__list {
   @include list-reset;
 
   &--step {
-    display: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right: 15px;
+    width: 50px;
+  }
+}
+
+.add-plan__item {
+  margin-bottom: 10px;
+
+  &--dot {
+    margin: 0;
+    margin-right: 16px;
+    width: 5px;
+    height: 5px;
+
+    background-color: #808285;
+    border-radius: 50%;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+
+  &--dot-active {
+    background-color: #1d2e5b;
   }
 }
 
 @media (min-width: $tablet-width) {
   .add-plan {
-    padding-bottom: 66px;
+    padding-bottom: 56px;
   }
 
   .add-plan__wrapper {
@@ -57,24 +73,36 @@
 
   .add-plan__title {
     padding-top: 43px;
-    padding-right: 75px;
     padding-bottom: 52px;
 
     font-size: 36px;
     line-height: 50px;
+  }
 
-    &::after {
-      top: 66px;
-      right: 68px;
+  .add-plan__list {
+    &--step {
+      margin-top: 32px;
+      margin-right: 0;
+      width: 73px;
+    }
+  }
 
-      box-shadow: 34px 0 0 rgba(#808285, 0.3), 68px 0 0 rgba(#808285, 0.3);
+  .add-plan__item {
+    margin-bottom: 40px;
+
+    &--dot {
+      margin-right: 29px;
+    }
+
+    &--route {
+      margin-bottom: 49px;
     }
   }
 }
 
 @media (min-width: $desktop-width) {
   .add-plan {
-    padding-bottom: 74px;
+    padding-bottom: 62px;
 
     border-radius: 60px 60px 0 0;
   }
@@ -86,55 +114,15 @@
   .add-plan__title {
     padding-top: 46px;
     padding-left: 70px;
-
-    &::after {
-      display: none;
-    }
   }
 
   .add-plan__list {
     &--step {
-      display: block;
-      margin-top: 14px;
-      margin-right: 46px;
-      margin-left: auto;
+      display: none;
     }
   }
 
   .add-plan__item {
-    &--step {
-      position: relative;
-
-      padding-bottom: 31px;
-      padding-left: 40px;
-
-      font-size: 20px;
-      font-weight: 400;
-      line-height: 13.78px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: rgba(#000000, 0.6);
-
-      &::before {
-        @include pseudo;
-
-        top: 5px;
-        left: -2px;
-
-        width: 5px;
-        height: 5px;
-
-        background-color: rgba(#808285, 0.3);
-        border-radius: 50%;
-      }
-    }
-
-    &--step-active {
-      color: #000000;
-
-      &::before {
-        background-color: #1d2e5b;
-      }
-    }
+    margin-bottom: 44px;
   }
 }
