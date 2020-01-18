@@ -212,6 +212,16 @@
     }
   }
 
+  .tariffs__option {
+    width: 400px;
+  }
+
+  .tariffs__price {
+    width: 150px;
+
+    text-align: right;
+  }
+
   .tariffs__link {
     position: relative;
 
@@ -286,6 +296,14 @@
 
       width: 444px;
     }
+  }
+
+  .tariffs__option {
+    width: 500px;
+  }
+
+  .tariffs__price {
+    width: 250px;
   }
 
   .tariffs__link {

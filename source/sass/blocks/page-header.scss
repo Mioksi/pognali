@@ -6,6 +6,10 @@
 
   background-color: #161c36;
 
+  &--menu-nojs {
+    position: static;
+  }
+
   &--menu-scroll {
     position: fixed;
     z-index: 10;
@@ -36,6 +40,15 @@
 
 .page-header__logo {
   display: block;
+
+  background-image: url("../img/logo-mobile-blue@1x.png");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/logo-mobile-blue@2x.png");
+    background-size: 100px auto;
+  }
 }
 
 .page-header__logo-wrapper {
@@ -144,6 +157,12 @@
   display: block;
 }
 
+.page-header--menu-nojs .page-header__logo-image,
+.page-header--menu-opened .page-header__logo-image,
+.page-header--menu-scroll .page-header__logo-image {
+  opacity: 0;
+}
+
 @media (min-width: $tablet-width) {
   .page-header {
     background-color: #182044;
@@ -165,6 +184,13 @@
 
   .page-header__logo {
     margin-top: 5px;
+
+    background-image: url("../img/logo-tablet-blue@1x.png");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/logo-tablet-blue@2x.png");
+      background-size: 166px auto;
+    }
   }
 
   .page-header__logo-image {
@@ -224,20 +250,6 @@
     z-index: 10;
 
     width: 100%;
-  }
-
-  .page-header--menu-closed .page-header__logo-wrapper--white {
-    display: block;
-  }
-
-  .page-header--menu-scroll .page-header__logo-wrapper--white,
-  .page-header--menu-nojs .page-header__logo-wrapper--white {
-    display: none;
-  }
-
-  .page-header--menu-opened .page-header__logo-wrapper--blue,
-  .page-header--menu-nojs .page-header__logo-wrapper--blue {
-    display: block;
   }
 
   .page-header--menu-closed .page-header__navigation,
@@ -300,6 +312,13 @@
 
   .page-header__logo {
     margin: 0;
+
+    background-image: url("../img/logo-desktop-blue@1x.png");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/logo-desktop-blue@2x.png");
+      background-size: 200px auto;
+    }
   }
 
   .page-header__logo-image {
