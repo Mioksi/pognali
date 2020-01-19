@@ -1,8 +1,14 @@
 .copyright__link {
+  position: relative;
+
   display: flex;
   flex-wrap: wrap;
 
   color: $grey;
+
+  &::before {
+    @include svg-ie;
+  }
 
   &:hover,
   &:focus {

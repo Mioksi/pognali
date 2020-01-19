@@ -370,7 +370,7 @@ input[type="number"] {
       width: 49px;
       height: 100%;
 
-      background-image: linear-gradient(to left, $white 65%, transparent);
+      background-image: linear-gradient(to left, $white 65%, rgba(255, 255, 255, 0));
     }
 
     &::after {
@@ -810,19 +810,26 @@ input[type="number"] {
 
   cursor: pointer;
 
-  &--arrow::after {
-    @include pseudo;
+  &--arrow {
+    &::after {
+      @include pseudo;
 
-    top: 17px;
-    right: 13px;
+      top: 17px;
+      right: 13px;
 
-    width: 12px;
-    height: 7px;
+      width: 12px;
+      height: 7px;
 
-    background-image: url("../img/svg/dropdown-form.svg");
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    opacity: 0.3;
+      background-image: url("../img/svg/dropdown-form.svg");
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      opacity: 0.3;
+    }
+
+    &:hover:not(.traveller-form__select--open),
+    &:focus:not(.traveller-form__select--open) {
+      border: 1px solid #959bb2;
+    }
   }
 
   &--selected {
@@ -835,12 +842,7 @@ input[type="number"] {
       width: 49px;
       height: 100%;
 
-      background-image: linear-gradient(to left, $white 65%, transparent);
-    }
-
-    &:hover,
-    &:focus {
-      border: 1px solid #959bb2;
+      background-image: linear-gradient(to left, $white 65%, rgba(255, 255, 255, 0));
     }
   }
 
@@ -1097,7 +1099,7 @@ input[type="number"] {
         width: 1px;
         height: 100%;
 
-        background-image: linear-gradient(to bottom, #d6d9e6 70%, transparent);
+        background-image: linear-gradient(to bottom, #d6d9e6 70%, rgba(255, 255, 255, 0));
       }
     }
 
