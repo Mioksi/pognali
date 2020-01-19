@@ -1,0 +1,122 @@
+.new-user {
+  padding-top: 107px;
+  padding-bottom: 29px;
+
+  background-color: #192144;
+  border-radius: 0 0 30px 30px;
+}
+
+.new-user__title {
+  display: block;
+  margin-bottom: 19px;
+
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  color: $orange;
+}
+
+.new-user__text {
+  margin: 0 auto;
+
+  text-align: center;
+  color: $white;
+
+  &--registration {
+    width: 200px;
+    margin-bottom: 29px;
+  }
+
+  &--contacts {
+    width: 230px;
+    margin-bottom: 17px;
+  }
+}
+
+.new-user__form {
+  margin-bottom: 29px;
+}
+
+.new-user__link {
+  text-decoration: underline;
+  color: #ffd74b;
+
+  &:hover,
+  &:focus {
+    color: $orange;
+  }
+
+  &:active {
+    color: rgba($orange, 0.3);
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .new-user {
+    padding-top: 127px;
+    padding-bottom: 65px;
+
+    border-radius: 0 0 60px 60px;
+  }
+
+  .new-user__title {
+    margin-bottom: 58px;
+
+    font-size: 45px;
+    line-height: 45px;
+  }
+
+  .new-user__text {
+    width: auto;
+
+    font-size: 28px;
+    line-height: 33px;
+
+    &--registration {
+      margin-bottom: 66px;
+    }
+
+    &--contacts {
+      margin-bottom: 40px;
+    }
+  }
+
+  .new-user__form {
+    margin-right: 35px;
+    margin-bottom: 56px;
+    margin-left: 35px;
+  }
+
+  .new-user__contacts {
+    margin-left: 35px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .new-user {
+    padding-top: 158px;
+    padding-bottom: 105px;
+  }
+
+  .new-user__text {
+    &--registration {
+      margin-bottom: 60px;
+      width: 610px;
+    }
+
+    &--contacts {
+      margin-bottom: 44px;
+    }
+  }
+
+  .new-user__contacts {
+    margin-left: 223px;
+  }
+
+  .new-user__form {
+    margin-right: 74px;
+    margin-bottom: 65px;
+    margin-left: 72px;
+  }
+}

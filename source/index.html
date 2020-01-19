@@ -2,275 +2,532 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Погнали: Главная страница</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Главная страница — Погнали</title>
+    <link href="css/style.min.css" rel="stylesheet">
+    <link rel="preload" href="fonts/bloggersans-light.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/bloggersans.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/bloggersans-medium.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts//bloggersans-bold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   </head>
   <body>
-    <header class="page-header">
-      <nav class="main-navigation">
-        <div class="main-navigation__scroll">
-          <a class="main-navigation__logo logo" aria-label="Главная страница">
-            <img class="logo__image" src="https://via.placeholder.com/100x19" width="100" height="19" alt="Логотип сервиса Погнали">
-          </a>
-          <button class="main-navigation__toggle" type="button">Открыть меню</button>
-        </div>
-        <div class="main-navigation__wrapper">
-          <ul class="main-navigation__list site-list">
-            <li class="main-navigation__item site-list__item">
-              <a class="site-list__link" href="#">О сервисе</a>
+    <div style="display:none">
+      <include src="build/img/svg/sprite.svg"></include>
+    </div>
+    <header class="page-header page-header--menu-closed page-header--menu-nojs">
+
+      <!-- .page-header--menu-nojs - оставляет меню открытым при выключенном JS -->
+      <!-- .page-header--menu-closed - закрывает меню, открытие происходит при нажатии на иконку «гамбургера» -->
+      <!-- .page-header--menu-opened - открывает меню, закрытие происходит при нажатии на иконку крестика -->
+      <!-- .page-header--menu-scroll - отвечает за прокручивание меню -->
+
+      <div class="page-header__wrapper container">
+        <a class="page-header__logo" aria-label="Главная страница сервиса «Погнали»">
+          <picture>
+            <source type="image/webp" media="(min-width: 1440px)" srcset="img/webp/logo-desktop-white@1x.webp 1x, img/webp/logo-desktop-white@2x.webp 2x">
+            <source type="image/webp" media="(min-width: 768px)" srcset="img/webp/logo-tablet-white@1x.webp 1x, img/webp/logo-tablet-white@2x.webp 2x">
+            <source type="image/webp" srcset="img/webp/logo-mobile-white@1x.webp 1x, img/webp/logo-mobile-white@2x.webp 2x">
+
+            <source media="(min-width: 1440px)" srcset="img/logo-desktop-white@1x.png 1x, img/logo-desktop-white@2x.png 2x">
+            <source media="(min-width: 768px)" srcset="img/logo-tablet-white@1x.png 1x, img/logo-tablet-white@2x.png 2x">
+            <img class="page-header__logo-image" src="img/logo-mobile-white@1x.png" srcset="img/logo-mobile-white@2x.png 2x" alt="Логотип сервиса «Погнали»">
+          </picture>
+        </a>
+        <button class="page-header__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
+        <nav class="page-header__navigation main-navigation">
+          <ul class="main-navigation__list">
+            <li class="main-navigation__item">
+              <a class="main-navigation__link"><span class="main-navigation__hover" data-hover="О сервисе">О сервисе</span></a>
             </li>
-            <li class="main-navigation__item site-list__item">
-              <a class="site-list__link" href="form.html">Направления</a>
+            <li class="main-navigation__item">
+              <a class="main-navigation__link" href="form.html"><span class="main-navigation__hover" data-hover="Направления">Направления</span></a>
             </li>
-            <li class="main-navigation__item site-list__item">
-              <a class="site-list__link" href="catalog.html">Попутчики</a>
+            <li class="main-navigation__item">
+              <a class="main-navigation__link" href="catalog.html"><span class="main-navigation__hover" data-hover="Попутчики">Попутчики</span></a>
             </li>
           </ul>
-          <div class="main-navigation__group">
-            <a class="main-navigation__button button" href="login.html">Авторизация</a>
-            <ul class="contast-list">
-              <li class="contast-list__item">
-                <a class="contast-list__link contast-list__link--phone" href="tel:88005558628">8 800 555-86-28</a>
-              </li>
-              <li class="contast-list__item">
-                <a class="contast-list__link contast-list__link--email" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
-              </li>
-            </ul>
-          </div>
-          <div class="main-navigation__social social">
-            <ul class="social__list">
-              <li class="social__item">
-                <a class="social__link" href="#"><span class="visually-hidden">Погнали в Facebook</span></a>
-              </li>
-              <li class="social__item">
-                <a class="social__link" href="#"><span class="visually-hidden">Погнали в VK</span></a>
-              </li>
-              <li class="social__item">
-                <a class="social__link" href="#"><span class="visually-hidden">Погнали в Instagram</span></a>
-              </li>
-            </ul>
-          </div>
+        </nav>
+        <a class="page-header__button button button--inner" href="login.html">Авторизация</a>
+        <div class="page-header__contacts contacts contacts--header">
+          <ul class="contacts__list">
+            <li class="contacts__item">
+              <a class="contacts__link contacts__link--phone" href="tel:88005558628">
+                <svg class="contacts__icon contacts__icon--phone" width="18" height="18">
+                  <use xlink:href="#contacts-phone"></use>
+                </svg>
+                8 800 555-86-28
+              </a>
+            </li>
+            <li class="contacts__item">
+              <a class="contacts__link contacts__link--mail" href="mailto:mail@htmlacademy.ru">
+                <svg class="contacts__icon contacts__icon--mail" width="18" height="13">
+                  <use xlink:href="#contacts-mail"></use>
+                </svg>
+                mail@htmlacademy.ru
+              </a>
+            </li>
+          </ul>
         </div>
-      </nav>
+        <div class="page-header__social social">
+          <ul class="social__list">
+            <li class="social__item">
+              <a class="social__link social__link--background" href="#">
+                <span class="visually-hidden">Погнали в Facebook</span>
+                <svg class="social__icon social__icon--color social__icon--facebook" width="11" height="21">
+                  <use xlink:href="#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link social__link--background" href="#">
+                <span class="visually-hidden">Погнали в VK</span>
+                <svg class="social__icon social__icon--color social__icon--vk" width="23" height="12">
+                  <use xlink:href="#vk"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link social__link--background" href="#">
+                <span class="visually-hidden">Погнали в Instagram</span>
+                <svg class="social__icon social__icon--color social__icon--instagram" width="18" height="18">
+                  <use xlink:href="#instagram"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
     <main class="page-main">
       <h1 class="visually-hidden">Сервис поиска попутчиков "Погнали"</h1>
       <section class="promo">
-        <h2 class="visually-hidden">Промо</h2>
-        <b class="promo__title">В путешествие с крутыми попутчиками!</b>
-        <div class="promo__wrapper user-block">
-          <ul class="user-block__list contacts-list">
-            <li class="contacts-list__item">
-              <a class="contacts-list__link contacts-list__link--phone" href="tel:88005558628">8 800 555-86-28</a>
+        <div class="promo__wrapper">
+          <div class="promo__header">
+            <div class="promo__header-wrapper container">
+              <h2 class="promo__title">В путешествие с крутыми попутчиками!</h2>
+            </div>
+          </div>
+          <div class="promo__user-block user-block container">
+            <ul class="user-block__list">
+              <li class="user-block__item">
+                <a class="user-block__link user-block__link--phone" href="tel:88005558628"><span class="visually-hidden">8 800 555-86-28</span></a>
+              </li>
+              <li class="user-block__item">
+                <a class="user-block__link user-block__link--mail" href="mailto:mail@htmlacademy.ru"><span class="visually-hidden">mail@htmlacademy.ru</span></a>
+              </li>
+            </ul>
+            <a class="user-block__button button button--inner" href="login.html">Авторизация</a>
+          </div>
+          <div class="promo__review review">
+            <div class="promo__review-wrapper container">
+              <blockquote class="review__content">
+                <p class="review__text">«Лучшее приложение, что я видел в жизни!»</p>
+                <cite class="review__author">Мурат Эльтазин главный&nbsp;редактор газеты «гаджетлайф»</cite>
+              </blockquote>
+            </div>
+          </div>
+          <div class="promo__service-use service-use container">
+            <ol class="service-use__list">
+              <li class="service-use__item">
+                <p class="service-use__text">Выберите направление</p>
+              </li>
+              <li class="service-use__item">
+                <p class="service-use__text">Изучите идеи путешественников</p>
+              </li>
+              <li class="service-use__item">
+                <p class="service-use__text">Находите тех, кто&nbsp;похож на вас</p>
+              </li>
+              <li class="service-use__item">
+                <p class="service-use__text">Путешествуйте вместе!</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+      <section class="page-main__about-service about-service">
+        <div class="about-service__wrapper container">
+          <h2 class="about-service__title">О сервисе</h2>
+          <p class="about-service__text">Любое путешествие веселее с&nbsp;попутчиками, которые на одной волне с тобой! Делитесь своими идеями путешествий и черпайте вдохновение в чужих. </p>
+          <p class="about-service__promo">
+            <b>А если найдете кого-то близкого по духу — скорее зовите в совместный трип!</b>
+          </p>
+          <a class="about-service__button button button--round button--arrow" href="#">Подробнее</a>
+        </div>
+      </section>
+      <section class="page-main__destination destination">
+        <div class="destination__wrapper container">
+          <div class="destination__content">
+            <h2 class="destination__title">Направления</h2>
+            <p class="destination__text">Мы не продаем туры и ничего не рекламируем. Люди сами пишут о странах, куда хотели бы отправиться и чем можно там заняться.</p>
+          </div>
+          <ul class="destination__list">
+            <li class="destination__item destination-item">
+              <a class="destination-item__link" href="#" aria-label="Тайланд">
+                <p class="destination-item__picture">
+                  <picture>
+                    <source type="image/webp" media="(min-width: 768px)" srcset="img/webp/thailand-desktop@1x.webp 1x, img/webp/thailand-desktop@2x.webp 2x">
+                    <source type="image/webp" srcset="img/webp/thailand-mobile@1x.webp 1x, img/webp/thailand-mobile@2x.webp 2x">
+                    <source media="(min-width: 768px)" srcset="img/thailand-desktop@1x.jpg 1x, img/thailand-desktop@2x.jpg 2x">
+                    <img class="destination-item__image" src="img/thailand-mobile@1x.jpg" srcset="img/thailand-mobile@2x.jpg 2x" alt="Тайланд">
+                  </picture>
+                </p>
+                <div class="destination-item__wrapper">
+                  <h3 class="destination-item__title">Таиланд</h3>
+                  <div class="destination-item__flag destination-item__flag--thailand"><span class="visually-hidden">Флаг Тайланда</span></div>
+                  <p class="destination-item__slogan">Джунгли зовут!</p>
+                  <span class="destination-item__counter destination-item__counter--icon">18321</span>
+                </div>
+              </a>
             </li>
-            <li class="contacts-list__item">
-              <a class="contacts-list__link contacts-list__link--email" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
+            <li class="destination__item destination-item">
+              <a class="destination-item__link" href="#" aria-label="Франция">
+                <p class="destination-item__picture">
+                  <picture>
+                    <source type="image/webp" media="(min-width: 768px)" srcset="img/webp/france-desktop@1x.webp 1x, img/webp/france-desktop@2x.webp 2x">
+                    <source type="image/webp" srcset="img/webp/france-mobile@1x.webp 1x, img/webp/france-mobile@2x.webp 2x">
+                    <source media="(min-width: 768px)" srcset="img/france-desktop@1x.jpg 1x, img/france-desktop@2x.jpg 2x">
+                    <img class="destination-item__image" src="img/france-mobile@1x.jpg" srcset="img/france-mobile@2x.jpg 2x" alt="Франция">
+                  </picture>
+                </p>
+                <div class="destination-item__wrapper">
+                  <h3 class="destination-item__title">Франция</h3>
+                  <div class="destination-item__flag destination-item__flag--france"><span class="visually-hidden">Флаг Франции</span></div>
+                  <p class="destination-item__slogan">Трэ бьен, манифик!</p>
+                  <span class="destination-item__counter destination-item__counter--icon">12518</span>
+                </div>
+              </a>
+            </li>
+            <li class="destination__item destination-item">
+              <a class="destination-item__link" href="#" aria-label="Чехия">
+                <p class="destination-item__picture">
+                  <picture>
+                    <source type="image/webp" media="(min-width: 768px)" srcset="img/webp/czech-desktop@1x.webp 1x, img/webp/czech-desktop@2x.webp 2x">
+                    <source type="image/webp" srcset="img/webp/czech-mobile@1x.webp 1x, img/webp/czech-mobile@2x.webp 2x">
+                    <source media="(min-width: 768px)" srcset="img/czech-desktop@1x.jpg 1x, img/czech-desktop@2x.jpg 2x">
+                    <img class="destination-item__image" src="img/czech-mobile@1x.jpg" srcset="img/czech-mobile@2x.jpg 2x" alt="Чехия">
+                  </picture>
+                </p>
+                <div class="destination-item__wrapper">
+                  <h3 class="destination-item__title">Чехия</h3>
+                  <div class="destination-item__flag destination-item__flag--czech"><span class="visually-hidden">Флаг Чехии</span></div>
+                  <p class="destination-item__slogan">Закоулки старой Европы</p>
+                  <span class="destination-item__counter destination-item__counter--icon">5326</span>
+                </div>
+              </a>
             </li>
           </ul>
-          <a class="user-block__button button" href="login.html">Авторизация</a>
-        </div>
-        <div class="promo__review review">
-          <blockquote class="review__content">
-            <p class="review__text">«Лучшее приложение, что я видел в жизни!»</p>
-            <cite class="review__author">Мурат Эльтазин главный редактор газеты «гаджетлайф»</cite>
-          </blockquote>
+          <a class="destination__button button button--round button--arrow" href="form.html">Показать все</a>
         </div>
       </section>
-      <section class="service-guide">
-        <h2 class="visually-hidden">Как пользоваться?</h2>
-        <ol class="service-guide__list">
-          <li class="service-guide__item">Выберите направление</li>
-          <li class="service-guide__item">Изучите идеи путешественников</li>
-          <li class="service-guide__item">Находите тех, кто похож на вас</li>
-          <li class="service-guide__item">Путешествуйте вместе!</li>
-        </ol>
+      <section class="page-main__companions companions">
+        <div class="companions__wrapper container">
+          <div class="companions__content">
+            <h2 class="companions__title">Попутчики</h2>
+            <p class="companions__text">Все мы индивидуальны и у каждого свой взгляд на идеальный отдых. Одному нужен пляж и коктейль, а другому маршрут для хайкинга.</p>
+            <p class="companions__promo">
+              <b>Теперь можно легко найти единомышленников!</b>
+            </p>
+          </div>
+          <ul class="companions__list">
+            <li class="companions__item companions-item">
+              <div class="companions-item__user-level user-level">
+                <div class="user-level__info">
+                  <svg class="user-level__bar" width="60" height="60" stroke-dasharray="175">
+                    <circle r="29" cx="30" cy="30" stroke-width="3"></circle>
+                  </svg>
+                  <span class="user-level__number">99</span>
+                  <span class="user-level__text">level</span>
+                </div>
+              </div>
+              <p class="companions-item__picture">
+                <picture>
+                  <source type="image/webp" srcset="img/webp/firsova-desktop@1x.webp 1x, img/webp/firsova-desktop@2x.webp 2x">
+
+                  <img class="companions-item__image" src="img/firsova-desktop@1x.jpg" srcset="img/firsova-desktop@2x.jpg 2x" alt="Фото попутчика">
+                </picture>
+              </p>
+              <div class="companions-item__wrapper">
+                <div class="companions-item__info">
+                  <a class="companions-item__link" href="#">
+                    <h3 class="companions-item__title">Таня Фирсова</h3>
+                  </a>
+                  <span class="companions-item__status companions-item__status--online"><span class="visually-hidden">Онлайн</span></span>
+                </div>
+                <p class="companions-item__tags">#ЗОЖ #ПП #Фитнес #пляж #авокадо #смузи</p>
+                <div class="companions-item__countries countries">
+                  <ul class="countries__list">
+                    <li class="countries__item countries__item--sri-lanka countries__item--hover">
+                      <span class="countries__name countries__name--hover">Шри-Ланка</span>
+                    </li>
+                    <li class="countries__item countries__item--thailand countries__item--hover">
+                      <span class="countries__name countries__name--hover">Тайланд</span>
+                    </li>
+                    <li class="countries__item countries__item--seychelles countries__item--hover">
+                      <span class="countries__name countries__name--hover">Сейшелы</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="companions-item__transport transport">
+                  <ul class="transport__list">
+                    <li class="transport__item">
+                      <svg class="transport__icon transport__icon--active" width="19" height="21">
+                        <use xlink:href="#plane"></use>
+                      </svg>
+                      <span class="transport__name transport__name--hover">Авиаперелет</span>
+                    </li>
+                    <li class="transport__item">
+                      <svg class="transport__icon" width="17" height="21">
+                        <use xlink:href="#bus"></use>
+                      </svg>
+                      <span class="transport__name transport__name--hover">Автотранспорт</span>
+                    </li>
+                    <li class="transport__item">
+                      <svg class="transport__icon" width="24" height="21">
+                        <use xlink:href="#bike"></use>
+                      </svg>
+                      <span class="transport__name transport__name--hover">Велосипед</span>
+                    </li>
+                    <li class="transport__item">
+                      <svg class="transport__icon" width="20" height="21">
+                        <use xlink:href="#run"></use>
+                      </svg>
+                      <span class="transport__name transport__name--hover">Пешком</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="companions__item companions-item">
+              <div class="companions-item__user-level user-level">
+                <div class="user-level__info">
+                  <svg class="user-level__bar" width="60" height="60" stroke-dasharray="150">
+                    <circle r="29" cx="30" cy="30" stroke-width="3"></circle>
+                  </svg>
+                  <span class="user-level__number">80</span>
+                  <span class="user-level__text">level</span>
+                </div>
+              </div>
+              <p class="companions-item__picture">
+                <picture>
+                  <source type="image/webp" srcset="img/webp/demin-desktop@1x.webp 1x, img/webp/demin-desktop@2x.webp 2x">
+
+                  <img class="companions-item__image" src="img/demin-desktop@1x.jpg" srcset="img/demin-desktop@2x.jpg 2x" alt="Фото попутчика">
+                </picture>
+              </p>
+              <div class="companions-item__wrapper">
+                <div class="companions-item__info">
+                  <a class="companions-item__link" href="#">
+                    <h3 class="companions-item__title">Петя Демин</h3>
+                  </a>
+                  <span class="companions-item__status companions-item__status--offline"><span class="visually-hidden">Оффлайн</span></span>
+                </div>
+                <p class="companions-item__tags">#бургер #бар #футбол #концерт #крафт</p>
+                <div class="companions-item__countries countries">
+                  <ul class="countries__list">
+                    <li class="countries__item countries__item--belgium countries__item--hover">
+                      <span class="countries__name countries__name--hover">Бельгия</span>
+                    </li>
+                    <li class="countries__item countries__item--czech countries__item--hover">
+                      <span class="countries__name countries__name--hover">Чехия</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="companions-item__transport transport">
+                  <ul class="transport__list">
+                    <li class="transport__item">
+                      <svg class="transport__icon transport__icon--active" width="19" height="21">
+                        <use xlink:href="#plane"></use>
+                      </svg>
+                      <span class="transport__name transport__name--hover">Авиаперелет</span>
+                    </li>
+                    <li class="transport__item">
+                      <svg class="transport__icon transport__icon--active" width="17" height="21">
+                        <use xlink:href="#bus"></use>
+                      </svg>
+                      <span class="transport__name transport__name--hover">Автотранспорт</span>
+                    </li>
+                    <li class="transport__item">
+                      <svg class="transport__icon" width="24" height="21">
+                        <use xlink:href="#bike"></use>
+                      </svg>
+                      <span class="transport__name transport__name--hover">Велосипед</span>
+                    </li>
+                    <li class="transport__item">
+                      <svg class="transport__icon transport__icon--active" width="20" height="21">
+                        <use xlink:href="#run"></use>
+                      </svg>
+                      <span class="transport__name transport__name--hover">Пешком</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <a class="companions__button  button button--round button--arrow" href="catalog.html">Показать всех</a>
+        </div>
       </section>
-      <section class="about-service">
-        <h2 class="about-service__title">О сервисе</h2>
-        <p class="about-service__text">Любое путешествие веселее с попутчиками, которые на одной волне с тобой! Делитесь своими идеями путешествий и черпайте вдохновение в чужих. </p>
+      <section class="page-main__tariffs tariffs">
+        <div class="page-main__tariffs-wrapper tariffs__add-profile">
+          <div class="tariffs__wrapper container">
+            <h2 class="tariffs__title">Добавьте свой профиль</h2>
+            <ol class="tariffs__list">
+              <li class="tariffs__item">
+                <span class="tariffs__option">Базовое размещение</span>
+                <span class="tariffs__price">Бесплатно</span>
+              </li>
+              <li class="tariffs__item">
+                <span class="tariffs__option">Вывод на первых позициях</span>
+                <span class="tariffs__price">99 руб./мес</span>
+              </li>
+              <li class="tariffs__item">
+                <span class="tariffs__option">Кастомный цвет карточки</span>
+                <span class="tariffs__price">59 руб./мес</span>
+              </li>
+            </ol>
+            <a class="tariffs__link tariffs__link--icon" href="tariffs.html">
+              <svg class="tariffs__icon" width="17" height="21">
+                <use xlink:href="#business"></use>
+              </svg>
+              Показать тарифы для бизнеса
+            </a>
+          </div>
+        </div>
+        <section class="tariffs__business modal-tariffs">
+          <h2 class="modal-tariffs__title">Бизнес-тарифы</h2>
+          <ul class="modal-tariffs__list">
+            <li class="modal-tariffs__item">
+              <span class="modal-tariffs__option">Реклама у блоггера</span>
+              <span class="modal-tariffs__price">300 000 руб./пост</span>
+            </li>
+            <li class="modal-tariffs__item">
+              <span class="modal-tariffs__option">Накрутка подписчиков</span>
+              <span class="modal-tariffs__price">от 1 руб./шт.</span>
+            </li>
+            <li class="modal-tariffs__item">
+              <span class="modal-tariffs__option">Лайки от ботов</span>
+              <span class="modal-tariffs__price">от 20 коп./лайк</span>
+            </li>
+            <li class="modal-tariffs__item">
+              <span class="modal-tariffs__option">Ваш продакт-плейсмент</span>
+              <span class="modal-tariffs__price">Индивидуально</span>
+            </li>
+          </ul>
+          <button class="modal-tariffs__button" type="button">Закрыть окно</button>
+        </section>
       </section>
-      <section class="destination">
-        <h2 class="destination__title">Направления</h2>
-        <p class="destination__text">Мы не продаем туры и ничего не рекламируем. Люди сами пишут о странах, куда хотели бы отправиться и чем можно там заняться.</p>
-        <ul class="destination__list">
-          <li class="destination__item destination__item--thailand">
-            <img class="destination__image" src="https://via.placeholder.com/270x110" width="270" height="110" alt="Тайланд">
-            <div class="destination__wrapper">
-              <h3 class="destination__title">Таиланд</h3>
-              <p class="destination__slogan">Джунгли зовут!</p>
-              <span class="destination__counter destination__counter--icon">18321</span>
-            </div>
-          </li>
-          <li class="destination__item destination__item--france">
-            <img class="destination__image" src="https://via.placeholder.com/270x110" width="270" height="110" alt="Франция">
-            <div class="destination__wrapper">
-              <h3 class="destination__title">Франция</h3>
-              <p class="destination__slogan">Трэ бьен, манифик!</p>
-              <span class="destination__counter destination__counter--icon">12518</span>
-            </div>
-          </li>
-          <li class="destination__item destination__item--czech">
-            <img class="destination__image" src="https://via.placeholder.com/270x110" width="270" height="110" alt="Чехия">
-            <div class="destination__wrapper">
-              <h3 class="destination__title">Чехия</h3>
-              <p class="destination__slogan">Закоулки старой Европы</p>
-              <span class="destination__counter destination__counter--icon">5326</span>
-            </div>
-          </li>
-        </ul>
-        <a class="destination__button destination__button--arrow button" href="form.html">Показать все</a>
-      </section>
-      <section class="companions">
-        <h2 class="companions__title">Попутчики</h2>
-        <p class="companions__text">Все мы индивидуальны и у каждого свой взгляд на идеальный отдых. Одному нужен пляж и коктейль, а другому маршрут для хайкинга.</p>
-        <b class="companions__accent">Теперь можно легко найти единомышленников!</b>
-        <ul class="companions__list">
-          <li class="companions__item">
-            <dl class="companions__level level">
-              <dt class="level__text">level</dt>
-              <dd class="level__number">99</dd>
-            </dl>
-            <img class="companions__image" src="https://via.placeholder.com/270x270" width="270" height="270" alt="Фото попутчика">
-            <div class="companions__wrapper">
-              <h3 class="companions__name">Таня Фирсова</h3>
-              <p class="companions__tags">#ЗОЖ #ПП #Фитнес #пляж #авокадо #смузи</p>
-              <ul class="companions__countries">
-                <li class="companions__country">
-                  <img class="companions__country-image" src="https://via.placeholder.com/35x24" alt="Шри-Ланка">
-                </li>
-                <li class="companions__country">
-                  <img class="companions__country-image" src="https://via.placeholder.com/35x24" alt="Тайланд">
-                </li>
-                <li class="companions__country">
-                  <img class="companions__country-image" src="https://via.placeholder.com/35x24" alt="Сейшельские Острова">
-                </li>
-              </ul>
-            </div>
-            <ul class="companions__transport">
-              <li class="companions__item companions__item--plane">
-                <span class="visually-hidden">На самолёте</span>
+      <section class="page-main__new-user new-user">
+        <div class="new-user__wrapper container">
+          <h2 class="visually-hidden">Новый пользователь</h2>
+          <b class="new-user__title">Заинтересовались?</b>
+          <p class="new-user__text new-user__text--registration">Зарегистрируйтесь, это&nbsp;быстро и бесплатно! <br> Уже зарегистрированы? Тогда скорее <a class="new-user__link" href="login.html">авторизуйтесь</a>.</p>
+          <form class="new-user__form registration-form" action="https://echo.htmlacademy.ru" method="post">
+            <label class="registration-form__label visually-hidden" for="email-field">Ваш email</label>
+            <input class="registration-form__input" type="email" name="email" id="email-field" placeholder="E-mail" required>
+            <button class="registration-form__button" type="submit">Регистрация</button>
+          </form>
+          <p class="new-user__text new-user__text--contacts">Остались вопросы? Мы&nbsp;с&nbsp;радостью на них ответим!</p>
+          <div class="new-user__contacts contacts">
+            <ul class="contacts__list">
+              <li class="contacts__item">
+                <a class="contacts__link contacts__link--phone" href="tel:88005558628">
+                  <svg class="contacts__icon contacts__icon--phone" width="18" height="18">
+                    <use xlink:href="#contacts-phone"></use>
+                  </svg>
+                  8 800 555-86-28
+                </a>
               </li>
-              <li class="companions__item companions__item--bus">
-                <span class="visually-hidden">На автобусе</span>
-              </li>
-              <li class="companions__item companions__item--bicycle">
-                <span class="visually-hidden">На велосипеде</span>
-              </li>
-              <li class="companions__item companions__item--runner">
-                <span class="visually-hidden">Пешком</span>
+              <li class="contacts__item">
+                <a class="contacts__link contacts__link--mail" href="mailto:mail@htmlacademy.ru">
+                  <svg class="contacts__icon contacts__icon--mail" width="18" height="11">
+                    <use xlink:href="#contacts-mail"></use>
+                  </svg>
+                  mail@htmlacademy.ru
+                </a>
               </li>
             </ul>
-          </li>
-          <li class="companions__item">
-            <dl class="companions__level level">
-              <dt class="level__text">level</dt>
-              <dd class="level__number">80</dd>
-            </dl>
-            <img class="companions__image" src="https://via.placeholder.com/270x270" width="270" height="270" alt="Фото попутчика">
-            <div class="companions__wrapper">
-              <h3 class="companions__name">Петя Демин</h3>
-              <p class="companions__tags">#бургер #бар #футбол #концерт #крафт</p>
-              <ul class="companions__countries">
-                <li class="companions__country">
-                  <img class="companions__country-image" src="https://via.placeholder.com/35x24" alt="Бельгия">
-                </li>
-                <li class="companions__country">
-                  <img class="companions__country-image" src="https://via.placeholder.com/35x24" alt="Чехия">
-                </li>
-              </ul>
-            </div>
-            <ul class="companions__transport">
-              <li class="companions__item companions__item--plane">
-                <span class="visually-hidden">На самолёте</span>
-              </li>
-              <li class="companions__item companions__item--bus">
-                <span class="visually-hidden">На автобусе</span>
-              </li>
-              <li class="companions__item companions__item--bicycle">
-                <span class="visually-hidden">На велосипеде</span>
-              </li>
-              <li class="companions__item companions__item--runner">
-                <span class="visually-hidden">Пешком</span>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <a class="companions__button companions__button--arrow button" href="catalog.html">Показать все</a>
+          </div>
+        </div>
       </section>
-      <section class="add-profile add-profile--icon">
-        <h2 class="add-profile__title">Добавьте свой профиль</h2>
-        <ol class="add-profile__list">
-          <li class="add-profile__item">Базовое размещение Бесплатно</li>
-          <li class="add-profile__item">Вывод на первых позициях 99 руб./мес</li>
-          <li class="add-profile__item">Кастомный цвет карточки 59 руб./мес</li>
-        </ol>
-        <a class="add-profile__link" href="tariffs.html">Показать тарифы для бизнеса</a>
-      </section>
-      <section class="registration">
-        <h2 class="visually-hidden">Регистрация на сайте</h2>
-        <b class="registration__title">Заинтересовались?</b>
-        <p class="registration__text">Зарегистрируйтесь, это быстро и бесплатно! Уже зарегистрированы? Тогда скорее <a class="registration__link" href="login.html">авторизуйтесь</a>.</p>
-        <form class="registration__form form-registration" action="https://echo.htmlacademy.ru" method="post">
-          <label class="form-registration__label visually-hidden" for="email-field">Ваш email</label>
-          <input type="email" name="email" id="email-field" placeholder="E-mail">
-          <button class="registration__button" type="submit"><span class="visually-hidden">Регистрация</span></button>
-        </form>
-      </section>
-      <section class="contacts">
-        <h2 class="visually-hidden">Контакты</h2>
-        <p class="contacts__text">Остались вопросы? Мы с радостью на них ответим!</p>
-        <ul class="contacts__list contast-list">
-          <li class="contast-list__item">
-            <a class="contast-list__link contast-list__link--phone" href="tel:88005558628">8 800 555-86-28</a>
-          </li>
-          <li class="contast-list__item">
-            <a class="contast-list__link contast-list__link--email" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
-          </li>
-        </ul>
-      </section>
-      <section class="map">
+      <section class="page-main__map map">
         <h2 class="visually-hidden">Наш адрес</h2>
-        <div class="map__wrapper">
-          <address class="map__address">ул. Большая Конюшенная, 19/8</address>
-          <a class="map__button map__button--arrow" href="#">Проложить маршрут</a>
+        <div class="map__location">
+          <div class="map__wrapper container">
+            <address class="map__address">ул. Большая Конюшенная, 19/8</address>
+            <a class="map__button" href="https://yandex.ru/maps/-/CGtFNJ1n">
+              <svg class="map__icon" width="10" height="14">
+                <use xlink:href="#triangle-arrow-right"></use>
+              </svg>
+              Проложить маршрут
+            </a>
+          </div>
         </div>
-        <img class="map__image" src="https://via.placeholder.com/320x546" width="320" height="546" alt="Адрес компании: ул. Большая Конюшенная, 19/8, Санкт-Петербург">
+        <div class="map__interactive" id="yandexmap">
+          <div class="map__picture">
+            <picture>
+              <source type="image/webp" media="(min-width: 1440px)" srcset="img/webp/map-desktop@1x.webp 1x, img/webp/map-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 768px)" srcset="img/webp/map-tablet@1x.webp 1x, img/webp/map-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/webp/map-mobile@1x.webp 1x, img/webp/map-mobile@2x.webp 2x">
+
+              <source media="(min-width: 1440px)" srcset="img/map-desktop@1x.jpg 1x, img/map-desktop@2x.jpg 2x">
+              <source media="(min-width: 768px)" srcset="img/map-tablet@1x.jpg 1x, img/map-tablet@2x.jpg 2x">
+              <img class="map__image" src="https://via.placeholder.com/320x546" alt="Адрес компании: ул. Большая Конюшенная, 19/8, Санкт-Петербург">
+            </picture>
+          </div>
+        </div>
       </section>
     </main>
     <footer class="page-footer">
-      <div class="page-footer__wrapper">
-        <a class="page-footer__logo logo" aria-label="Главная страница">
-          <img class="logo__image logo__image--blue" src="https://via.placeholder.com/100x19" width="100" height="19" alt="Логотип сервиса Погнали">
+      <div class="page-footer__wrapper container">
+        <a class="page-footer__logo" aria-label="Главная страница сервиса «Погнали»">
+          <picture>
+            <source type="image/webp" media="(min-width: 1440px)" srcset="img/webp/logo-desktop-blue@1x.webp 1x, img/webp/logo-desktop-blue@2x.webp 2x">
+            <source type="image/webp" media="(min-width: 768px)" srcset="img/webp/logo-tablet-blue@1x.webp 1x, img/webp/logo-tablet-blue@2x.webp 2x">
+            <source type="image/webp" srcset="img/webp/logo-mobile-blue@1x.webp 1x, img/webp/logo-mobile-blue@2x.webp 2x">
+
+            <source media="(min-width: 1440px)" srcset="img/logo-desktop-blue@1x.png 1x, img/logo-desktop-blue@2x.png 2x">
+            <source media="(min-width: 768px)" srcset="img/logo-tablet-blue@1x.png 1x, img/logo-tablet-blue@2x.png 2x">
+            <img class="page-footer__logo-image" src="img/logo-mobile-blue@1x.png" srcset="img/logo-mobile-blue@2x.png 2x" alt="Логотип сервиса «Погнали»">
+          </picture>
         </a>
-        <div class="page-footer__social social social--footer">
+        <div class="page-footer__social social">
           <ul class="social__list">
             <li class="social__item">
-              <a class="social__link" href="#"><span class="visually-hidden">Погнали в Facebook</span></a>
+              <a class="social__link" href="#">
+                <span class="visually-hidden">Погнали в Facebook</span>
+                <svg class="social__icon social__icon--facebook" width="11" height="21">
+                  <use xlink:href="#facebook"></use>
+                </svg>
+              </a>
             </li>
             <li class="social__item">
-              <a class="social__link" href="#"><span class="visually-hidden">Погнали в VK</span></a>
+              <a class="social__link" href="#">
+                <span class="visually-hidden">Погнали в VK</span>
+                <svg class="social__icon social__icon--vk" width="23" height="12">
+                  <use xlink:href="#vk"></use>
+                </svg>
+              </a>
             </li>
             <li class="social__item">
-              <a class="social__link" href="#"><span class="visually-hidden">Погнали в Instagram</span></a>
+              <a class="social__link" href="#">
+                <span class="visually-hidden">Погнали в Instagram</span>
+                <svg class="social__icon social__icon--instagram" width="18" height="18">
+                  <use xlink:href="#instagram"></use>
+                </svg>
+              </a>
             </li>
           </ul>
         </div>
         <div class="page-footer__copyright copyright">
-          <b class="copyright__text">Разработано</b>
-          <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">
-            <img class="copyright__link-image" src="https://via.placeholder.com/27x34" width="27" height="34" alt="HTML Academy">
+          <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive" aria-label="Разработано HTML Academy">
+            <b class="copyright__text">Разработано</b>
+            <img class="copyright__icon" src="img/svg/htmlacademy.svg" width="27" height="34" alt="HTML Academy">
           </a>
         </div>
       </div>
     </footer>
-    <section class="modal-tariffs">
-      <h2 class="modal-tariffs__title">Бизнес тарифы</h2>
-      <ul class="modal-tariffs__list">
-        <li class="modal-tariffs__item">Реклама у блоггера 300 000 руб./пост</li>
-        <li class="modal-tariffs__item">Накрутка подписчиков от 1 руб./шт.</li>
-        <li class="modal-tariffs__item">Лайки от ботов от 20 коп./лайк</li>
-        <li class="modal-tariffs__item">Ваш продакт-плейсмент Индивидуально</li>
-      </ul>
-      <button class="modal-tariffs__button" type="button">Закрыть окно</button>
-    </section>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=5dd7b717-6791-493e-bfca-36f7bec94721&lang=ru_RU"></script>
+    <script src="js/lib/picturefill.min.js"></script>
+    <script src="js/script.min.js"></script>
   </body>
 </html>

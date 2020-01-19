@@ -1,0 +1,75 @@
+.user-block {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.user-block__list {
+  @include list-reset;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.user-block__link {
+  position: relative;
+
+  display: inline-block;
+  vertical-align: top;
+
+  width: 40px;
+  height: 40px;
+
+  background-color: $orange;
+  border-radius: 50%;
+
+  &--mail {
+    background-color: #ffbd30;
+  }
+
+  &::before {
+    @include pseudo;
+
+    top: 12px;
+    left: 12px;
+  }
+
+  &--phone::before {
+    width: 18px;
+    height: 18px;
+
+    background-image: url("../img/svg/topmenu-phone.svg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+  }
+
+  &--mail::before {
+    width: 18px;
+    height: 14px;
+
+    background-image: url("../img/svg/topmenu-mail.svg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: #f26926;
+  }
+
+  &:active::before {
+    opacity: 0.3;
+  }
+}
+
+.user-block__button {
+  padding-top: 7px;
+  padding-bottom: 3px;
+  width: 189px;
+}
+
+@media (min-width: $tablet-width) {
+  .user-block {
+    display: none;
+  }
+}

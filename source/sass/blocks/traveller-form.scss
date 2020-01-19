@@ -1,0 +1,2003 @@
+.traveller-form__add-plan {
+  position: relative;
+  z-index: 2;
+
+  margin-top: -30px;
+}
+
+.traveller-form__list {
+  @include list-reset;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &--transport {
+    align-items: flex-start;
+    justify-content: center;
+    padding: 14px 55px;
+    width: 270px;
+  }
+
+  &--options {
+    flex-direction: column;
+  }
+
+  &--select {
+    margin-bottom: 5px;
+  }
+}
+
+.traveller-form__item {
+  position: relative;
+
+  margin: 0;
+
+  &--file {
+    margin-top: 19px;
+    margin-bottom: 33px;
+  }
+
+  &--tags {
+    margin-bottom: 18px;
+  }
+
+  &--option {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 21px;
+  }
+
+  &--checkbox {
+    margin-bottom: 25px;
+  }
+
+  &--date {
+    margin-bottom: 16px;
+    padding-top: 12px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+
+    border-top: 1px solid #cbced9;
+    border-bottom: 1px solid #cbced9;
+  }
+
+  &--select {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 22px;
+
+    &:not(:last-child)::before {
+      @include pseudo;
+
+      bottom: 5px;
+      right: 50px;
+
+      width: 5px;
+      height: 10px;
+
+      background-image: url("../img/svg/small-arrow.svg");
+      background-position: 0 0;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &--plans {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: 25px;
+
+    &:last-child {
+      margin-bottom: 22px;
+    }
+
+    &::before {
+      @include pseudo;
+
+      top: 10px;
+      left: -14px;
+
+      width: 15px;
+      height: 2px;
+
+      background-color: #1d2e5b;
+      border-radius: 1px;
+    }
+
+    &:first-of-type::after {
+      @include pseudo;
+
+      top: 11px;
+      left: -14px;
+
+      width: 2px;
+      height: 281px;
+
+      background-color: #1d2e5b;
+    }
+  }
+}
+
+.traveller-form__group {
+  position: relative;
+
+  &--transport {
+    border-radius: 10px;
+    border: 1px solid #cbced9;
+  }
+
+  &--calendar {
+    margin-bottom: 22px;
+  }
+}
+
+.traveller-form__legend {
+  margin: 0;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #1d2e5b;
+
+  &--transport {
+    position: absolute;
+    top: -8px;
+    left: 0;
+    right: 0;
+
+    width: 106px;
+    margin: auto;
+    padding: 0 12px;
+
+    text-align: center;
+
+    background-color: #edeff6;
+  }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  appearance: textfield;
+}
+
+.traveller-form__input {
+  padding: 0;
+
+  &--number {
+    padding: 0 30px;
+    width: 220px;
+    height: 43px;
+
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 13.37px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #1d2e5b;
+
+    background-color: $white;
+    border: 1px solid #cbced9;
+    border-radius: 4px;
+
+    &:hover {
+      border: 1px solid #959bb2;
+    }
+
+    &:focus {
+      border: 1px solid #161c35;
+      outline: none;
+    }
+  }
+
+  &--transport {
+    &:checked + .traveller-form__label--transport .traveller-form__icon {
+      opacity: 1;
+    }
+
+    &:active + .traveller-form__label--transport .traveller-form__icon {
+      opacity: 0.15;
+    }
+  }
+
+  + .traveller-form__label--checkbox::before {
+    @include pseudo;
+
+    top: 0;
+    left: 0;
+
+    width: 26px;
+    height: 26px;
+
+    background-color: $white;
+    border: 1px solid #cbced9;
+    border-radius: 4px;
+  }
+
+  &:checked + .traveller-form__label--checkbox::after {
+    @include pseudo;
+
+    top: 8px;
+    left: 9px;
+
+    width: 9px;
+    height: 9px;
+
+    background-image: url("../img/svg/tick.svg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+  }
+
+  + .traveller-form__label--checkbox:hover::before,
+  &:focus + .traveller-form__label--checkbox::before {
+    border: 1px solid #959bb2;
+  }
+
+  + .traveller-form__label--checkbox:active::after {
+    opacity: 0.3;
+  }
+
+  &:focus + label {
+    outline: 5px auto -webkit-focus-ring-color;
+  }
+
+  &:focus + .traveller-form__label--transport {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  }
+
+  + .traveller-form__label--checkbox:active::before {
+    background-color: #e2e5f1;
+    border: none;
+  }
+}
+
+.traveller-form__label {
+  position: relative;
+
+  display: block;
+
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1d2e5b;
+
+  cursor: pointer;
+
+  &--file {
+    padding-top: 6px;
+    padding-right: 15px;
+    padding-bottom: 4px;
+    padding-left: 15px;
+    width: 270px;
+
+    font-size: 17px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+
+    background-color: #dfe3f0;
+    border-radius: 20px;
+
+    &:hover,
+    &:focus {
+      background-color: #d1d7e9;
+    }
+
+    &:active {
+      color: rgba(#1d2e5b, 0.3);
+    }
+  }
+
+  &--textarea {
+    position: absolute;
+    top: -7px;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+    padding: 0 12px;
+    width: 70px;
+
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+
+    background-color: #edeff6;
+  }
+
+  &--transport {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 33px;
+    height: 33px;
+
+    background-color: $white;
+    border-radius: 50%;
+
+    &:hover {
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    &:active {
+      background-color: #e2e5f1;
+      box-shadow: none;
+    }
+  }
+
+  &--number {
+    margin-bottom: 8px;
+
+    font-weight: 500;
+    line-height: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  &--checkbox {
+    padding-top: 7px;
+    padding-left: 39px;
+
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 15px;
+    text-transform: none;
+    color: #444444;
+  }
+
+  &--plans {
+    flex-grow: 1;
+    margin-bottom: 18px;
+    padding-left: 11px;
+
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 18px;
+    text-transform: none;
+
+    &::before {
+      @include pseudo;
+
+      top: 0;
+      right: 0;
+
+      width: 49px;
+      height: 100%;
+
+      background-image: linear-gradient(to left, $white 65%, rgba(255, 255, 255, 0));
+    }
+
+    &::after {
+      @include pseudo;
+
+      top: 8px;
+      left: -3px;
+
+      width: 6px;
+      height: 6px;
+
+      background-color: #1d2e5b;
+      border-radius: 50%;
+    }
+  }
+}
+
+.traveller-form__icon {
+  position: relative;
+
+  fill: #1d2e5b;
+  opacity: 0.15;
+
+  &--plane {
+    left: -2px;
+  }
+}
+
+.traveller-form__note {
+  margin-left: auto;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2.15px;
+  color: #1d2e5b;
+
+  opacity: 0.3;
+}
+
+.traveller-form__textarea {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #444444;
+
+  background-color: transparent;
+  border: 1px solid #cbced9;
+  border-radius: 10px;
+  outline: none;
+
+  resize: none;
+
+  &--tags {
+    padding-top: 22px;
+    padding-bottom: 10px;
+    padding-right: 24px;
+    padding-left: 24px;
+    width: 270px;
+    height: 89px;
+
+    &:hover {
+      border-color: #aeb4cb;
+    }
+  }
+
+  &--plans {
+    position: relative;
+    z-index: 1;
+
+    padding: 7px 13px;
+    width: 220px;
+    height: 220px;
+
+    &:hover {
+      border-color: #959bb2;
+    }
+  }
+
+  &::placeholder {
+    color: rgba(#444444, 0.3);
+  }
+
+  &:focus {
+    border-color: #161c35;
+  }
+
+  &:invalid {
+    border: 1px solid #f47e7e;
+
+    + .traveller-form__invalid {
+      display: block;
+    }
+  }
+}
+
+.traveller-form__invalid {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  display: none;
+  padding: 10px;
+  width: 100%;
+
+  font-weight: 400;
+  color: #ff0000;
+
+  background-color: #ffefef;
+}
+
+.traveller-form__toggle {
+  position: absolute;
+
+  padding: 0;
+  width: 20px;
+  height: 20px;
+
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+
+  &--option {
+    top: 37px;
+
+    &:hover::before,
+    &:hover::after,
+    &:focus::before,
+    &:focus::after {
+      background-color: rgba(#606161, 0.4);
+    }
+
+    &:active::before,
+    &:active::after {
+      background-color: rgba(#606161, 0.1);
+    }
+  }
+
+  &--remove {
+    left: 10px;
+  }
+
+  &--add {
+    right: 10px;
+  }
+
+  &--arrow {
+    top: 13px;
+
+    &:hover::before,
+    &:focus::before {
+      opacity: 0.5;
+    }
+
+    &:active::before {
+      opacity: 0.1;
+    }
+  }
+
+  &--previous {
+    left: -4px;
+  }
+
+  &--next {
+    right: -5px;
+  }
+
+  &--remove::before {
+    @include pseudo;
+
+    top: 8px;
+    left: 4px;
+
+    width: 14px;
+    height: 2px;
+
+    background-color: rgba(#606161, 0.2);
+  }
+
+  &--add::before,
+  &--add::after {
+    @include pseudo;
+
+    top: 8px;
+    left: 2px;
+
+    width: 14px;
+    height: 2px;
+
+    background-color: rgba(#606161, 0.3);
+  }
+
+  &--add::after {
+    transform: rotate(-90deg);
+  }
+
+  &--previous::before {
+    @include pseudo;
+
+    top: 1px;
+    left: 4px;
+
+    width: 9px;
+    height: 18px;
+
+    background-image: url("../img/svg/month-arrow-left.svg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+  }
+
+  &--next::before {
+    @include pseudo;
+
+    top: 1px;
+    right: 5px;
+
+    width: 9px;
+    height: 18px;
+
+    background-image: url("../img/svg/month-arrow-right.svg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+  }
+}
+
+.traveller-form__date {
+  display: block;
+
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+  color: #1d2e5b;
+}
+
+.traveller-form__calendar {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+.traveller-form__field {
+  height: 31px;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #444444;
+
+  &--weekend {
+    color: #ff5c23;
+  }
+}
+
+.traveller-form__day {
+  display: none;
+}
+
+.traveller-form__value {
+  padding: 0;
+
+  border: 1px solid #cbced9;
+}
+
+.traveller-form__button {
+  padding: 0;
+
+  border: none;
+
+  cursor: pointer;
+
+  &--date {
+    position: relative;
+
+    width: 100%;
+    padding: 6px;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: center;
+    color: #444444;
+
+    background-color: #edeff6;
+
+    &:hover:not(:disabled) {
+      color: $white;
+
+      background-color: #1d2e5b;
+    }
+
+    &:hover:not(:disabled)::before {
+      @include pseudo;
+      top: -1px;
+      left: -1px;
+      z-index: 1;
+
+      width: 33px;
+      height: 32px;
+
+      border: 2px solid #ff5c23;
+    }
+  }
+
+  &--active {
+    color: $white;
+
+    background-color: #101d41;
+  }
+
+  &--disabled {
+    opacity: 0.3;
+
+    background-color: $white;
+
+    cursor: default;
+  }
+
+  &--delete {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+
+    width: 21px;
+    height: 21px;
+
+    background-color: #edeff6;
+    border-radius: 50%;
+
+    &::before,
+    &::after {
+      @include pseudo;
+
+      top: 10px;
+      left: 5px;
+
+      width: 11px;
+      height: 2px;
+
+      background-color: #000000;
+      opacity: 0.1;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+
+    &:hover::before,
+    &:hover::after,
+    &:focus::before,
+    &:focus::after {
+      opacity: 0.3;
+    }
+
+    &:active::before,
+    &:active::after {
+      opacity: 0.05;
+    }
+  }
+
+  &--submit {
+    margin-bottom: 11px;
+    padding: 5px 30px;
+    width: 230px;
+
+    border-radius: 20px;
+  }
+}
+
+.traveller-form__staying,
+.traveller-form__next-month {
+  display: none;
+}
+
+.traveller-form__link {
+  display: block;
+  width: 230px;
+
+  &--next {
+    margin-bottom: 14px;
+    padding-top: 7px;
+    padding-bottom: 3px;
+
+    border-radius: 20px;
+  }
+
+  &--previous {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #161c35;
+
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+}
+
+.traveller-form__select {
+  position: relative;
+
+  padding: 11px;
+  padding-left: 10px;
+  width: 168px;
+  overflow: hidden;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+  letter-spacing: 1.4px;
+  color: #1d2e5b;
+
+  background-color: transparent;
+  border: 1px solid #cbced9;
+  border-radius: 4px;
+
+  cursor: pointer;
+
+  &--arrow {
+    &::after {
+      @include pseudo;
+
+      top: 17px;
+      right: 13px;
+
+      width: 12px;
+      height: 7px;
+
+      background-image: url("../img/svg/dropdown-form.svg");
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      opacity: 0.3;
+    }
+
+    &:hover:not(.traveller-form__select--open),
+    &:focus:not(.traveller-form__select--open) {
+      border: 1px solid #959bb2;
+    }
+  }
+
+  &--selected {
+    &::before {
+      @include pseudo;
+
+      top: 0;
+      right: 0;
+
+      width: 49px;
+      height: 100%;
+
+      background-image: linear-gradient(to left, $white 65%, rgba(255, 255, 255, 0));
+    }
+  }
+
+  &--option {
+    width: 220px;
+
+    &::before {
+      @include pseudo;
+
+      top: 16px;
+      right: 48px;
+
+      width: 8px;
+      height: 8px;
+
+      background-color: #ffffff;
+      border: 1px solid #cbced9;
+      border-radius: 50%;
+    }
+  }
+
+  &--add {
+    width: 220px;
+
+    background-color: #edeff6;
+    border: none;
+
+    &::before,
+    &::after {
+      @include pseudo;
+    }
+
+    &::before {
+      top: 13px;
+      right: 13px;
+
+      width: 14px;
+      height: 14px;
+
+      background-image: url("../img/svg/qty-plus.svg");
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      opacity: 0.3;
+    }
+
+    &::after {
+      top: 16px;
+      right: 48px;
+
+      width: 8px;
+      height: 8px;
+
+      background-color: #edeff6;
+      border: 1px solid #cbced9;
+      border-radius: 50%;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: #dfe3f0;
+    }
+
+    &:active {
+      color: rgba(#1d2e5b, 0.3);
+    }
+  }
+
+  &--open {
+    color: #ffffff;
+
+    background-color: #1d2e5b;
+
+    + .traveller-form__button {
+      &--delete {
+        display: none;
+      }
+    }
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      top: 16px;
+      right: 17px;
+
+      width: 9px;
+      height: 9px;
+
+      background-image: url("../img/svg/menu-close.svg");
+      opacity: 0.3;
+    }
+
+    &:hover::after,
+    &:focus::after {
+      opacity: 1;
+    }
+
+    &:active::after {
+      opacity: 0.1;
+    }
+  }
+}
+
+.traveller-form__picture {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  width: 52px;
+
+  border: 1px solid #cbced9;
+  border-radius: 4px;
+
+  &::before {
+    @include pseudo;
+
+    top: 16px;
+    left: -6px;
+
+    width: 8px;
+    height: 8px;
+
+    background-color: #1d2e5b;
+    border-radius: 50%;
+  }
+
+  &--plans {
+    display: block;
+    width: auto;
+    margin-left: auto;
+
+    border: none;
+    border-radius: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.traveller-form__image {
+  width: 35px;
+  height: 24px;
+}
+
+.traveller-form__dropdown-select {
+  position: absolute;
+  z-index: 2;
+  top: 40px;
+  left: 0;
+
+  display: none;
+  width: 220px;
+
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 20px 50px rgba(29, 46, 91, 0.1), 0 0 0 1px #cbced9;
+
+  &--show {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
+
+.traveller-form__alphabet-list {
+  @include list-reset;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.traveller-form__alphabet-item {
+  border-right: 1px solid #cbced9;
+  border-bottom: 1px solid #cbced9;
+
+  &:nth-child(5n) {
+    border-right: none;
+  }
+}
+
+.traveller-form__alphabet-button {
+  padding: 0;
+  width: 43px;
+  height: 40px;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 1.4px;
+
+  background-color: $white;
+  border: none;
+
+  &--active {
+    background-color: #edeff6;
+  }
+}
+
+.traveller-form__country-list {
+  @include list-reset;
+
+  padding-top: 55px;
+  padding-bottom: 16px;
+  padding-left: 20px;
+}
+
+.traveller-form__country-link {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+
+  color: #444444;
+
+  &:hover,
+  &:focus {
+    color: #1d2e5b;
+  }
+
+  &:active {
+    color: rgba(#1d2e5b, 0.3);
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .traveller-form__list {
+    &--transport {
+      padding-top: 24px;
+      padding-bottom: 25px;
+      width: 308px;
+    }
+
+    &--options {
+      margin-bottom: 33px;
+    }
+
+    &--select {
+      position: relative;
+
+      padding-top: 41px;
+      padding-bottom: 30px;
+
+      border-top: 1px solid #d6d9e6;
+
+      &::before {
+        @include pseudo;
+
+        top: 0;
+        right: 135px;
+
+        width: 1px;
+        height: 100%;
+
+        background-image: linear-gradient(to bottom, #d6d9e6 70%, rgba(255, 255, 255, 0));
+      }
+    }
+
+    &--plans {
+      margin-bottom: 23px;
+      padding-top: 27px;
+      padding-right: 31px;
+
+      border-top: 1px solid #d6d9e6;
+    }
+  }
+
+  .traveller-form__item {
+    &--file {
+      order: 3;
+      margin-top: 52px;
+      margin-bottom: 51px;
+    }
+
+    &--tags {
+      order: 4;
+    }
+
+    &--transport {
+      margin-right: 8px;
+
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+    }
+
+    &--option {
+      align-items: center;
+      margin-bottom: 26px;
+
+      border-top: 1px solid #d6d9e6;
+    }
+
+    &--duration {
+      order: 2;
+    }
+
+    &--checkbox {
+      order: 1;
+    }
+
+    &--date {
+      margin-bottom: 30px;
+      padding-top: 33px;
+      padding-right: 45px;
+      padding-bottom: 32px;
+      padding-left: 45px;
+    }
+
+    &--select {
+      margin-bottom: 15px;
+      padding-bottom: 0;
+      width: 100%;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    &--plans {
+      margin-bottom: 43px;
+
+      &::before {
+        left: auto;
+        top: 17px;
+        right: -35px;
+
+        width: 15px;
+        height: 15px;
+
+        border-radius: 50%;
+      }
+
+      &:first-of-type::after {
+        left: auto;
+        top: 19px;
+        right: -29px;
+
+        width: 3px;
+        height: 261px;
+      }
+    }
+  }
+
+  .traveller-form__group {
+    &--transport {
+      order: 1;
+    }
+
+    &--calendar {
+      margin-bottom: 46px;
+    }
+  }
+
+  .traveller-form__legend {
+    &--transport {
+      top: auto;
+      bottom: -8px;
+
+      width: 153px;
+
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 18px;
+      letter-spacing: 2px;
+    }
+  }
+
+  .traveller-form__input {
+    &--number {
+      padding: 0 45px;
+
+      font-size: 20px;
+      line-height: 18px;
+
+      width: 100%;
+      height: 70px;
+    }
+
+    + .traveller-form__label--checkbox::before {
+      width: 36px;
+      height: 36px;
+    }
+
+    &:checked + .traveller-form__label--checkbox::after {
+      top: 11px;
+      left: 13px;
+
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  .traveller-form__label {
+    &--file {
+      padding-top: 20px;
+      padding-bottom: 22px;
+      width: 618px;
+
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 18px;
+      letter-spacing: 2px;
+
+      border-radius: 10px;
+    }
+
+    &--transport {
+      width: 43px;
+      height: 43px;
+    }
+
+    &--textarea {
+      top: auto;
+      bottom: -3px;
+
+      width: 83px;
+
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 18px;
+      letter-spacing: 2px;
+    }
+
+    &--number {
+      margin-top: 23px;
+      margin-bottom: 26px;
+
+      font-size: 20px;
+      line-height: 18px;
+      letter-spacing: 2px;
+    }
+
+    &--checkbox {
+      padding-top: 7px;
+      padding-bottom: 11px;
+      padding-left: 58px;
+
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 18px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #1d2e5b;
+    }
+
+    &--plans {
+      flex-grow: 0;
+      margin-top: 13px;
+      margin-bottom: 45px;
+      padding-left: 0;
+
+      font-size: 30px;
+      font-weight: 700;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .traveller-form__note {
+    font-size: 20px;
+    line-height: 18px;
+    letter-spacing: 2px;
+  }
+
+  .traveller-form__icon {
+    &--plane {
+      width: 19px;
+      height: 21px;
+    }
+
+    &--bus {
+      width: 17px;
+      height: 21px;
+    }
+
+    &--bike {
+      width: 24px;
+      height: 21px;
+    }
+
+    &--on-foot {
+      width: 20px;
+      height: 21px;
+    }
+  }
+
+  .traveller-form__textarea {
+    &--tags {
+      padding-top: 32px;
+      padding-left: 39px;
+      width: 618px;
+      height: 94px;
+
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    &--plans {
+      padding: 15px 17px;
+      width: 499px;
+      height: 142px;
+
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  .traveller-form__invalid {
+    padding: 16px 24px;
+
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .traveller-form__toggle {
+    &--option {
+      top: 93px;
+    }
+
+    &--remove {
+      left: 23px;
+    }
+
+    &--add {
+      right: 19px;
+    }
+
+    &--arrow {
+      top: 25px;
+
+      height: 34px;
+    }
+
+    &--previous {
+      left: 15px;
+    }
+
+    &--next {
+      right: 15px;
+    }
+
+    &--remove::before {
+      left: 0;
+
+      width: 20px;
+
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    &--add::before,
+    &--add::after {
+      left: 0;
+
+      width: 20px;
+
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    &--previous::before {
+      left: 0;
+
+      width: 19px;
+      height: 34px;
+    }
+
+    &--next::before {
+      right: 0;
+
+      width: 19px;
+      height: 34px;
+    }
+  }
+
+  .traveller-form__date {
+    font-size: 36px;
+  }
+
+  .traveller-form__field {
+    height: 35px;
+
+    font-size: 18px;
+    line-height: 30px;
+    text-transform: none;
+    letter-spacing: 1.8px;
+  }
+
+  .traveller-form__day {
+    display: inline;
+  }
+
+  .traveller-form__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  .traveller-form__button {
+    &--date {
+      padding: 25px;
+
+      font-size: 20px;
+      letter-spacing: 2px;
+
+      &:hover:not(:disabled)::before {
+        width: 78px;
+        height: 71px;
+
+        border-width: 4px;
+      }
+    }
+
+    &--delete {
+      top: 23px;
+      right: -2px;
+
+      background-color: transparent;
+
+      &::before,
+      &::after {
+        top: 10px;
+        left: 0;
+
+        width: 24px;
+      }
+    }
+
+    &--submit {
+      position: relative;
+
+      padding-top: 28px;
+      padding-right: 50px;
+      padding-bottom: 29px;
+      padding-left: 32px;
+      width: 285px;
+
+      font-size: 24px;
+      line-height: 24px;
+      text-align: left;
+      text-transform: none;
+
+      &::before {
+        @include pseudo;
+
+        top: 34px;
+        right: 29px;
+
+        border: 7px solid transparent;
+        border-left: 10px solid #1d2e5b;
+      }
+    }
+  }
+
+  .traveller-form__link {
+    position: relative;
+
+    font-size: 24px;
+    line-height: 24px;
+    text-align: left;
+    text-transform: none;
+
+    &--next {
+      padding-top: 28px;
+      padding-right: 33px;
+      padding-bottom: 29px;
+      padding-left: 33px;
+      width: 285px;
+
+      &::after {
+        @include pseudo;
+
+        top: 34px;
+        right: 29px;
+
+        border: 7px solid transparent;
+        border-left: 10px solid #1d2e5b;
+      }
+    }
+
+    &--previous {
+      padding-left: 31px;
+      width: 178px;
+
+      &::after {
+        @include pseudo;
+
+        top: 6px;
+        left: -6px;
+
+        border: 7px solid transparent;
+        border-right: 10px solid #1d2e5b;
+      }
+    }
+  }
+
+  .traveller-form__select {
+    padding-left: 23px;
+    width: 369px;
+    height: 70px;
+    overflow: visible;
+
+    font-size: 20px;
+    letter-spacing: 2px;
+
+    &--arrow::after {
+      top: 30px;
+      right: 27px;
+
+      width: 17px;
+      height: 9px;
+    }
+
+    &--option {
+      &::before {
+        top: 25px;
+        right: -34px;
+
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    &--add {
+      &::before {
+        top: 24px;
+        right: 27px;
+
+        width: 18px;
+        height: 18px;
+      }
+
+      &::after {
+        top: 25px;
+        right: -34px;
+
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    &--open {
+      + .traveller-form__button {
+        &--delete {
+          display: block;
+        }
+      }
+
+      &::before {
+        display: block;
+      }
+
+      &::after {
+        top: 25px;
+
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
+  .traveller-form__picture {
+    padding-left: 52px;
+    width: auto;
+
+    border: none;
+
+    &--plans {
+      padding-left: 0;
+    }
+
+    &::before {
+      top: 26px;
+      left: 18px;
+
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  .traveller-form__image {
+    width: 70px;
+    height: 47px;
+  }
+
+  .traveller-form__dropdown-select {
+    top: 71px;
+
+    padding-top: 33px;
+    padding-right: 73px;
+    padding-bottom: 35px;
+    padding-left: 26px;
+    width: 575px;
+
+    box-shadow: 0 20px 50px rgba(29, 46, 91, 0.1);
+
+    &--show {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &::before {
+      @include pseudo;
+
+      top: 0;
+      right: 207px;
+
+      width: 1px;
+      height: 100%;
+
+      background-color: #d6d9e6;
+    }
+  }
+
+  .traveller-form__alphabet-list {
+    width: 261px;
+    border: 1px solid #cbced9;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .traveller-form__alphabet-item {
+    &:nth-child(5n) {
+      border-right: 1px solid #cbced9;
+    }
+  }
+
+  .traveller-form__alphabet-button {
+    width: 51px;
+    height: 68px;
+
+    font-size: 20px;
+    letter-spacing: 2px;
+
+    &--active {
+      color: $white;
+
+      background-color: #1d2e5b;
+    }
+  }
+
+  .traveller-form__country-list {
+    padding: 0;
+  }
+
+  .traveller-form__country-link {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .traveller-form__list {
+    &--transport {
+      width: 384px;
+    }
+
+    &--tags {
+      margin-left: 64px;
+    }
+
+    &--options {
+      flex-direction: row;
+      margin-bottom: 18px;
+      padding-top: 30px;
+
+      border-top: 1px solid #d6d9e6;
+    }
+
+    &--select {
+      padding-top: 62px;
+      padding-bottom: 37px;
+
+      &::before {
+        right: 225px;
+      }
+    }
+
+    &--plans {
+      margin-bottom: 34px;
+      padding-top: 72px;
+    }
+  }
+
+  .traveller-form__item {
+    &--file {
+      order: 2;
+      margin: 0;
+      margin-right: 95px;
+      margin-bottom: 26px;
+      width: 100%;
+    }
+
+    &--tags {
+      order: 3;
+      margin-bottom: 0;
+    }
+
+    &--transport {
+      margin-right: 0;
+    }
+
+    &--option {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 14px;
+      width: 490px;
+
+      border: none;
+    }
+
+    &--checkbox {
+      margin-top: 18px;
+      margin-left: auto;
+    }
+
+    &--date {
+      margin-bottom: 10px;
+    }
+
+    &--plans {
+      &::before {
+        right: 187px;
+      }
+
+      &:first-of-type::after {
+        right: 193px;
+      }
+    }
+  }
+
+  .traveller-form__group {
+    &--transport {
+      order: 3;
+      margin-left: auto;
+    }
+
+    &--calendar {
+      margin-bottom: 56px;
+    }
+  }
+
+  .traveller-form__input {
+    &--number {
+      width: 181px;
+    }
+  }
+
+  .traveller-form__label {
+    &--file {
+      margin-left: auto;
+      padding-top: 14px;
+      padding-bottom: 15px;
+      width: 190px;
+
+      border-radius: 0 0 10px 10px;
+    }
+
+    &--textarea {
+      margin-right: auto;
+      margin-left: 22px;
+    }
+
+    &--number {
+      width: 195px;
+      margin-right: 25px;
+    }
+
+    &--plans {
+      min-width: 100px;
+    }
+  }
+
+  .traveller-form__note {
+    order: 1;
+    margin-left: 37px;
+
+    opacity: 1;
+  }
+
+  .traveller-form__label-text {
+    &--device {
+      display: none;
+    }
+  }
+
+  .traveller-form__textarea {
+    &--tags {
+      width: 730px;
+    }
+
+    &--plans {
+      padding-top: 22px;
+      padding-left: 24px;
+      width: 730px;
+    }
+  }
+
+  .traveller-form__invalid {
+    width: 730px;
+  }
+
+  .traveller-form__toggle {
+    &--option {
+      top: 26px;
+    }
+
+    &--remove {
+      left: 240px;
+    }
+
+    &--add {
+      right: 109px;
+    }
+
+    &--previous {
+      left: 0;
+    }
+
+    &--next {
+      right: 0;
+    }
+  }
+
+  .traveller-form__field {
+    padding-bottom: 14px;
+    padding-left: 15px;
+
+    text-align: left;
+  }
+
+  .traveller-form__button {
+    &--date {
+      padding: 26px;
+      padding-top: 0;
+      padding-left: 13px;
+      width: 142px;
+      height: 70px;
+
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 30px;
+      text-align: left;
+      vertical-align: top;
+
+      &:hover:not(:disabled)::before {
+        width: 145px;
+      }
+    }
+
+    &--delete {
+      top: 22px;
+      right: 6px;
+    }
+
+    &--staying {
+      padding-bottom: 0;
+    }
+  }
+
+  .traveller-form__staying {
+    display: block;
+  }
+
+  .traveller-form__next-month {
+    display: inline;
+  }
+
+  .traveller-form__link {
+    &--previous::after {
+      left: -11px;
+    }
+  }
+
+  .traveller-form__select {
+    width: 730px;
+
+    &--option {
+      &::before {
+        right: -53px;
+      }
+    }
+
+    &--add {
+      &::after {
+        top: 24px;
+        right: -53px;
+      }
+    }
+  }
+
+  .traveller-form__picture {
+    padding-left: 85px;
+
+    &--plans {
+      padding-right: 85px;
+    }
+
+    &::before {
+      left: 37px;
+    }
+  }
+
+  .traveller-form__dropdown-select {
+    padding-right: 106px;
+    padding-bottom: 17px;
+    width: 730px;
+
+    &::before {
+      right: 239px;
+    }
+  }
+
+  .traveller-form__alphabet-list {
+    width: 362px;
+
+    border: none;
+  }
+
+  .traveller-form__alphabet-item {
+    margin-right: 15px;
+    margin-bottom: 15px;
+
+    border: none;
+
+    &:nth-child(5n) {
+      margin-right: 0;
+
+      border: none;
+    }
+  }
+
+  .traveller-form__alphabet-button {
+    width: 60px;
+    height: 70px;
+
+    border: 1px solid #cbced9;
+    border-radius: 4px;
+
+    &:hover,
+    &:focus {
+      border: 1px solid #959bb2;
+    }
+
+    &:active {
+      color: $white;
+
+      background-color: #1d2e5b;
+      border: 1px solid #1d2e5b;
+    }
+  }
+}

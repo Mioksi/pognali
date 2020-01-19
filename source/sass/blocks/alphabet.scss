@@ -1,0 +1,60 @@
+.alphabet__list {
+  @include list-reset;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 225px;
+}
+
+.alphabet__button {
+  padding: 12px;
+  width: 45px;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+
+  background-color: $white;
+  border: none;
+  box-shadow: 0 0 0 1px #cbced9;
+
+  cursor: pointer;
+
+  &--active {
+    color: $white;
+
+    background-color: #1d2e5b;
+    box-shadow: none;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .alphabet__list {
+    width: 390px;
+  }
+
+  .alphabet__item {
+    margin-bottom: 23px;
+  }
+
+  .alphabet__button {
+    padding: 0;
+    width: 78px;
+    height: 60px;
+
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 24px;
+    color: rgba(#192144, 0.2);
+
+    background-color: transparent;
+    box-shadow: none;
+
+    &--active {
+      color: #192144;
+    }
+  }
+}

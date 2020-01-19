@@ -1,0 +1,102 @@
+.button {
+  position: relative;
+
+  display: block;
+  width: 270px;
+
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+  color: #1d2e5b;
+
+  background-color: #ffd74b;
+
+  cursor: pointer;
+
+  &--inner {
+    padding: 12px 20px;
+    padding-bottom: 8px;
+
+    font-size: 17px;
+    line-height: 30px;
+    text-transform: uppercase;
+    color: #161c35;
+
+    border-radius: 35px;
+
+    &:active {
+      color: rgba(#161c35, 0.3);
+    }
+  }
+
+  &--round {
+    padding: 24px;
+    padding-bottom: 20px;
+
+    text-align: left;
+
+    border-radius: 10px;
+  }
+
+  &--arrow {
+    &::after {
+      @include pseudo;
+
+      top: 24px;
+      right: 16px;
+
+      border: 7px solid transparent;
+      border-left: 10px solid #1d2e5b;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    background-color: #ffbd30;
+  }
+
+  &:active {
+    color: rgba(#1d2e5b, 0.3);
+  }
+
+  &:active::after {
+    opacity: 0.3;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 24px;
+    line-height: 24px;
+
+    &--inner {
+      padding-top: 12px;
+      width: 189px;
+
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    &--round {
+      padding-top: 30px;
+      padding-right: 34px;
+      padding-bottom: 27px;
+      padding-left: 34px;
+      width: 274px;
+
+      border-radius: 20px;
+    }
+
+    &--arrow {
+      &::after {
+        top: 34px;
+        right: 28px;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    &--round {
+      width: 274px;
+    }
+  }
+}

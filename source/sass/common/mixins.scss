@@ -1,0 +1,22 @@
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+@mixin pseudo {
+  content: "";
+
+  position: absolute;
+}
+
+@mixin svg-ie {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

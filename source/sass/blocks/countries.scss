@@ -1,0 +1,242 @@
+.countries {
+  padding: 0 10px;
+  width: 270px;
+
+  &--catalog {
+    padding: 0;
+  }
+}
+
+.countries__sub-title {
+  position: relative;
+
+  margin: 0;
+  margin-bottom: 14px;
+
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+
+  &::before {
+    @include pseudo;
+
+    top: 8px;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background-color: #edeff6;
+  }
+}
+
+.countries__title-wrapper {
+  position: relative;
+
+  margin-left: 15px;
+  padding: 0 11px;
+
+  background-color: white;
+}
+
+.countries__list {
+  @include list-reset;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &--catalog {
+    flex-direction: column;
+    justify-content: start;
+    margin-left: 25px;
+  }
+}
+
+.countries__item {
+  position: relative;
+
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 35px 24px;
+
+  &--hover {
+    margin-right: 19px;
+    width: 35px;
+    height: 24px;
+  }
+
+  &--thailand {
+    background-image: url("../img/svg/flag-thailand.svg");
+  }
+
+  &--france {
+    background-image: url("../img/svg/flag-france.svg");
+  }
+
+  &--czech {
+    background-image: url("../img/svg/flag-czech.svg");
+  }
+
+  &--sri-lanka {
+    background-image: url("../img/svg/flag-sri-lanka.svg");
+  }
+
+  &--seychelles {
+    background-image: url("../img/svg/flag-seychelles.svg");
+  }
+
+  &--belgium {
+    background-image: url("../img/svg/flag-belgium.svg");
+  }
+
+  &--usa {
+    background-image: url("../img/svg/flag-usa.svg");
+  }
+
+  &--australia {
+    background-image: url("../img/svg/flag-australia.svg");
+  }
+
+  &--dominicana {
+    background-image: url("../img/svg/flag-dominica.svg");
+  }
+
+  &--united-kingdom {
+    background-image: url("../img/svg/flag-united-kingdom.svg");
+  }
+
+  &--germany {
+    background-image: url("../img/flag-germany.png");
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+
+  &--catalog {
+    margin-bottom: 6px;
+
+    background-size: 26px 18px;
+  }
+
+  &--hover:hover .countries__name {
+    display: block;
+  }
+}
+
+.countries__name {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  color: $white;
+
+  &--catalog {
+    padding-top: 4px;
+    padding-bottom: 3px;
+    padding-left: 40px;
+
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: #1d2e5b;
+  }
+
+  &--hover {
+    position: absolute;
+
+    top: 39px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: none;
+    padding: 21px 17px;
+
+    white-space: nowrap;
+
+    background-color: #101d41;
+    border-radius: 4px;
+
+    &::before {
+      @include pseudo;
+
+      top: -8px;
+      left: 43%;
+
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid #111e42;
+      border-left: 8px solid transparent;
+    }
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .countries {
+    width: 285px;
+
+    &--catalog {
+      width: auto;
+    }
+  }
+
+  .countries__sub-title {
+    margin-bottom: 16px;
+  }
+
+  .countries__title-wrapper {
+    margin-left: 72px;
+  }
+
+  .countries__list {
+    &--catalog {
+      flex-direction: row;
+      margin-left: 36px;
+    }
+  }
+
+  .countries__item {
+    &--catalog {
+      margin-right: 27px;
+      margin-bottom: 0;
+
+      background-size: 35px 24px;
+    }
+  }
+
+  .countries__name {
+    &--catalog {
+      padding-left: 46px;
+
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .countries__sub-title {
+    display: none;
+  }
+
+  .countries__list {
+    &--catalog {
+      flex-direction: column;
+      margin-left: 70px;
+    }
+  }
+
+  .countries__item {
+    &--catalog {
+      margin-right: 0;
+      margin-bottom: 7px;
+    }
+  }
+
+  .countries__name {
+    &--catalog {
+      padding-left: 54px;
+    }
+  }
+}

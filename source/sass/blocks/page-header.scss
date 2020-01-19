@@ -1,0 +1,365 @@
+.page-header {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 1;
+
+  background-color: #161c36;
+
+  &--menu-nojs {
+    position: static;
+  }
+
+  &--menu-scroll {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+
+    background-color: $white;
+  }
+}
+
+.page-header__wrapper {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding-top: 27px;
+  padding-bottom: 20px;
+
+  &--inner {
+    padding-top: 19px;
+  }
+}
+
+.page-header__logo {
+  display: block;
+
+  background-image: url("../img/logo-mobile-blue@1x.png");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/logo-mobile-blue@2x.png");
+    background-size: 100px auto;
+  }
+}
+
+.page-header__logo-wrapper {
+  display: none;
+}
+
+.page-header__logo-image {
+  width: 100px;
+  height: 19px;
+}
+
+.page-header--menu-scroll .page-header__logo-wrapper--blue {
+  display: block;
+}
+
+.page-header--menu-scroll .page-header__logo-wrapper--white {
+  display: none;
+}
+
+.page-header__navigation {
+  margin: 0 auto;
+  margin-top: 64px;
+  margin-bottom: 49px;
+}
+
+.page-header__button {
+  margin-bottom: 51px;
+}
+
+.page-header__contacts {
+  margin-bottom: 30px;
+}
+
+.page-header__social {
+  margin: 0 auto;
+  padding-bottom: 8px;
+}
+
+.page-header__toggle {
+  position: absolute;
+  top: 19px;
+  right: 23px;
+
+  padding: 0;
+  width: 30px;
+  height: 30px;
+
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px;
+
+  cursor: pointer;
+
+  &--inner {
+    top: 11px;
+  }
+}
+
+.page-header--menu-closed .page-header__toggle::before {
+  @include pseudo;
+
+  top: 12px;
+  left: 3px;
+
+  width: 25px;
+  height: 3px;
+
+  background-color: $white;
+  border-radius: 1px;
+  box-shadow: 0 8px 0 0 $white;
+}
+
+.page-header--menu-scroll.page-header--menu-closed .page-header__toggle::before {
+  background-color: #cccccc;
+  box-shadow: 0 6px 0 0 #cccccc;
+}
+
+.page-header--menu-opened .page-header__toggle {
+  &::before,
+  &::after {
+    @include pseudo;
+
+    top: 16px;
+    left: 2px;
+
+    width: 27px;
+    height: 3px;
+
+    background-color: #cccccc;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+.page-header--menu-closed .page-header__button {
+  display: none;
+}
+
+.page-header--menu-opened .page-header__button {
+  display: block;
+}
+
+.page-header--menu-nojs .page-header__logo-image,
+.page-header--menu-opened .page-header__logo-image,
+.page-header--menu-scroll .page-header__logo-image {
+  opacity: 0;
+}
+
+@media (min-width: $tablet-width) {
+  .page-header {
+    background-color: #182044;
+
+    &--inner {
+      background-color: #161c35;
+    }
+
+    &--menu-scroll {
+      background-color: $white;
+    }
+  }
+
+  .page-header__wrapper {
+    flex-direction: row;
+    padding-top: 40px;
+    padding-bottom: 38px;
+  }
+
+  .page-header__logo {
+    margin-top: 5px;
+
+    background-image: url("../img/logo-tablet-blue@1x.png");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/logo-tablet-blue@2x.png");
+      background-size: 166px auto;
+    }
+  }
+
+  .page-header__logo-image {
+    width: 166px;
+    height: 42px;
+  }
+
+  .page-header__toggle {
+    top: 49px;
+    right: 48%;
+  }
+
+  .page-header__button {
+    order: 1;
+    margin: 0;
+    margin-left: auto;
+  }
+
+  .page-header__navigation {
+    order: 2;
+    margin: 0;
+    margin-top: 89px;
+    margin-bottom: 129px;
+    margin-left: 57px;
+  }
+
+  .page-header__contacts {
+    order: 3;
+    margin-left: 57px;
+    margin-bottom: 115px;
+    width: 100%;
+  }
+
+  .page-header__social {
+    order: 4;
+    margin: 0;
+    margin-left: 60px;
+    padding-bottom: 36px;
+  }
+
+  .page-header--menu-closed .page-header__button,
+  .page-header--menu-opened .page-header__button {
+    display: block;
+  }
+}
+
+@media (max-width: $device-width-only) {
+  .page-header {
+    &--menu-nojs,
+    &--menu-opened {
+      background-color: $white;
+    }
+  }
+
+  .page-header.page-header--menu-opened {
+    position: fixed;
+    z-index: 10;
+
+    width: 100%;
+  }
+
+  .page-header--menu-closed .page-header__navigation,
+  .page-header--menu-closed .page-header__contacts,
+  .page-header--menu-closed .page-header__social {
+    display: none;
+  }
+
+  .page-header--menu-opened .page-header__navigation,
+  .page-header--menu-opened .page-header__contacts,
+  .page-header--menu-opened .page-header__social {
+    display: block;
+  }
+
+  .page-header--menu-nojs .page-header__toggle {
+    display: none;
+  }
+
+  .page-header--menu-nojs .page-header__navigation,
+  .page-header--menu-nojs .page-header__button,
+  .page-header--menu-nojs .page-header__contacts,
+  .page-header--menu-nojs .page-header__social {
+    display: block;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .page-header {
+    background-color: #161c34;
+
+    &--menu-scroll {
+      background-color: $white;
+    }
+
+    &--menu-nojs {
+      .page-header__logo-image {
+        opacity: 1;
+      }
+    }
+  }
+
+  .page-header__wrapper {
+    position: relative;
+
+    align-items: center;
+    padding-top: 47px;
+    padding-bottom: 18px;
+
+    &::before {
+      @include pseudo;
+
+      top: 74px;
+      left: 300px;
+
+      width: 60px;
+      height: 2px;
+
+      background-color: $white;
+      border-radius: 1px;
+    }
+
+    &--scroll::before {
+      background-color: #192144;
+    }
+  }
+
+  .page-header__logo {
+    margin: 0;
+
+    background-image: url("../img/logo-desktop-blue@1x.png");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/logo-desktop-blue@2x.png");
+      background-size: 200px auto;
+    }
+  }
+
+  .page-header__logo-image {
+    width: 200px;
+    height: 52px;
+  }
+
+  .page-header__logo-wrapper {
+    &--white {
+      display: block;
+    }
+  }
+
+  .page-header__navigation {
+    order: 1;
+    margin: 0;
+    margin-right: auto;
+    margin-left: 145px;
+  }
+
+  .page-header__contacts {
+    order: 2;
+    margin: 0;
+    margin-bottom: 5px;
+    width: auto;
+  }
+
+  .page-header__button {
+    order: 3;
+    margin: 0;
+    margin-bottom: 5px;
+  }
+
+  .page-header__social,
+  .page-header__toggle {
+    display: none;
+  }
+}

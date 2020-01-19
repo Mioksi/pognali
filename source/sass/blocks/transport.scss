@@ -1,0 +1,183 @@
+.transport {
+  &--catalog {
+    .transport__list {
+      margin-left: 10px;
+      width: auto;
+    }
+
+    .transport__item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      width: 33px;
+      height: 32px;
+
+      background-color: #edeff6;
+      border-radius: 50%;
+    }
+  }
+}
+
+.transport__sub-title {
+  margin: 0;
+  margin-bottom: 14px;
+
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.transport__title-wrapper {
+  position: relative;
+
+  padding: 0 12px;
+
+  background-color: $white;
+}
+
+.transport__list {
+  @include list-reset;
+
+  display: flex;
+  flex-wrap: wrap;
+  width: 150px;
+}
+
+.transport__item {
+  position: relative;
+
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+
+  &:hover .transport__name--hover {
+    display: block;
+  }
+}
+
+.transport__icon {
+  fill: #1d2e5b;
+  opacity: 0.15;
+
+  &--active {
+    opacity: 1;
+  }
+
+  &--plane {
+    width: 14px;
+    height: 16px;
+  }
+
+  &--bus {
+    width: 13px;
+    height: 16px;
+  }
+
+  &--bike {
+    width: 19px;
+    height: 17px;
+  }
+
+  &--on-foot {
+    width: 15px;
+    height: 17px;
+  }
+}
+
+.transport__name {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  color: $white;
+
+  opacity: 1;
+
+  &--hover {
+    position: absolute;
+    z-index: 2;
+
+    top: 39px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: none;
+    padding: 21px 17px;
+
+    white-space: nowrap;
+
+    background-color: #101d41;
+    border-radius: 4px;
+
+    &::before {
+      @include pseudo;
+
+      top: -8px;
+      left: 45%;
+
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid #111e42;
+      border-left: 8px solid transparent;
+    }
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .transport {
+    &--catalog {
+      .transport__list {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
+
+      .transport__item {
+        width: 31px;
+        height: 31px;
+
+        background-color: transparent;
+        border-radius: 0;
+      }
+    }
+  }
+
+  .transport__sub-title {
+    display: none;
+  }
+
+  .transport__icon {
+    &--plane {
+      width: 19px;
+      height: 21px;
+    }
+
+    &--bus {
+      width: 17px;
+      height: 21px;
+    }
+
+    &--bike {
+      width: 24px;
+      height: 21px;
+    }
+
+    &--on-foot {
+      width: 20px;
+      height: 21px;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .transport {
+    &--catalog {
+      .transport__list {
+        flex-direction: row;
+      }
+    }
+  }
+
+  .transport__list {
+    flex-direction: row;
+  }
+}

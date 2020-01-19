@@ -1,0 +1,241 @@
+.map__location {
+  position: relative;
+  z-index: 1;
+
+  padding-top: 67px;
+  padding-bottom: 35px;
+
+  background-color: #ffd74b;
+  border-radius: 0 0 30px 30px;
+}
+
+.map__address {
+  position: relative;
+
+  margin-bottom: 31px;
+  padding-top: 2px;
+  padding-left: 61px;
+  width: 210px;
+
+  font-size: 16px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 22px;
+  text-transform: uppercase;
+  color: #192144;
+
+  &::before {
+    @include pseudo;
+
+    top: 0;
+    left: 0;
+
+    width: 45px;
+    height: 45px;
+
+    background-color: #121936;
+    border-radius: 50%;
+
+    background-image: url("../img/svg/contacts-location.svg");
+    background-position: 16px 13px;
+    background-repeat: no-repeat;
+    background-size: 14px 22px;
+  }
+}
+
+.map__button {
+  position: relative;
+
+  display: block;
+  padding-top: 20px;
+  padding-right: 30px;
+  padding-bottom: 18px;
+  padding-left: 20px;
+  width: 270px;
+
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 18px;
+  color: #1d2e5b;
+
+  border: 3px solid #192144;
+
+  border-radius: 10px;
+
+  &:hover,
+  &:focus {
+    color: $white;
+
+    background-color: #192144;
+  }
+
+  &:hover .map__icon,
+  &:focus .map__icon {
+    fill: $white;
+  }
+
+  &:active {
+    color: rgba($white, 0.3);
+  }
+
+  &:active .map__icon {
+    fill: rgba($white, 0.3);
+  }
+}
+
+.map__icon {
+  position: absolute;
+  top: 21px;
+  right: 20px;
+
+  fill: #1d2e5b;
+}
+
+.map__interactive {
+  margin-top: -45px;
+  min-width: 320px;
+  height: 546px;
+}
+
+.map__picture {
+  position: relative;
+
+  margin: 0 auto;
+  width: 320px;
+  height: 546px;
+
+  &--hide {
+    display: none;
+  }
+
+  &::before {
+    @include pseudo;
+
+    top: 151px;
+    left: 140px;
+
+    width: 41px;
+    height: 41px;
+
+    background-image: url("../img/svg/map-marker.svg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .map__location {
+    padding-top: 102px;
+    padding-bottom: 85px;
+
+    border-radius: 0 0 60px 60px;
+  }
+
+  .map__address {
+    margin-bottom: 43px;
+    margin-left: 35px;
+    padding-top: 23px;
+    padding-bottom: 18px;
+    padding-left: 93px;
+    width: auto;
+
+    font-size: 28px;
+    line-height: 28px;
+
+    &::before {
+      width: 68px;
+      height: 68px;
+
+      background-position: 23px 20px;
+      background-size: 21px 32px;
+    }
+  }
+
+  .map__button {
+    margin: 0 auto;
+    padding-top: 27px;
+    padding-bottom: 24px;
+    padding-left: 33px;
+
+    width: 618px;
+
+    font-size: 24px;
+    line-height: 24px;
+
+    border-radius: 20px;
+  }
+
+  .map__icon {
+    top: 31px;
+    right: 33px;
+  }
+
+  .map__interactive {
+    margin-top: -95px;
+    height: 700px;
+  }
+
+  .map__picture {
+    width: 768px;
+    height: 700px;
+
+    &::before {
+      top: 281px;
+      left: 357px;
+
+      width: 54px;
+      height: 54px;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .map__location {
+    padding-top: 109px;
+    padding-bottom: 56px;
+  }
+
+  .map__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .map__address {
+    margin-bottom: 0;
+    margin-left: 223px;
+    padding-top: 32px;
+    padding-bottom: 30px;
+    padding-left: 120px;
+    width: 650px;
+
+    &::before {
+      width: 90px;
+      height: 90px;
+
+      background-position: 31px 26px;
+      background-size: 28px 43px;
+    }
+  }
+
+  .map__button {
+    margin-top: 5px;
+    margin-right: 74px;
+    width: 324px;
+  }
+
+  .map__interactive {
+    margin-top: -209px;
+    height: 750px;
+  }
+
+  .map__picture {
+    width: 1440px;
+    height: 750px;
+
+    &::before {
+      top: 354px;
+      left: 693px;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.copyright__link {
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  color: $grey;
+
+  &::before {
+    @include svg-ie;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.copyright__text {
+  padding-top: 5px;
+
+  font-weight: 400;
+}
+
+.copyright__icon {
+  margin-left: auto;
+}
+
+@media (min-width: $tablet-width) {
+  .copyright__text {
+    padding-top: 3px;
+
+    font-size: 20px;
+    line-height: 24px;
+  }
+}

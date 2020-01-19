@@ -1,0 +1,210 @@
+.traveller-plans {
+  position: relative;
+
+  padding-bottom: 50px;
+
+  color: #1d2e5b;
+
+  background-color: #dfe3f0;
+  border-radius: 30px 30px 0 0;
+}
+
+.traveller-plans__title {
+  margin: 0;
+  padding-top: 28px;
+  padding-bottom: 31px;
+
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.traveller-plans__list {
+  @include list-reset;
+}
+
+.traveller-plans__item {
+  margin-bottom: 10px;
+  padding: 24px;
+  padding-bottom: 23px;
+
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.traveller-plans__sub-title {
+  margin: 0;
+  margin-bottom: 20px;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.traveller-plans__number {
+  font-weight: 500;
+  letter-spacing: 1.6px;
+}
+
+.traveller-plans__info {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+}
+
+.traveller-plans__companion {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.traveller-plans__date {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.traveller-plans__button {
+  line-height: 18px;
+  opacity: 0.3;
+  color: #000000;
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.1;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .traveller-plans {
+    padding-bottom: 97px;
+  }
+
+  .traveller-plans__wrapper {
+    padding: 0 75px;
+  }
+
+  .traveller-plans__title {
+    padding-top: 47px;
+    padding-bottom: 44px;
+
+    font-size: 36px;
+    line-height: 50px;
+  }
+
+  .traveller-plans__sub-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    padding-right: 28px;
+    padding-bottom: 22px;
+    padding-left: 36px;
+
+    font-size: 24px;
+    line-height: 50px;
+
+    border-bottom: 1px solid rgba(#cbced9, 0.3);
+  }
+
+  .traveller-plans__number {
+    order: 1;
+
+    font-size: 20px;
+    line-height: 18px;
+    letter-spacing: 2px;
+  }
+
+  .traveller-plans__item {
+    padding: 0;
+    padding-top: 25px;
+    padding-bottom: 18px;
+  }
+
+  .traveller-plans__info {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 33px;
+    padding-left: 32px;
+
+    font-size: 20px;
+    line-height: 18px;
+    letter-spacing: 2px;
+  }
+
+  .traveller-plans__companion {
+    margin: 0;
+    margin-right: auto;
+  }
+
+  .traveller-plans__date {
+    margin: 0;
+  }
+
+  .traveller-plans__button {
+    margin-left: 80px;
+
+    line-height: 18px;
+    letter-spacing: 2px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .traveller-plans {
+    padding-bottom: 78px;
+
+    border-radius: 60px 60px 0 0;
+  }
+
+  .traveller-plans__wrapper {
+    padding-right: 60px;
+    padding-left: 124px;
+  }
+
+  .traveller-plans__title {
+    padding-top: 46px;
+    padding-left: 7px;
+  }
+
+  .traveller-plans__item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-top: 22px;
+    padding-right: 38px;
+    padding-bottom: 25px;
+    padding-left: 42px;
+  }
+
+  .traveller-plans__sub-title {
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    border: none;
+  }
+
+  .traveller-plans__number {
+    padding-right: 26px;
+  }
+
+  .traveller-plans__info {
+    margin-left: auto;
+    padding: 0;
+    width: 592px;
+  }
+
+  .traveller-plans__companion {
+    margin-right: 8px;
+    width: 170px;
+  }
+
+  .traveller-plans__button {
+    margin-left: auto;
+  }
+}
