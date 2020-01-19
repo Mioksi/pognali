@@ -88,6 +88,11 @@
       background-image: url("../img/flags-back@1x.png");
       background-position: 0 0;
       background-repeat: no-repeat;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/flags-back@2x.png");
+        background-size: 289px auto;
+      }
     }
   }
 
