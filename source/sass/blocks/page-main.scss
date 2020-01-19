@@ -1,14 +1,18 @@
 .page-main {
   position: relative;
 
-  padding-top: 72px;
-
   background-color: #161c36;
 
   &--inner {
-    padding-top: 64px;
-
     background-color: #edeff6;
+  }
+
+  &--padding {
+    padding-top: 72px;
+  }
+
+  &--padding.page-main--inner {
+    padding-top: 64px;
   }
 }
 
@@ -119,14 +123,18 @@
 
 @media (min-width: $tablet-width) {
   .page-main {
-    padding-top: 139px;
-
     background-color: #182044;
 
     &--inner {
-      padding-top: 131px;
-
       background-color: #edeff6;
+    }
+
+    &--padding {
+      padding-top: 139px;
+    }
+
+    &--padding.page-main--inner {
+      padding-top: 131px;
     }
   }
 
@@ -221,14 +229,18 @@
 
 @media (min-width: $desktop-width) {
   .page-main {
-    padding-top: 123px;
-
     background-color: #161c34;
 
     &--inner {
-      padding-top: 123px;
-
       background-color: #edeff6;
+    }
+
+    &--padding {
+      padding-top: 123px;
+    }
+
+    &--padding.page-main--inner {
+      padding-top: 123px;
     }
   }
 

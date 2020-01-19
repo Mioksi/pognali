@@ -283,6 +283,12 @@
     &--menu-scroll {
       background-color: $white;
     }
+
+    &--menu-nojs {
+      .page-header__logo-image {
+        opacity: 1;
+      }
+    }
   }
 
   .page-header__wrapper {

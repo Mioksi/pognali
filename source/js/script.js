@@ -3,6 +3,7 @@ var pageHeaderWrapper = pageHeader.querySelector('.page-header__wrapper');
 var navigationToggle = pageHeader.querySelector('.page-header__toggle');
 var mainNavigation = document.querySelector('.main-navigation');
 var mainNavigationItem = mainNavigation.querySelectorAll('.main-navigation__item');
+var pageMain = document.querySelector('.page-main');
 
 var tariffs = document.querySelector('.tariffs');
 
@@ -15,6 +16,7 @@ var countryFilter = document.querySelector('.filter');
 var travellerForm = document.querySelector('.traveller-form');
 
 pageHeader.classList.remove('page-header--menu-nojs');
+pageMain.classList.add('page-main--padding');
 
 navigationToggle.addEventListener('click', function () {
   if (pageHeader.classList.contains('page-header--menu-closed')) {
